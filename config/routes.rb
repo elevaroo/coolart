@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  get 'profile', to: 'pages#profile'
+  # resources :category, only: [:index]
+  # need to check everything we need as routes
+  resources :artists, only: [ :show, :index ] do
+    resources :artworks, except: [ :index ] do
+      resources :orders, only: [:new, :create]
+      resources :favorite_artworks, only: [:new, :create, :destroy]
+    end
+  end
+
+  resources :artworks, only: [ :index ]
+
 end
