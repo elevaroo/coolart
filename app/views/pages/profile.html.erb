@@ -1,1 +1,7 @@
-profile.html.erb
+<% if current_user.artist? %>
+  <%= render "pages/profile_partials/artist_profile" %>
+<% elsif current_user.collector? %>
+  <%= render "pages/profile_partials/collector_profile" %>
+<% end %>
+
+
