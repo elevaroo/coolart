@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get 'profile', to: 'pages#profile'
   # resources :category, only: [:index]
   # need to check everything we need as routes
+
+  # add param :name for renaming the path #param: :username
+
   resources :artists, only: [ :show, :index ] do
     resources :artworks, except: [ :index ] do
       resources :orders, only: [:new, :create]
