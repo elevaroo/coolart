@@ -1,1 +1,8 @@
-show.html.erb
+
+
+
+
+<!-- this is the order button which redirects to the profile page in the bought items -->
+<%= simple_form_for [@artwork, @order] do |f| %>
+  <%= f.button :submit, "Buy me!", class: 'btn btn-primary' %>
+<%= end %>
