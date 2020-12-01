@@ -3,6 +3,7 @@ class Artwork < ApplicationRecord
   belongs_to :medium
   belongs_to :category
   has_many :tags
+  has_many :orders
 
 
   validates :name, presence: true
