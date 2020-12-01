@@ -1,35 +1,60 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div class="navbar navbar-expand-sm navbar-light navbar-coolart fixed-top">
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
+  <div class="navbar-left btn-cont">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item btn btn-succes">
+          <a class="nav-link hp-btn" href="#">Home</a>
+          <span class='line-1'></span>
+          <span class='line-2'></span>
+          <span class='line-3'></span>
+          <span class='line-4'></span>
+        </li>
+        <li class="nav-item btn btn-succes">
+          <a class="nav-link hp-btn" href="#">Art Advisor</a>
+          <span class='line-1'></span>
+          <span class='line-2'></span>
+          <span class='line-3'></span>
+          <span class='line-4'></span>
+        </li>
+        <li class="nav-item btn btn-succes">
+          <a class="nav-link hp-btn" href="#">Category</a>
+          <span class='line-1'></span>
+          <span class='line-2'></span>
+          <span class='line-3'></span>
+          <span class='line-4'></span>
+        </li>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
+        <li class="nav-item  link-effect btn btn-succes">
+          <a class="nav-link hp-btn" href="#">Find your style</a>
+          <span class='line-1'></span>
+          <span class='line-2'></span>
+          <span class='line-3'></span>
+          <span class='line-4'></span>
         </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
   </div>
+  <div class="navbar-right">
+    <ul class="navbar-nav mr-auto btn-cont">
+      <li class="nav-item dropdown btn btn-succes">
+        <a class="nav-link hp-btn" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://cioday.com/wp-content/uploads/2018/11/avatar-placeholder.png"> Login <a/>
+         <span class='line-1'></span>
+         <span class='line-2'></span>
+         <span class='line-3'></span>
+         <span class='line-4'></span>
+         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Artists</a>
+          <a class="dropdown-item" href="#">Art Advisor</a>
+          <a class="dropdown-item" href="#">Help</a>
+          <a class="dropdown-item" href="#">Contact</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 </div>
