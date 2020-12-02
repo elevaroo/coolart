@@ -1,0 +1,28 @@
+
+<div class="container">
+
+<% @artists.each do |artist| %>
+  <div class="card">
+  <%= artist.user.username %>
+  <%= artist.location %>
+  <%= artist.nationality %>
+  <%= link_to 'click', artist_path(artist)%>
+<% end %>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

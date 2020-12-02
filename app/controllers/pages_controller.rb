@@ -7,5 +7,4 @@ class PagesController < ApplicationController
   #can you call the inclusion(validation) values of the Category model instead?
 
   end
-
 end

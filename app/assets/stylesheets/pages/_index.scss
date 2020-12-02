@@ -1,2 +1,7 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.card{
+  display:flex;
+ flex-direction: column;
+}
