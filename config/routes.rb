@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   # add param :name for renaming the path #param: :username
 
+  resources :categories, only: :show, param: :name
+
   resources :artists, only: [ :show, :index ] do
     resources :artworks, except: [ :index ] do
       resources :orders, only: [:new, :create]
@@ -16,5 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :artworks, only: [ :index ]
+
 
 end
