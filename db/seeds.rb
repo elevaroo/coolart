@@ -65,3 +65,33 @@ cows = Artwork.create!(
   artist: user_artist.account
   )
 
+pablo = User.create!(
+  first_name: "Pablo",
+  last_name: "Picasso",
+  email: "pa@blo.com",
+  username: "pablopicasso",
+  password: "lewagon",
+  account: Artist.create!(
+    location: "Madrid, Spain",
+    nationality: "Spanish",
+    vita: "hello i'm Pablo",
+    artschool: "Madrid Art Academy"
+    )
+  )
+
+painting = Category.create!(name: "Painting")
+oil = Medium.create!(name: "Oil paint")
+
+  woman = Artwork.create!(
+  name: "Woman",
+  description: "naked bathing woman",
+  year: Date.ordinal(1931),
+  price: 9300,
+  height: 60,
+  width: 40,
+  medium: oil,
+  category: painting,
+  artist: pablo.account
+  )
+
+
