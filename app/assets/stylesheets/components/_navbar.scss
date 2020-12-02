@@ -10,20 +10,21 @@
 }
 
 .navbar-coolart .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
 
 .navbar-coolart-white {
-  background-color: white;
+  background-color: #F8F8F8;
 }
 
 .navbar-right {
   display:flex;
- align-item:right;
+  align-item:right;
 }
 
 .btn-cont {
   text-align: center;
+  font-family: "Roboto", "sans-serif";
 .hp-btn {
 }
   .btn {
@@ -51,7 +52,7 @@
     display: block;
     position: absolute;
     width: 1px;
-    background-color: red;
+    background-color: #272626;
     left: 0;
     bottom: 0;
   }
@@ -60,7 +61,7 @@
     display: block;
     position: absolute;
     height: 1px;
-    background-color: red;
+    background-color: #272626;
     left: 0;
     top: 0;
   }
@@ -69,7 +70,7 @@
     display: block;
     position: absolute;
     width: 1px;
-    background-color: red;
+    background-color: #272626;
     right: 0;
     top: 0;
   }
@@ -78,7 +79,7 @@
     display: block;
     position: absolute;
     height: 1px;
-    background-color: red;
+    background-color: #272626;
     right: 0;
     bottom: 0;
   }

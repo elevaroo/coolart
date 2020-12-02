@@ -5,12 +5,10 @@ class Artwork < ApplicationRecord
   has_many :tags
   has_many :orders
 
-
   validates :name, presence: true
   validates :description, presence: true
   validates :year, presence: true
   validates :price, presence: true
   validates :height, presence: true
   validates :width, presence: true
-
 end

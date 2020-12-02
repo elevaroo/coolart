@@ -6,3 +6,4 @@ class Artist < ApplicationRecord
   validates :date_of_birth, presence: true
   validates :nationality, presence: true
 end
+
