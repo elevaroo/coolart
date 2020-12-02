@@ -14,19 +14,6 @@ Artist.destroy_all
 User.destroy_all
 
 
-# p collector_1 = User.create!(
-#   first_name: "Ele",
-#   last_name: "Elevaroo",
-#   email: "ele@me.com",
-#   username: "elevaroo",
-#   password: "lewagon",
-#   )
-
-# p me = Collector.create!()
-
-# collector_1.collector = me
-
-
 user_collector = User.create!(
   first_name: "Ele",
   last_name: "Elevaroo",
