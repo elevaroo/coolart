@@ -4,4 +4,5 @@ class ArtworksController < ApplicationController
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
   end
-end
+
+#add photos[] in the params
