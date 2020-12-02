@@ -1,6 +1,20 @@
+<h1 class="text-center mb-4"><%= @artwork.name.capitalize %></h1>
+<div class="artwork-info">
+  <h3> <%= @artwork.name %> </h3>
+  <ul>
+    <li><%= @artwork.category.capitalize %></li>
+    <li><%= @artwork.width %></li>
+    <li><%= @artwork.height %></li>
+    <li><%= @artwork.price %> €</li>
+  </ul>
+  <p> <%= @artwork.year %></p>
+  <p> <%= @artwork.description %></p>
+</div>
 
-
-
+<div class="booking form-header">
+  <h4><strong class="text-center">Book for <%= @artwork.name.capitalize %> </strong></h4>
+  <%= render 'bookings/form', artwork: @artwork, artwork: @artwork %>
+</div>
 
 <!-- this is the order button which redirects to the profile page in the bought items -->
 <%= simple_form_for [@artist, @artwork, @order] do |f| %>

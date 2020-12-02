@@ -1,1 +1,24 @@
-hello
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8">
+
+      <% if params[:category].present? %>
+        <h2 class="header-description mb-4" > <%= @category.capitalize %></h2>
+      <% end %>
+
+      <div class="card-container d-flex flex-wrap">
+        <% @artworks.each do |artwork| %>
+        <%= link_to artist_artworks_path(artwork) do %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= artwork.name.capitalize %></h2>
+            <p class="artwork-description"><%= artwork.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= artwork.price %> €</h2>
+        </div>
+      </div>
+        <% end %>
+        <% end %>
+    </div>
+  </div>
+</div>

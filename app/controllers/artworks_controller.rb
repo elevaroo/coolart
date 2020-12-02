@@ -44,7 +44,7 @@ class ArtworksController < ApplicationController
 
   def update
     if @artwork.update(artwork_params)
-      redirect_to artists_path, notice: "Artwork was successfully updated."
+      redirect_to artist_artworks_path(@artwork), notice: "Artwork was successfully updated."
     else
       render :edit, notice: "Something went wrong."
     end
@@ -63,7 +63,6 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork).permit(:name, :description, :year, :price, :height, :width)
-
   end
 end
 

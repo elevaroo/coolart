@@ -1,1 +1,20 @@
-new.html.erb
+<div class="container">
+  <div class="row row-margin-top">
+
+    <div class="form-background w-100 d-flex flex-column align-items-center">
+      <div class="form-group">
+        <%= simple_form_for(@artwork) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :year %>
+        <%= f.input :description %>
+        <%= f.input :width %>
+        <%= f.input :height %>
+        <%= f.input :price %>
+        <%= f.input :location %>
+        <%= f.submit "Create New Artwork", class: "btn-margin btn-ghost" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
