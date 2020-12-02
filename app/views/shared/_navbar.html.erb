@@ -39,10 +39,11 @@
       </ul>
     </div>
   </div>
+  <% if user_signed_in? %>
   <div class="navbar-right">
     <ul class="navbar-nav mr-auto btn-cont">
       <li class="nav-item dropdown btn btn-succes">
-        <a class="nav-link hp-btn" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://cioday.com/wp-content/uploads/2018/11/avatar-placeholder.png"> Login <a/>
+        <a class="nav-link hp-btn" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://cioday.com/wp-content/uploads/2018/11/avatar-placeholder.png"> Dashboard <a/>
          <span class='line-1'></span>
          <span class='line-2'></span>
          <span class='line-3'></span>
@@ -51,9 +52,20 @@
           <a class="dropdown-item" href="#">Artists</a>
           <a class="dropdown-item" href="#">Art Advisor</a>
           <a class="dropdown-item" href="#">Help</a>
-          <a class="dropdown-item" href="#">Contact</a>
+          <%= link_to "Sign out", destroy_user_session_path, method:"delete", class:"dropdown-item" %>
         </div>
       </div>
     </li>
   </ul>
 </div>
+<% else  %>
+<div class="navbar-right">
+    <ul class="navbar-nav mr-auto btn-cont">
+      <li class="nav-item dropdown btn btn-succes">
+        <%= link_to "Login", new_user_session_path, class:"nav-link hp-btn" %>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<% end %>
