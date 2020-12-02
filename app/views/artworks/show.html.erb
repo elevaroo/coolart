@@ -6,3 +6,5 @@
 <%= simple_form_for [@artist, @artwork, @order] do |f| %>
   <%= f.button :submit, "Buy me!", class: 'btn btn-primary' %>
 <%= end %>
+
+<%= button_to raw("<i class=\"far fa-heart\"></i>") ,{:controller => 'favorite_artworks', :action => 'create', :user_id => current_user.id, :artwork_id => @artwork.id}, {:method => :post} %>

@@ -3,10 +3,11 @@
 </div>
 
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
-      <%= "Lorem ipsum dolor sit amet, consectetur adipisicing elit " * 100 %>
-    </div>
+  <!-- insert category card here -->
+  <div>
+    <% @categories.each do |category| %>
+      <%= category %>
+    <% end %>
   </div>
 </div>
 
