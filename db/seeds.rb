@@ -181,7 +181,7 @@ lithography = Medium.create!(name: "lithography")
 
 
 drawing = Category.create!(name:"drawing")
-oil_paint= = Medium.create!(name: "Oil paint")
+oil_paint = Medium.create!(name: "Oil paint")
 
  sunshine = Artworks.create!(
   name: "sunshine",
