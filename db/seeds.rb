@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 Artwork.destroy_all
 Medium.destroy_all
@@ -13,19 +6,23 @@ Collector.destroy_all
 Artist.destroy_all
 User.destroy_all
 
+  ndashiz = User.create!(
+  first_name: "Simon",
+  last_name: "Goffin",
+  email: "gloirealarue@gmail.com",
+  username: "ndashiz",
+  password: "lewagon",
+  account: Collector.create!()
+  )
 
-# p collector_1 = User.create!(
-#   first_name: "Ele",
-#   last_name: "Elevaroo",
-#   email: "ele@me.com",
-#   username: "elevaroo",
-#   password: "lewagon",
-#   )
-
-# p me = Collector.create!()
-
-# collector_1.collector = me
-
+george1 = User.create!(
+  first_name: "George",
+  last_name: "Ferland",
+  email: "george_ferland@gmail.com",
+  username: "George1",
+  password: "lewagon",
+  account: Collector.create!()
+  )
 
 user_collector = User.create!(
   first_name: "Ele",
@@ -36,6 +33,7 @@ user_collector = User.create!(
   account: Collector.create!()
   )
 
+
 user_artist = User.create!(
   first_name: "Andy",
   last_name: "Warhol",
@@ -45,10 +43,40 @@ user_artist = User.create!(
   account: Artist.create!(
     location: "NY, USA",
     nationality: "American",
-    vita: "hello i'm Andy",
+    vita: "hello I'm Andy",
     artschool: "NY Art Academy"
     )
   )
+
+  desposito = User.create!(
+  first_name: "Angelo",
+  last_name: "Despo",
+  email: "angelo@despo.com",
+  username: "Desposito",
+  password: "lewagon",
+  account: Artist.create!(
+    location: "Paris, France",
+    nationality: "French",
+    vita: "Hello, I'm Angelo,I have a passion for art and I specialise in sculpture.",
+    artschool: "Paris School of Art"
+    )
+  )
+
+
+   vicart = User.create!(
+  first_name: "Victoria",
+  last_name: "Guettaf",
+  email: "victoria@mail.com",
+  username: "VicArt",
+  password: "lewagon",
+  account: Artist.create!(
+    location: "Brussels, Belgium",
+    nationality: "Belgian",
+    vita: "Hello, I'm Angelo,I have a passion for art and I specialise in sculpture.",
+    artschool: "ENSAV La Cambre"
+    )
+  )
+
 
 prints = Category.create!(name: "Print")
 media = Medium.create!(name: "Lithography")
@@ -92,6 +120,79 @@ oil = Medium.create!(name: "Oil paint")
   medium: oil,
   category: painting,
   artist: pablo.account
+  )
+
+  desire = Artwork.create!(
+  name: "Desire",
+  description: "a man's desire in a woman's eyes",
+  year: Date.ordinal(2007),
+  price: 2600,
+  height: 60,
+  width: 40,
+  medium: oil,
+  category: painting,
+  artist: pablo.account
+  )
+
+sculpture = Category.create!(name:"Sculpture")
+plastic = Medium.create!(name: "Plastic")
+
+  neighbour = Artwork.create!(
+  name: "Neighbour",
+  description: "sculture based on my neighbour who doesn't have a curtain in her bathroom",
+  year: Date.ordinal(2016),
+  price: 3200,
+  height: 170,
+  width: 70,
+  medium: plastic,
+  category: sculpture,
+  artist: vicart.account
+  )
+
+sculpture = Category.create!(name:"Sculpture")
+bronze = Medium.create!(name: "Bronze")
+
+  dona = Artwork.create!(
+  name: "Dona",
+  description: "representing dona, a saint from Greek mythology",
+  year: Date.ordinal(2017),
+  price: 2200,
+  height: 180,
+  width: 50,
+  medium: bronze,
+  category: sculpture,
+  artist: desposito.account
+  )
+
+photography = Category.create!(name:"Photography")
+lithography = Medium.create!(name: "Lithography")
+
+ paris = Artwork.create!(
+  name: "Paris ",
+  description: "Paris photo taken from a helicopter",
+  year: Date.ordinal(2015),
+  price: 890,
+  height: 100,
+  width: 40,
+  medium: lithography,
+  category: photography,
+  artist: desposito.account
+  )
+
+
+drawing = Category.create!(name:"Drawing")
+oil_paint = Medium.create!(name: "Oil paint")
+
+ sunshine = Artwork.create!(
+  name: "sunshine",
+  description: "Paris photo taken from a helicopter",
+  year: Date.ordinal(2020),
+  price: 480,
+  height: 30,
+  width: 20,
+  medium: oil_paint,
+  category: drawing,
+  artist: vicart.account
   )
 
 

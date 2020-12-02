@@ -7,3 +7,4 @@ class Artist < ApplicationRecord
   validates :vita, presence: true
   validates :nationality, presence: true
 end
+
