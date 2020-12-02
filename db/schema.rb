@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_163219) do
+ActiveRecord::Schema.define(version: 2020_12_01_091550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "location"
+    t.string "nationality"
+    t.date "date_of_birth"
+    t.string "vita"
+    t.string "artschool"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "artworks", force: :cascade do |t|
     t.string "name"
@@ -27,19 +37,14 @@ ActiveRecord::Schema.define(version: 2020_11_30_163219) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "artist_id", null: false
+    t.index ["artist_id"], name: "index_artworks_on_artist_id"
     t.index ["category_id"], name: "index_artworks_on_category_id"
     t.index ["medium_id"], name: "index_artworks_on_medium_id"
   end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
-
-  create_table "artists", force: :cascade do |t|
-    t.string "location"
-    t.string "nationality"
-    t.date "date_of_birth"
-    t.string "vita"
-    t.string "artschool"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -49,10 +54,29 @@ ActiveRecord::Schema.define(version: 2020_11_30_163219) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "favorite_artworks", force: :cascade do |t|
+    t.bigint "artwork_id", null: false
+    t.bigint "collector_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_favorite_artworks_on_artwork_id"
+    t.index ["collector_id"], name: "index_favorite_artworks_on_collector_id"
+  end
+
   create_table "media", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "artwork_id", null: false
+    t.bigint "collector_id", null: false
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["artwork_id"], name: "index_orders_on_artwork_id"
+    t.index ["collector_id"], name: "index_orders_on_collector_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -81,7 +105,12 @@ ActiveRecord::Schema.define(version: 2020_11_30_163219) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "artworks", "artists"
   add_foreign_key "artworks", "categories"
   add_foreign_key "artworks", "media"
+  add_foreign_key "favorite_artworks", "artworks"
+  add_foreign_key "favorite_artworks", "collectors"
+  add_foreign_key "orders", "artworks"
+  add_foreign_key "orders", "collectors"
   add_foreign_key "tags", "artworks"
 end

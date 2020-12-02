@@ -1,5 +1,5 @@
 class Medium < ApplicationRecord
   has_many :artworks
 
-  validates :category, inclusion: { in: ['oil paint', 'watercolour', 'pencil', 'etching', 'lithography', 'bronze', 'marble', 'wood', 'iron', 'plastic', 'acrylic paint', 'chalk', 'pastels'] }
+  validates :name, inclusion: { in: ['Oil paint', 'Watercolour', 'Pencil', 'Etching', 'Lithography', 'Bronze', 'Marble', 'Wood', 'Iron', 'Plastic', 'Acrylic paint', 'Chalk', 'Pastel'] }
 end

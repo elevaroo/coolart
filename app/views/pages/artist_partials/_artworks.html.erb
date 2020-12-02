@@ -1,0 +1,13 @@
+<% current_user.artist.artworks.each do |artwork| %>
+
+<div>
+  <h1><%= artwork.name %></h1>
+  <h1><%= artwork.year  %></h1>
+  <p><%= artwork.description %></p>
+  <h1><%= artwork.price %></h1>
+  <h1><%= artwork.width  %>, <%= artwork.height  %></h1>
+  <h1><%= artwork.category.name %></h1>
+  <h1><%= artwork.medium.name %></h1>
+</div>
+
+<% end %>

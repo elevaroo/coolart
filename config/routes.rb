@@ -2,7 +2,22 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get 'profile', to: 'pages#profile'
   # resources :category, only: [:index]
-  resources :artists, only: [ :show, :index, ]
-  resources :artworks #show and index for everyone; edit add and delete only for an artist (nested)
+  # need to check everything we need as routes
+
+  # add param :name for renaming the path #param: :username
+
+  resources :categories, only: :show, param: :name
+
+  resources :artists, only: [ :show, :index ] do
+    resources :artworks, except: [ :index ] do
+      resources :orders, only: [:new, :create]
+      resources :favorite_artworks, only: [:new, :create, :destroy]
+    end
+  end
+
+  resources :artworks, only: [ :index ]
+
+
 end

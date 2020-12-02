@@ -1,2 +1,18 @@
-<h4>Pages#home</h4>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="home-banner">
+  <h1>Coolart</h1>
+</div>
+
+<div class="container d-flex">
+  <!-- insert category card here -->
+
+  <% @categories.each do |category| %>
+    <div class="m-2">
+      <%= link_to category.name, category_path(category.name)%>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%= link_to 'Discover all our artists', artists_path, class:"btn" %>

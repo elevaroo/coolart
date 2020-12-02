@@ -9,7 +9,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :account
 
   def build_account(params)
-    self.account = account_type.constantize.new(params)
+    self.account = account_type.constantize.create(params)
   end
 
   def collector?
@@ -22,4 +22,5 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :username, presence: true, uniqueness: true
 end

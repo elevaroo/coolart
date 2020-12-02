@@ -3,7 +3,7 @@ class Artwork < ApplicationRecord
   belongs_to :medium
   belongs_to :category
   has_many :tags
-
+  has_many :orders
 
   validates :name, presence: true
   validates :description, presence: true
@@ -11,5 +11,4 @@ class Artwork < ApplicationRecord
   validates :price, presence: true
   validates :height, presence: true
   validates :width, presence: true
-
 end
