@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :account_type, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool ]])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, account_attributes:  [ :location, :nationality, :date_of_birth, :vita, :artschool ]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool ]])
   end
 end
