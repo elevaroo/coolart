@@ -11,7 +11,7 @@
       <div class="card-container d-flex flex-wrap">
         <div class="d-flex flex-wrap">
           <% @artworks.each do |artwork| %>
-              <%= link_to 'see more', artist_artwork_path(artwork.artist, artwork) %>
+              <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
               <div class="card-wrapper">
                 <div class="card-item">
                   <%= image_tag "artwork", class:"artwork"%>
@@ -24,9 +24,10 @@
                   </div>
 
                   <h4 class="card-dimensions"><%= artwork.medium.name %>, W 80cm x H 80cm</h4>
-                  <h4 class="card-artist"><%= artwork.artist.user.first_name %><%= artwork.artist.user.last_name %></h4>
+                  <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
                 </div>
               </div>
+              <% end %>
             <% end %>
 
         </div>

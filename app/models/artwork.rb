@@ -11,4 +11,7 @@ class Artwork < ApplicationRecord
   validates :price, presence: true
   validates :height, presence: true
   validates :width, presence: true
+
+  scope :price_min, lambda{|min| where(['price >= 0', min])}
+  scope :price_max, lambda{|max| where(['price <= 10000', max])}
 end
