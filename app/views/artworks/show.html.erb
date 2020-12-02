@@ -2,7 +2,7 @@
 <div class="artwork-info">
   <h3> <%= @artwork.name %> </h3>
   <ul>
-    <li><%= @artwork.category.capitalize %></li>
+    <li><%= @artwork.category.name.capitalize %></li>
     <li><%= @artwork.width %></li>
     <li><%= @artwork.height %></li>
     <li><%= @artwork.price %> €</li>
@@ -11,14 +11,17 @@
   <p> <%= @artwork.description %></p>
 </div>
 
-<div class="booking form-header">
-  <h4><strong class="text-center">Book for <%= @artwork.name.capitalize %> </strong></h4>
-  <%= render 'bookings/form', artwork: @artwork, artwork: @artwork %>
-</div>
 
 <!-- this is the order button which redirects to the profile page in the bought items -->
-<%= simple_form_for [@artist, @artwork, @order] do |f| %>
-  <%= f.button :submit, "Buy me!", class: 'btn btn-primary' %>
-<%= end %>
 
-<%= button_to raw("<i class=\"far fa-heart\"></i>") ,{:controller => 'favorite_artworks', :action => 'create', :user_id => current_user.id, :artwork_id => @artwork.id}, {:method => :post} %>
+<%= simple_form_for [@order] do |f| %>
+  <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+  <%= f.button :submit, "Buy me!", class: 'btn' %>
+<% end %>
+
+
+
+<%= simple_form_for [@favorite_artwork] do |f| %>
+  <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+  <%= f.button :submit, {class: 'button postfix'} do %><i class="far fa-heart"></i><% end %>
+<% end %>

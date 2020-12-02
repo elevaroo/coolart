@@ -1,9 +1,9 @@
 class FavoriteArtworksController < ApplicationController
 
-def create
-    @fav_artwork = FavoriteArtwork.new(booking_params)
-    @fav_artwork.user_id = current_user.id
-    @fav_artwork.artwork_id = params[:artwork_id]
+  def create
+    @fav_artwork = FavoriteArtwork.new(fav_artworks_params)
+    @fav_artwork.collector_id = current_user.account.id
+    @fav_artwork.artwork_id = params[:favorite_artwork][:artwork_id]
     respond_to do |format|
       if @fav_artwork.save!
         format.html { redirect_to profile_path }
