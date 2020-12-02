@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+.background-container {
+  background: asset-url('background-landing.jpg');
+  object-fit: cover;
+  width: 100%;
+
+}
+.lorem{
+  width: 50px;
+}
