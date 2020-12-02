@@ -21,7 +21,7 @@ class ArtworksController < ApplicationController
 
   def show
     @order = Order.new
-    # likes
+    @favorite_artwork = FavoriteArtwork.new
   end
 
   def new
@@ -62,6 +62,7 @@ class ArtworksController < ApplicationController
 
   def artwork_params
     params.require(:artwork).permit(:name, :description, :year, :price, :height, :width)
+
   end
 end
 

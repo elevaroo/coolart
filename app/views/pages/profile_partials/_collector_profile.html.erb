@@ -1,1 +1,24 @@
-_collector_profile.html.erb
+<h1>Welcome <%= current_user.first_name %></h1>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="pills-account-tab" data-toggle="pill" href="#pills-account" role="tab" aria-controls="pills-account" aria-selected="true">My account</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-collection-tab" data-toggle="pill" href="#pills-collection" role="tab" aria-controls="pills-collection" aria-selected="false">My collection</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="pills-orders-tab" data-toggle="pill" href="#pills-orders" role="tab" aria-controls="pills-orders" aria-selected="false">Orders</a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab">
+    <%= render "pages/collector_partials/my_account" %>
+  </div>
+  <div class="tab-pane fade" id="pills-collection" role="tabpanel" aria-labelledby="pills-collection-tab">
+    <%= render "pages/collector_partials/my_collection" %>
+  </div>
+  <div class="tab-pane fade" id="pills-orders" role="tabpanel" aria-labelledby="pills-orders-tab">
+    <%= render "pages/collector_partials/orders" %>
+  </div>
+</div>
