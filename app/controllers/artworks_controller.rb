@@ -7,6 +7,7 @@ class ArtworksController < ApplicationController
     @artworks = Artwork.all
   end
 
+
   def show
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
