@@ -4,20 +4,7 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      sql_query = " \
-        artworks.name @@ :query \
-        OR artworks.description @@ :query \
-        OR users.first_name @@ :query \sep
-        OR users.last_name @@ :query \
-      "
-      @artworks = Artwork.joins(:user).where(sql_query, query: "%#{params[:query]}%")
-    elsif params[:category].present?
-      @artworks = Artwork.where(category: params[:category])
-      @category = params[:category]
-    else
-      @artworks = Artwork.all
-    end
+    @artworks = Artwork.all
   end
 
   def show
