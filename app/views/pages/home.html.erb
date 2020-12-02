@@ -1,14 +1,16 @@
+
 <div class="home-banner">
-  <h1>CoolArt.</h1>
+  <h1>Coolart</h1>
 </div>
 
-<div class="container">
+<div class="container d-flex">
   <!-- insert category card here -->
-  <div>
-    <% @categories.each do |category| %>
-      <%= category %>
-    <% end %>
-  </div>
+
+  <% @categories.each do |category| %>
+    <div class="m-2">
+      <%= link_to category.name, category_path(category.name)%>
+    </div>
+  <% end %>
 </div>
 
 

@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
 
-  @categories = %w(Painting Sculpture Photography Print Drawing)
+  @categories = Category.all
   #can you call the inclusion(validation) values of the Category model instead?
 
   end
