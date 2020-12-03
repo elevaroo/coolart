@@ -1,13 +1,18 @@
-<% current_user.account.favorite_artworks.each do |fav| %>
+<div class="p-2 d-flex flex-wrap align-content-start">
+  <% current_user.account.favorite_artworks.each do |fav| %>
+    <div class="card-wrapper">
+      <div class="card-item">
+        <%= image_tag "artwork", class:"artwork"%>
+      </div>
+      <div class="card-info">
+        <div class="d-flex justify-content-between">
+          <h4 class="artwork-title"><%= fav.artwork.name.capitalize %>, <%= fav.artwork.year %></h4>
+          <h4 class="card-price"><%= fav.artwork.price %> €</h4>
+        </div>
 
-<div>
-  <h1><%= fav.artwork.name %></h1>
-  <p><%= fav.artwork.description %></p>
-  <h2><%= fav.artwork.year %></h2>
-  <h2><%= fav.artwork.price %></h2>
-  <p><%= fav.artwork.width %>, <%= fav.artwork.height %></p>
-  <h1><%= fav.artwork.medium.name %></h1>
-  <h1><%= fav.artwork.category.name %></h1>
+        <h4 class="card-dimensions"><%= fav.artwork.medium.name %>, W <%= fav.artwork.width %> x H <%= fav.artwork.height %><% if fav.artwork.depth %> x D <%= fav.artwork.depth %><% end %></h4>
+        <h4 class="card-artist"><%= fav.artwork.artist.user.first_name %> <%= fav.artwork.artist.user.last_name %></h4>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-<% end %>
