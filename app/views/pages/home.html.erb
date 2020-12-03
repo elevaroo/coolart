@@ -1,6 +1,8 @@
 <div class="background-container">
   <div class="home-banner">
-    <h1>Coolart</h1>
+    <div class="logo">
+
+    </div>
   </div>
 
 <h2 class="container my-4"> Browse by Category:</h1>
@@ -15,19 +17,45 @@
     <% end %>
   </div>
 
-<h2 class="container my-4">Browse by Budget:</h1>
-
-  <div class="container d-flex flex-wrap">
-    <div class="m-2"><%= link_to 'up to 500', @artworks_path, price_min: 0, price_max: 500 %></div>
-    <div class="m-2"><%= link_to 'Artworks 500-1000', @artworks_path, price_min: 500, price_max: 1000 %></div>
-    <div class="m-2"><%= link_to '1000-2000', @artworks_path, price_min: 1000, price_max: 2000 %></div>
-    <div class="m-2"><%= link_to 'above 2000', @artworks_path, price_min: 2000, price_max: 15000 %></div>
-
-  </div>
-
-  <div class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus delectus animi maxime, provident dicta, tempora, voluptatem voluptate nobis molestias eaque soluta est ut consectetur dolore, necessitatibus earum reprehenderit illum laborum! Quisquam soluta quae rerum ipsum doloribus perferendis, explicabo repellat doloremque tenetur. In blanditiis necessitatibus amet pariatur, unde voluptatibus voluptas distinctio qui beatae, voluptates dolore optio culpa, eos quis sit facere tenetur earum omnis temporibus ea quidem accusantium ratione minima fuga. Sunt, quibusdam. Numquam doloribus voluptatem neque sint quas. Voluptas, sed asperiores esse sunt, vero minus, cum perspiciatis, illum saepe architecto neque corrupti dolores reprehenderit labore maiores dolor temporibus ullam corporis?
+  <div class="container">
+    <h2 class="my-4">Browse by Budget:</h2>
+    <div class="d-flex flex-wrap">
+      <div class="m-2"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
+      <div class="m-2"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
+      <div class="m-2"><%= link_to 'Artworks 1000-2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
+      <div class="m-2"><%= link_to 'Artworks above 2000', artworks_path(price_min: 2000, price_max: 100000) %></div>
+    </div>
   </div>
 
 
+
+<div class="container">
+  <h2>Our selected Artworks</h2>
+  <div class="card-container d-flex flex-wrap">
+    <div class="d-flex flex-wrap">
+      <% @samples.each do |artwork| %>
+          <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
+          <div class="card-wrapper">
+            <div class="card-item">
+              <%= image_tag "artwork", class:"artwork"%>
+            </div>
+
+            <div class="card-info">
+              <div class="d-flex justify-content-between">
+                <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                <h4 class="card-price"><%= artwork.price %> €</h4>
+              </div>
+
+              <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+              <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+  <%= link_to 'Discover more artworks', artworks_path, class:"btn" %>
+</div>
+  
   <%= link_to 'Discover all our artists', artists_path, class:"btn" %>
 </div>

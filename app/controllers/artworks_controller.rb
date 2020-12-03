@@ -6,9 +6,8 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
 
   def index
-    @artworks = Artwork.all
+    @artworks = apply_scopes(Artwork).all
   end
-
 
   def show
     @order = Order.new
@@ -42,7 +41,7 @@ class ArtworksController < ApplicationController
 
   def destroy
     @artwork.destroy
-    redirect_to artists_path, notice: 'Artwork was successfully destroyed.'
+    redirect_to profile_path, notice: 'Artwork was successfully destroyed.'
   end
 
   private
@@ -52,8 +51,8 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width)
-  end
+    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width, photos: [] )
+  en
 end
 
 # artworks[:user_id] = current_user

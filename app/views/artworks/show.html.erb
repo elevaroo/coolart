@@ -1,27 +1,45 @@
-<h1 class="text-center mb-4"><%= @artwork.name.capitalize %></h1>
-<div class="artwork-info">
-  <h3> <%= @artwork.name %> </h3>
-  <ul>
-    <li><%= @artwork.category.name.capitalize %></li>
-    <li><%= @artwork.width %></li>
-    <li><%= @artwork.height %></li>
-    <li><%= @artwork.price %> €</li>
-  </ul>
-  <p> <%= @artwork.year %></p>
-  <p> <%= @artwork.description %></p>
+
+<div class="artwork-container">
+  <div class="artwork-title">
+    <h1 class="text-center mb-4"><%= @artwork.name.capitalize %></h1>
+  </div>
+
+  <div class="artinfo-container">
+    <div class="artwork-info">
+      <div id="artlike">
+        <%= simple_form_for [@favorite_artwork] do |f| %>
+          <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+          <%= button_tag do %><i class="far fa-heart"></i><% end %>
+        <% end %>
+      </div>
+
+      <h3 id="arttitle"><strong> <%= @artwork.name %> </strong></h3>
+
+      <ul>
+        <li><%= @artwork.category.name.capitalize %></li>
+        <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
+        <li>Date of Creation: <%= @artwork.year %></li>
+        <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
+        <!-- need right link to location of artist (current_user) -->
+        <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong>NY, USA</strong></li>
+      </ul>
+
+      <h2><%= @artwork.price %> €</h2>
+
+      <!-- this is the order button which redirects to the profile page in the bought items -->
+        <%= simple_form_for [@order] do |f| %>
+          <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+          <%= f.button :submit, "Buy me!", class: 'button' %>
+        <% end %>
+      <div id="artfacts">
+        <i class="far fa-eye"></i>
+        <i class="far fa-heart"></i>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="artdescription">
+    <p> <%= @artwork.description %></p>
+  </div>
 </div>
-
-
-<!-- this is the order button which redirects to the profile page in the bought items -->
-
-<%= simple_form_for [@order] do |f| %>
-  <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-  <%= f.button :submit, "Buy me!", class: 'btn' %>
-<% end %>
-
-
-
-<%= simple_form_for [@favorite_artwork] do |f| %>
-  <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-  <%= button_tag do %><i class="far fa-heart"></i><% end %>
-<% end %>

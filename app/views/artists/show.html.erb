@@ -1,12 +1,33 @@
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-10">
+        <div class="d-flex flex-column artist-title">
+          <h2> <strong><%= @artist.user.username %></strong> profile </h2>
+          <div class="image-wrap">
+            <% if @artist.user.photo.attached? %>
+            <%= cl_image_tag @artist.users.photo.key %>
+            <% else %>
+            <img src='https://source.unsplash.com/800x450/?people'>
+            <% end %>
+          </div>
+          <button class="follow-button">Follow<%= link_to "", "/"%></button>
+          <div class="card artist-info">
+            <h3> <i class="fas fa-fingerprint"></i><%= @artist.user.first_name %> <%= @artist.user.last_name %><h3>
+              <h3><i class="fas fa-globe-europe"></i><%= @artist.nationality.upcase %><h3>
+                <h3><i class="fas fa-graduation-cap"></i><%= @artist.artschool %><h3>
+                  <h3><i class="fas fa-birthday-cake"></i><%= @artist.date_of_birth%><h3>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-10 artist-title">
+             <h2 class="artist-nickname"> Description </h2>
+             <div class= "artist-description">
+               <%= @artist.vita %>
+             </div>
+           </div>
+         </div>
+       </div>
 
-<div class="container">
-  <div class="card">
-<%= @artist.nationality %>
-<%= @artist.artschool %>
-<%= @artist.vita %>
-<%= @artist.date_of_birth %>
-<%= @artist.artschool %>
-<%= @artist.user.first_name %>
-<%= @artist.user.last_name %>
-</div>
-</div>
+
