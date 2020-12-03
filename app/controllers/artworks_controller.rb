@@ -51,8 +51,8 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width)
-  end
+    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width, photos: [] )
+  en
 end
 
 # artworks[:user_id] = current_user
