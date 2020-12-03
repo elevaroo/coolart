@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :account, polymorphic: true
+  has_one_attached :photo
 
   accepts_nested_attributes_for :account
 

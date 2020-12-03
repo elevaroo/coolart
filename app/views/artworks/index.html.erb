@@ -5,7 +5,6 @@
       <% if params[:category].present? %>
         <h2 class="header-description mb-4" > <%= @category.capitalize %></h2>
       <% end %>
-
       <div class="card-container d-flex flex-wrap">
         <% @artworks.each do |artwork| %>
         <%= link_to artist_artworks_path(artwork) do %>
