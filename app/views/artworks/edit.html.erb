@@ -11,6 +11,7 @@
         <%= f.input :height %>
         <%= f.input :depth %>
         <%= f.input :price %>
+        <%= f.input :photos, as: :file %>
         <%= f.input :medium %>
         <%= f.input :category %>
         <%= f.submit "Create New Artwork", class: "btn-margin btn-ghost", method: :patch %>
