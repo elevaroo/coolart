@@ -6,7 +6,7 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
 
   def index
-    @artworks = Artwork.all
+    @artworks = apply_scopes(Artwork).all
   end
 
 
