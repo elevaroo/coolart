@@ -15,6 +15,14 @@ class FavoriteArtworksController < ApplicationController
     end
   end
 
+  def destroy
+    @fav_artwork = FavoriteArtwork.find(params[:id])
+    @fav_artwork.destroy
+    redirect_to profile_path
+  end
+
+  private
+
   def fav_artworks_params
     params.require(:favorite_artwork).permit(:artwork_id)
   end
