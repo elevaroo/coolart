@@ -134,7 +134,6 @@ oil = Medium.create!(name: "Oil paint")
   artist: pablo.account
   )
 
-sculpture = Category.create!(name:"Sculpture")
 plastic = Medium.create!(name: "Plastic")
 
   neighbour = Artwork.create!(
