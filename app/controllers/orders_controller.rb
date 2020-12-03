@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.user_id = current_user.id
-    @order.artwork_id = params[:artwork_id]
+
+    @order.collector_id = current_user.account_id
+    @order.artwork_id = params[:order][:artwork_id]
     respond_to do |format|
       if @order.save!
         format.html{ redirect_to profile_path }

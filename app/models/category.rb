@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
   has_many :artworks
 
-  validates :name, inclusion: { in: %w(Painting Sculpture Photography Print Drawing) }
+  validates :name, inclusion: { in: ['Painting', 'Sculpture', 'Photography', 'Print', 'Drawing', 'Mixed Media'] }
 end

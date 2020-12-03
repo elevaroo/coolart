@@ -1,1 +1,5 @@
 // Specific CSS for your home-page
+.background-container {
+  background: asset-url('background-landing.jpg');
+  object-fit: cover;
+}

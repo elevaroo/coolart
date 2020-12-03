@@ -51,7 +51,7 @@ user_artist = User.create!(
   desposito = User.create!(
   first_name: "Angelo",
   last_name: "Despo",
-  email: "andy@warhol.com",
+  email: "angelo@despo.com",
   username: "Desposito",
   password: "lewagon",
   account: Artist.create!(
@@ -134,8 +134,8 @@ oil = Medium.create!(name: "Oil paint")
   artist: pablo.account
   )
 
-sculpture = Category.create!(name:"sculpture")
-plastic = Medium.create!(name: "plastic")
+sculpture = Category.create!(name:"Sculpture")
+plastic = Medium.create!(name: "Plastic")
 
   neighbour = Artwork.create!(
   name: "Neighbour",
@@ -145,14 +145,14 @@ plastic = Medium.create!(name: "plastic")
   height: 170,
   width: 70,
   medium: plastic,
-  category: sculture,
+  category: sculpture,
   artist: vicart.account
   )
 
-sculpture = Category.create!(name:"sculpture")
-bronze = Medium.create!(name: "bronze")
+sculpture = Category.create!(name:"Sculpture")
+bronze = Medium.create!(name: "Bronze")
 
-  Dona = Artworks.create!(
+  dona = Artwork.create!(
   name: "Dona",
   description: "representing dona, a saint from Greek mythology",
   year: Date.ordinal(2017),
@@ -160,14 +160,14 @@ bronze = Medium.create!(name: "bronze")
   height: 180,
   width: 50,
   medium: bronze,
-  category: sculture,
+  category: sculpture,
   artist: desposito.account
   )
 
-photography = Category.create!(name:"photography")
-lithography = Medium.create!(name: "lithography")
+photography = Category.create!(name:"Photography")
+lithography = Medium.create!(name: "Lithography")
 
- paris = Artworks.create!(
+ paris = Artwork.create!(
   name: "Paris ",
   description: "Paris photo taken from a helicopter",
   year: Date.ordinal(2015),
@@ -180,17 +180,17 @@ lithography = Medium.create!(name: "lithography")
   )
 
 
-drawing = Category.create!(name:"drawing")
-oil_paint= = Medium.create!(name: "Oil paint")
+drawing = Category.create!(name:"Drawing")
+oil_paint = Medium.create!(name: "Oil paint")
 
- sunshine = Artworks.create!(
+ sunshine = Artwork.create!(
   name: "sunshine",
   description: "Paris photo taken from a helicopter",
   year: Date.ordinal(2020),
   price: 480,
   height: 30,
   width: 20,
-  medium: Watercolour,
+  medium: oil_paint,
   category: drawing,
   artist: vicart.account
   )

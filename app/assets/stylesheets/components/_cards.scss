@@ -1,21 +1,30 @@
 .card-item {
   background-image: url("background_card.png");
-  height: 250px;
   width:250px;
   padding: 25px;
+  flex-grow: 1;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card-wrapper {
-  width: 22%;
+  width: 250px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-
 
 .image-wrap img{
   width:100%;
-   object-fit:cover;
+  object-fit:cover;
+}
+
+.card-item .artwork {
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.9);
+  max-width: 90%;
+  object-fit: contain;
 }
 
 .card-info {

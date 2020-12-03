@@ -4,6 +4,17 @@
   height: 100vh;
   color: #eee;
   text-align: center;
-  padding-top: 40vh;
+  padding-top: none;
+}
+
+.logo {
+  max-height: 650px;
+  max-width: 400px;
+  width: 350px;
+  height: 600px;
+  border: 1px solid black;
+  position: absolute;
+  top: 130px;
+  left: 150px;
 }
 
