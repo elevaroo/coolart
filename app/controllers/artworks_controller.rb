@@ -16,6 +16,7 @@ class ArtworksController < ApplicationController
 
   def new
     @artwork = Artwork.new
+    @artist = current_user.account
   end
 
   def edit

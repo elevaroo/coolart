@@ -4,7 +4,6 @@
     <div class="row">
       <div class="col-md-4 col-sm-10">
         <div class="d-flex flex-column artist-title">
-          <h2> <strong><%= current_user.username %></strong> profile </h2>
           <div class="image-wrap">
             <% if current_user.photo.attached? %>
               <%= cl_image_tag current_user.photo.key %>
@@ -12,7 +11,6 @@
             <img src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
             <% end %>
           </div>
-          <button class="follow-button">Follow<%= link_to "", "/"%></button>
           <div class="card artist-info">
             <h3><i class="fas fa-fingerprint"></i><%= current_user.first_name %> <%= current_user.last_name %></h3>
             <h3><i class="fas fa-globe-europe"></i><%= current_user.account.nationality.upcase %></h3>
