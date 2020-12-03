@@ -1,10 +1,12 @@
 class ArtworksController < ApplicationController
+  has_scope :price_min
+  has_scope :price_max
 
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
 
   def index
-    @artworks = Artwork.all
+    @artworks = apply_scopes(Artwork).all
   end
 
 

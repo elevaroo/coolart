@@ -23,5 +23,5 @@
 
 <%= simple_form_for [@favorite_artwork] do |f| %>
   <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-  <%= f.button :submit, {class: 'button postfix'} do %><i class="far fa-heart"></i><% end %>
+  <%= button_tag do %><i class="far fa-heart"></i><% end %>
 <% end %>
