@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'profile', to: 'pages#profile'
+  get '/orders/:id/mark_as_shipped',  to: 'orders#mark_as_shipped', as: 'mark_as_shipped'
   # resources :category, only: [:index]
   # need to check everything we need as routes
 

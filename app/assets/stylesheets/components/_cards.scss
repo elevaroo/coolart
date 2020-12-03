@@ -17,7 +17,7 @@
 }
 
 .card-item .artwork {
-  box-shadow: 0px 0px 6px rgba(0,0,0,0.9);
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.18);
   max-width: 90%;
   object-fit: contain;
 }
@@ -56,4 +56,28 @@
   position: absolute;
   right: -5;
   bottom: -5;
+}
+
+.card-order {
+  overflow: hidden;
+  height: 120px;
+  width: 500px;
+  background: white;
+  box-shadow: 0 2 4px rgba(0,0,0,0.18);
+  display: flex;
+  h1 {
+    font-size: 30px;
+  }
+}
+
+.order-picture {
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.18);
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.order-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
