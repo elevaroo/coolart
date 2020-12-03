@@ -16,6 +16,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :photo, as: :file %>
     <%= f.input :account_type, :as => :hidden, :input_html => { :value => :Collector } %>
     <%= f.simple_fields_for :account_attributes do |af|%>
       <%= af.input :test, :as => :hidden, :input_html => { :value => "" }  %>

@@ -44,16 +44,15 @@
   <% if user_signed_in? %>
   <div class="navbar-right">
     <ul class="navbar-nav mr-auto btn-cont">
-      <li class="nav-item dropdown btn btn-succes">
-        <a class="nav-link hp-btn" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://cioday.com/wp-content/uploads/2018/11/avatar-placeholder.png"> Dashboard <a/>
-         <span class='line-1'></span>
-         <span class='line-2'></span>
-         <span class='line-3'></span>
-         <span class='line-4'></span>
+      <li class="nav-item dropdown">
+        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=
+                    <% if current_user.photo.attached? %>
+                      <%= cl_image_path current_user.photo.key %>
+                    <% else %>
+                      'https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'
+                    <% end %> />
          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Artists</a>
-          <a class="dropdown-item" href="#">Art Advisor</a>
-          <a class="dropdown-item" href="#">Help</a>
+          <%= link_to "Dashboard", profile_path, class:"dropdown-item" %>
           <%= link_to "Sign out", destroy_user_session_path, method:"delete", class:"dropdown-item" %>
         </div>
       </div>

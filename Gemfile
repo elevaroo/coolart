@@ -35,9 +35,10 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 gem 'has_scope'
+gem 'cloudinary', '~> 1.16.0'
 
-
-group :development, :test do  gem 'pry-byebug'
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
