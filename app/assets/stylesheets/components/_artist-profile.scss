@@ -1,54 +1,57 @@
 .artist-title h2 {
-font-family: 'East Sea Dokdo', cursive;
-text-align: center;
-padding: 10px 38px;
-font-size:35px;
-}
-
-.artist-nickname h4 {
+  font-family: 'East Sea Dokdo', cursive;
   text-align: center;
-  font-weight:300;
-  font-family: 'East Sea Dokdo', cursive
+  padding: 10px 38px;
+  font-size:35px;
 }
 
+  .artist-nickname {
+    font-family: 'East Sea Dokdo', cursive;
+    text-align: center;
+    h4 {
+      text-align: center;
+      font-weight:300;
+      font-family: 'East Sea Dokdo', cursive
+    }
+    h3 {
+      text-align: center;
+      font-weight:300;
+    }
+  }
 
 
-.artist-nickname h3 {
-  text-align: center;
-  font-weight:300;
-}
+  .artist-info {
+    text-align: center;
+    padding:10px 38px;
+  }
 
-.artist-info {
-  text-align: center;
-  padding:10px 38px;
-}
+  .content {
+    background-color:rgba(255, 243, 226, 1);
+  }
 
-.content {
-  background-color:rgba(255, 243, 226, 1);
-}
+  .card-item .artwork {
+    box-shadow: 0px 0px 6px rgba(0,0,0,0.9);
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+  }
 
-.card-item .artwork {
-  box-shadow: 0px 0px 6px rgba(0,0,0,0.9);
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
-
-.artist-profile-pic {
+  .artist-profile-pic {
     width: 250px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: cover;
-}
+    object-fit:cover;
+  }
 
-.artist-info {
-background-color: rgba(249, 177, 148, 1);
-margin-top:10px;
-border-radius:10px;
-}
+  .artist-info {
+    background-color: rgba(249, 177, 148, 1);
+    margin-top:10px;
+    border-radius:10px;
+  }
 
-.artist-card {
+  .artist-card {
     height: 303px;
 
     margin: 10px;
@@ -56,4 +59,4 @@ border-radius:10px;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0px 0px 6px rgba(0,0,0,0.18);
-    }
+  }
