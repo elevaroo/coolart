@@ -4,6 +4,7 @@ class Artwork < ApplicationRecord
   belongs_to :category
   has_many :tags
   has_many :orders
+  has_many_attached :photos
 
   validates :name, presence: true
   validates :description, presence: true
