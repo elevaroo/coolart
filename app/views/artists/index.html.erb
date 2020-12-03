@@ -8,7 +8,7 @@
        <% if artist.user.photo.attached? %>
        <%= cl_image_tag artist.users.photo.key, crop: :fill %>
        <% else %>
-       <img class="card-item artist-profile-pic" src='https://source.unsplash.com/800x450/?people'>
+       <img class="card-item artist-profile-pic" src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
        <% end %>""
        <div class="d-flex justify-content-between my-2 mx-2">
         <%= artist.location %>

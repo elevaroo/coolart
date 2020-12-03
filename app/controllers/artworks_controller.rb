@@ -19,6 +19,7 @@ class ArtworksController < ApplicationController
   end
 
   def edit
+    @artist = current_user.account
   end
 
   def create
@@ -33,7 +34,7 @@ class ArtworksController < ApplicationController
 
   def update
     if @artwork.update(artwork_params)
-      redirect_to artist_artworks_path(@artwork), notice: "Artwork was successfully updated."
+      redirect_to artist_artwork_path(current_user.account, @artwork), notice: "Artwork was successfully updated."
     else
       render :edit, notice: "Something went wrong."
     end
