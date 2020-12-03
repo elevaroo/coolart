@@ -2,7 +2,9 @@
   <% current_user.account.favorite_artworks.each do |fav| %>
     <div class="card-wrapper">
       <div class="card-item">
-        <%= cl_image_tag fav.artwork.photo.key class:"artwork"%>
+        <% if fav.artwork.photos.attached? %>
+          <%= cl_image_tag fav.artwork.photos.first.key, class:"artwork"%>
+        <% end %>
       </div>
       <div class="card-info">
         <div class="d-flex justify-content-between">

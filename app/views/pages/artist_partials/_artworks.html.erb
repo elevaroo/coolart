@@ -4,7 +4,7 @@
       <div class="card-wrapper">
         <div class="card-item">
           <% if artwork.photos.attached? %>
-          <%= cl_image_tag artwork.photos.first.key class:"artwork"%>
+          <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
           <% end %>
         </div>
         <div class="card-info">
