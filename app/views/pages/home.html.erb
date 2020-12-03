@@ -5,9 +5,8 @@
     </div>
   </div>
 
-  <div class="container d-flex">
+  <div class="container d-flex flex-wrap">
     <!-- insert category card here -->
-
     <% @categories.each do |category| %>
       <div class="m-2">
         <%= link_to category.name, category_path(category.name)%>
@@ -15,5 +14,45 @@
     <% end %>
   </div>
 
+  <div class="container">
+    <h2>Search an Artwork by Price</h2>
+    <div class="d-flex flex-wrap">
+      <div class="m-2"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
+      <div class="m-2"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
+      <div class="m-2"><%= link_to 'Artworks 1000-2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
+      <div class="m-2"><%= link_to 'Artworks above 2000', artworks_path(price_min: 2000, price_max: 100000) %></div>
+    </div>
+  </div>
+
+
+
+<div class="container">
+  <h2>Our selected Artworks</h2>
+  <div class="card-container d-flex flex-wrap">
+    <div class="d-flex flex-wrap">
+      <% @samples.each do |artwork| %>
+          <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
+          <div class="card-wrapper">
+            <div class="card-item">
+              <%= image_tag "artwork", class:"artwork"%>
+            </div>
+
+            <div class="card-info">
+              <div class="d-flex justify-content-between">
+                <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                <h4 class="card-price"><%= artwork.price %> €</h4>
+              </div>
+
+              <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+              <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+  <%= link_to 'Discover more artworks', artworks_path, class:"btn" %>
+</div>
+  
   <%= link_to 'Discover all our artists', artists_path, class:"btn" %>
 </div>

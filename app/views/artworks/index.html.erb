@@ -2,32 +2,28 @@
   <div class="row">
     <div class="col-8">
 
-      <% if params[:category].present? %>
-        <h2 class="header-description mb-4" > <%= @category.capitalize %></h2>
-      <% end %>
-
-
-
       <div class="card-container d-flex flex-wrap">
         <div class="d-flex flex-wrap">
           <% @artworks.each do |artwork| %>
-            <%= link_to 'see more', artist_artwork_path(artwork.artist, artwork) %>
-            <div class="card-wrapper">
-              <div class="card-item">
-                <%= image_tag "artwork", class:"artwork"%>
-              </div>
 
-              <div class="card-info">
-                <div class="d-flex justify-content-between">
-                  <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                  <h4 class="card-price"><%= artwork.price %> €</h4>
+              <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
+              <div class="card-wrapper">
+                <div class="card-item">
+                  <%= image_tag "artwork", class:"artwork"%>
                 </div>
 
-                <h4 class="card-dimensions"><%= artwork.medium.name %>, W 80cm x H 80cm</h4>
-                <h4 class="card-artist"><%= artwork.artist.user.first_name %><%= artwork.artist.user.last_name %></h4>
+                <div class="card-info">
+                  <div class="d-flex justify-content-between">
+                    <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                    <h4 class="card-price"><%= artwork.price %> €</h4>
+                  </div>
+
+                  <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+                  <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+                </div>
               </div>
-            </div>
-          <% end %>
+              <% end %>
+            <% end %>
         </div>
       </div>
     </div>
