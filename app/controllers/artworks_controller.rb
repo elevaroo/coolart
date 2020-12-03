@@ -9,7 +9,6 @@ class ArtworksController < ApplicationController
     @artworks = apply_scopes(Artwork).all
   end
 
-
   def show
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
@@ -42,7 +41,7 @@ class ArtworksController < ApplicationController
 
   def destroy
     @artwork.destroy
-    redirect_to artists_path, notice: 'Artwork was successfully destroyed.'
+    redirect_to profile_path, notice: 'Artwork was successfully destroyed.'
   end
 
   private
