@@ -2,7 +2,7 @@
 <% current_user.account.orders.each do |order| %>
   <div class="card-order">
     <div class="order-picture">
-
+      <%= cl_image_tag order.artwork.photo.key %>
     </div>
     <div class="order-content">
     <h1><%= order.artwork.name %>, <%= order.artwork.year %></h1>

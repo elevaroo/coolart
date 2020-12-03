@@ -3,7 +3,9 @@
     <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
       <div class="card-wrapper">
         <div class="card-item">
-          <%= image_tag "artwork", class:"artwork"%>
+          <% if artwork.photos.attached? %>
+          <%= cl_image_tag artwork.photos.first.key class:"artwork"%>
+          <% end %>
         </div>
         <div class="card-info">
           <div class="d-flex justify-content-between">
