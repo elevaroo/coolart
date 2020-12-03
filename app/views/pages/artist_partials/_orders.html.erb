@@ -2,15 +2,15 @@
   <% current_user.account.orders.each do |order| %>
     <div class="card-order">
     <div class="order-picture">
-      <%= cl_image_tag order.artwork.photo.key %>
+      <%= cl_image_tag order.artwork.photos.first.key %>
     </div>
     <div class="order-content">
       <h1><%= order.artwork.name %>, <%= order.artwork.year %></h1>
       <h2><%= order.artwork.artist %></h2>
       <h3><%= order.artwork.price %> €</h3>
-      <% if order.status.confirmed? %>
+      <% if order.status == 0 %>
         <%= link_to "Mark as shipped", mark_as_shipped_path(order), class:"mark-as-shipped-btn" %>
-      <% elsif order.status.dispatched? %>
+      <% elsif order.status == 1 %>
         <h4 id="shipped">Shipped</h4>
       <% else %>
         <h4 id="fulfilled">Fulfilled</h4>
