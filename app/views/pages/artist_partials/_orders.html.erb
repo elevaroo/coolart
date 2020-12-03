@@ -1,8 +1,21 @@
-<% current_user.account.orders.each do |order| %>
-  <div>
-    <h1>order.artwork.name</h1>
-    <h1>order.artwork.year</h1>
-    <h1>order.artwork.price</h1>
-    <h1>order.status</h1>
+<div class="m-2 d-flex flex-wrap">
+  <% current_user.account.orders.each do |order| %>
+    <div class="card-order">
+    <div class="order-picture">
+
+    </div>
+    <div class="order-content">
+      <h1><%= order.artwork.name %>, <%= order.artwork.year %></h1>
+      <h2><%= order.artwork.artist %></h2>
+      <h3><%= order.artwork.price %> €</h3>
+      <% if order.status.confirmed? %>
+        <%= link_to "Mark as shipped", mark_as_shipped_path(order), class:"mark-as-shipped-btn" %>
+      <% elsif order.status.dispatched? %>
+        <h4 id="shipped">Shipped</h4>
+      <% else %>
+        <h4 id="fulfilled">Fulfilled</h4>
+      <% end %>
+    </div>
   </div>
-<% end %>
+  <% end %>
+</div>

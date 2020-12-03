@@ -1,10 +1,13 @@
-<h1><%= current_user.first_name %> <%= current_user.last_name %></h1>
 
 <h3>@<%= current_user.username %></h3>
 <h3><%= current_user.account.location %></h3>
 <h3><%= current_user.account.nationality %></h3>
 <h3><%= current_user.account.date_of_birth %></h3>
-<h3><%= current_user.account.vita %></h3>
+<div>
+<p><%= current_user.account.vita %></p>
+</div>
+<% if current_user.account.artschool %>
 <h3><%= current_user.account.artschool %></h3>
+<% end %>
 
 <%= link_to "Update details", edit_user_registration_path %>
