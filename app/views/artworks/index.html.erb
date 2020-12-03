@@ -11,24 +11,23 @@
       <div class="card-container d-flex flex-wrap">
         <div class="d-flex flex-wrap">
           <% @artworks.each do |artwork| %>
-              <%= link_to 'see more', artist_artwork_path(artwork.artist, artwork) %>
-              <div class="card-wrapper">
-                <div class="card-item">
-                  <%= image_tag "artwork", class:"artwork"%>
-                </div>
-
-                <div class="card-info">
-                  <div class="d-flex justify-content-between">
-                    <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                    <h4 class="card-price"><%= artwork.price %> €</h4>
-                  </div>
-
-                  <h4 class="card-dimensions"><%= artwork.medium.name %>, W 80cm x H 80cm</h4>
-                  <h4 class="card-artist"><%= artwork.artist.user.first_name %><%= artwork.artist.user.last_name %></h4>
-                </div>
+            <%= link_to 'see more', artist_artwork_path(artwork.artist, artwork) %>
+            <div class="card-wrapper">
+              <div class="card-item">
+                <%= image_tag "artwork", class:"artwork"%>
               </div>
-            <% end %>
 
+              <div class="card-info">
+                <div class="d-flex justify-content-between">
+                  <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                  <h4 class="card-price"><%= artwork.price %> €</h4>
+                </div>
+
+                <h4 class="card-dimensions"><%= artwork.medium.name %>, W 80cm x H 80cm</h4>
+                <h4 class="card-artist"><%= artwork.artist.user.first_name %><%= artwork.artist.user.last_name %></h4>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
