@@ -3,14 +3,19 @@
     <h1>Coolart</h1>
   </div>
 
+<h2 class="container my-4"> Browse by Category:</h1>
+
   <div class="container d-flex flex-wrap">
     <!-- insert category card here -->
+    <div class="overview-element mx-auto">
     <% @categories.each do |category| %>
-      <div class="m-2">
+      <div class="overview-element-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("#{category.name.downcase}.png") %>')">
         <%= link_to category.name, category_path(category.name)%>
       </div>
     <% end %>
   </div>
+
+<h2 class="container my-4">Browse by Budget:</h1>
 
   <div class="container d-flex flex-wrap">
     <div class="m-2"><%= link_to 'up to 500', @artworks_path, price_min: 0, price_max: 500 %></div>
