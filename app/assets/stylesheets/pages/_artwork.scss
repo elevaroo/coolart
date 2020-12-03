@@ -1,16 +1,40 @@
 .artwork-container {
   text-align: right;
   margin: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .artwork-title {
   text-align: center;
   margin-bottom: 70px;
+  position: absolute;
+}
+
+.artwork-info-container {
+  align-self: flex-start;
+  margin-right: 40px;
+  flex-grow: 1;
+  margin-top: 100px;
+}
+
+.artimage {
+  height: 510px;
+  width: auto;
+  flex-grow: 1;
+  border: 1px solid #272626;
+}
+
+.artdescription {
+  content-align: center;
+  margin-top: 40px;
+  width: auto;
+  text-align: left;
+  flex-grow: 1;
 }
 
 .artinfo-card {
-  margin-top: 60px;
-  margin-left: 930px;
+  margin-top: 100px;
   width: 340px;
   height: 510px;
   text-align: center;
@@ -19,6 +43,8 @@
   vertical-align: center;
   background-color: #F9B194;
   color: #272626;
+  position: sticky;
+  top: 0;
 }
 
 ul {
@@ -82,4 +108,11 @@ button {
   border: none;
   background-color: transparent;
   font-size: 25px;
+  &:hover {
+    color: red;
+    transition: 0.3s;
+  }
 }
+
+
+
