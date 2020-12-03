@@ -1,18 +1,24 @@
 <div class="m-2 d-flex flex-wrap">
   <% current_user.account.artworks.each do |artwork| %>
-
-  <div class="card-artwork-profile">
-    <h1><%= artwork.name %></h1>
-    <h1><%= artwork.year  %></h1>
-    <p><%= artwork.description %></p>
-    <h1><%= artwork.price %></h1>
-    <h1><%= artwork.width  %>, <%= artwork.height  %></h1>
-    <h1><%= artwork.category.name %></h1>
-    <h1><%= artwork.medium.name %></h1>
-    <%= link_to "Edit", edit_artist_artwork_path(artwork.artist, artwork) %>
-    <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete do %><i class="fas fa-trash"></i><% end %>
-  </div>
-
+    <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
+      <div class="card-wrapper">
+        <div class="card-item">
+          <%= image_tag "artwork", class:"artwork"%>
+        </div>
+        <div class="card-info">
+          <div class="d-flex justify-content-between">
+            <h4 class="artwork-title"><%= artwork.name.capitalize %>, <%= artwork.year %></h4>
+            <h4 class="card-price"><%= artwork.price %> €</h4>
+          </div>
+            <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> x H <%= artwork.height %><% if artwork.depth %> x D <%= artwork.depth %><% end %></h4>
+            <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+          </div>
+        <div class="card-artist-btn">
+            <%= link_to "Edit", edit_artist_artwork_path(artwork.artist, artwork) %>
+            <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete do %><i class="fas fa-trash"></i><% end %>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
