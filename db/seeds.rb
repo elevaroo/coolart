@@ -1,4 +1,6 @@
 
+Order.destroy_all
+FavoriteArtwork.destroy_all
 Artwork.destroy_all
 Medium.destroy_all
 Category.destroy_all
@@ -134,6 +136,7 @@ oil = Medium.create!(name: "Oil paint")
   artist: pablo.account
   )
 
+sculpture = Category.create!(name:"Sculpture")
 plastic = Medium.create!(name: "Plastic")
 
   neighbour = Artwork.create!(
@@ -148,7 +151,7 @@ plastic = Medium.create!(name: "Plastic")
   artist: vicart.account
   )
 
-sculpture = Category.create!(name:"Sculpture")
+
 bronze = Medium.create!(name: "Bronze")
 
   dona = Artwork.create!(
