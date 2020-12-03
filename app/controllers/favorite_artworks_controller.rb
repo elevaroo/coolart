@@ -2,7 +2,7 @@ class FavoriteArtworksController < ApplicationController
 
   def create
     @fav_artwork = FavoriteArtwork.new(fav_artworks_params)
-    @fav_artwork.collector_id = current_user.account.id
+    @fav_artwork.collector_id = current_user.id
     @fav_artwork.artwork_id = params[:favorite_artwork][:artwork_id]
     respond_to do |format|
       if @fav_artwork.save!
