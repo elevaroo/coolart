@@ -1,4 +1,15 @@
 <div class="container-fluid">
+
+  <%= form_tag artworks_path, method: :get do %>
+    <%= select_tag(:category, options_for_select(['Painting', 'Sculpture', 'Photography', 'Print', 'Drawing', 'Mixed Media'], params[:category]), prompt: 'select category') %>
+    <%= select_tag(:medium, options_for_select(['Oil paint', 'Watercolour', 'Pencil', 'Etching', 'Lithography', 'Bronze', 'Marble', 'Wood', 'Iron', 'Plastic', 'Acrylic paint', 'Chalk', 'Pastel'], params[:medium]), prompt: 'select medium') %>
+    <%= text_field_tag(:price_min, placeholder: "min price") %>
+    <%= text_field_tag(:price_max, placeholder: "max price") %>
+    <%= text_field_tag(:tag, placeholder: "tag") %>
+  <%= submit_tag "Find your Artwork", class: "btn" %>
+  <% end %>
+
+
   <div class="row">
     <div class="col-8">
 

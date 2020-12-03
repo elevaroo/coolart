@@ -7,9 +7,14 @@
   <div class="artinfo-container">
     <div class="artwork-info">
       <div id="artlike">
-        <%= simple_form_for [@favorite_artwork] do |f| %>
-          <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-          <%= button_tag do %><i class="far fa-heart"></i><% end %>
+        <% if like = current_user.account.favorite_artworks.find_by(artwork_id: @artwork.id) %>
+          <%= link_to favorite_artwork_path(like), remote: true, method: 'delete' do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to favorite_artworks_path(artwork_id: @artwork.id), remote: true, method: 'post' do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
         <% end %>
       </div>
 

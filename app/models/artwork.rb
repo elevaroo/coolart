@@ -14,6 +14,10 @@ class Artwork < ApplicationRecord
   validates :width, presence: true
   validates :photos, presence: true
 
+  scope :category, lambda{|category| joins(:category).where(['categories.name = ?', category])}
+  scope :medium, lambda{|medium| joins(:medium).where(['media.name = ?', medium])}
+  scope :tag, lambda{|tag| joins(:tag).where(['tags.name = ?', tag])}
+  scope :artist, lambda{|artist| joins(:artist).where(['artist.last_name = ?', artist])}
   scope :price_min, lambda{|min| where(['price >= ?', min])}
   scope :price_max, lambda{|max| where(['price <= ?', max])}
 end
