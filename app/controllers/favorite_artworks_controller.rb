@@ -1,7 +1,6 @@
 class FavoriteArtworksController < ApplicationController
 
   def create
-
     @fav_artwork = FavoriteArtwork.new()
     @fav_artwork.collector_id = current_user.account.id
     @fav_artwork.artwork_id = params[:artwork_id]

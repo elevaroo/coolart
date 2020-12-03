@@ -1,22 +1,50 @@
 .artwork-container {
   text-align: right;
-  padding: 25px;
   margin: 40px;
-  margin-top: none;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .artwork-title {
   text-align: center;
+  margin-bottom: 70px;
+  position: absolute;
 }
 
-.artinfo-container {
-  margin: 60px;
+.artwork-info-container {
+  align-self: flex-start;
+  margin-right: 40px;
+  flex-grow: 1;
+  margin-top: 100px;
+}
+
+.artimage {
+  height: 510px;
+  width: auto;
+  flex-grow: 1;
+  border: 1px solid #272626;
+}
+
+.artdescription {
+  content-align: center;
+  margin-top: 40px;
+  width: auto;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.artinfo-card {
+  margin-top: 100px;
   width: 340px;
-  height: 550px;
+  height: 510px;
   text-align: center;
-  padding: 25px;
+  padding-top: 15px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   vertical-align: center;
+  background-color: #F9B194;
+  color: #272626;
+  position: sticky;
+  top: 0;
 }
 
 ul {
@@ -25,34 +53,66 @@ ul {
 }
 
 #icon-fact {
-  margin-top: 16px;
-  font-size: 20px;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.buybanner {
+  padding: 10px;
+  margin: none;
+  width: 340px;
+  height: 115px;
+  content-align: center;
+  vertical-align: center;
+  background-color: lightgrey;
 }
 
 .button {
-  border: 2px solid green;
   border-radius: 1px;
-  background-color: none;
+  background-color: rgba(39, 38, 38, 0.8);
+  color: lightgrey;
   &:hover {
     transition: 0.3s;
-    color: red;
+    color: rgba(39, 38, 38, 1.0);
+    background-color: #F9B194;
   }
 }
 
 #artfacts {
-  margin: 16px 80px 16px 80px;
-  font-size: 20px;
-  border: 1px solid black;
   display: flex;
   justify-content: space-between;
+  color: #272626;
+  font-size: 30px;
+  margin-top: 20px;
+  width: 340px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .fa-heart .fa-eye {
   padding: 16px;
 }
 
-#arttitle {
-  margin-bottom: 20px;
-  margin-top: 30px;
-
+#artfacts-text {
+  font-size: 16px;
 }
+
+#arttitle {
+  margin-bottom: 16px;
+  margin-top: 0px;
+  font-size: 24px;
+}
+
+button {
+  margin-left: 270px;
+  border: none;
+  background-color: transparent;
+  font-size: 25px;
+  &:hover {
+    color: red;
+    transition: 0.3s;
+  }
+}
+
+
+
