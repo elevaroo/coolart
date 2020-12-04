@@ -40,7 +40,7 @@
       <div class="artinfo-card">
         <div class="artwork-info">
           <div id="artlike">
-            <% if current_user.collector? %>
+            <% if user_signed_in? && current_user.collector? %>
             <% if like = current_user.account.favorite_artworks.find_by(artwork_id: @artwork.id) %>
             <%= link_to favorite_artwork_path(like), remote: true, method: 'delete' do %>
             <i class="far fa-heart"></i>
