@@ -8,8 +8,8 @@
     <div class="artwork-info">
       <div id="artlike">
         <%= simple_form_for [@favorite_artwork] do |f| %>
-          <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-          <%= button_tag do %><i class="far fa-heart"></i><% end %>
+        <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+        <%= button_tag do %><i class="far fa-heart"></i><% end %>
         <% end %>
       </div>
 
@@ -27,10 +27,10 @@
       <h2><%= @artwork.price %> €</h2>
 
       <!-- this is the order button which redirects to the profile page in the bought items -->
-        <%= simple_form_for [@order] do |f| %>
-          <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-          <%= f.button :submit, "Buy me!", class: 'button' %>
-        <% end %>
+      <%= simple_form_for [@order] do |f| %>
+      <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
+      <%= f.button :submit, "Buy me!", class: 'button' %>
+      <% end %>
       <div id="artfacts">
         <i class="far fa-eye"></i>
         <i class="far fa-heart"></i>
@@ -42,4 +42,30 @@
   <div class="artdescription">
     <p> <%= @artwork.description %></p>
   </div>
+</div>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% if @artwork.photos.attached? %>
+      <div class="carousel-item active">
+        <%= cl_image_tag @artwork.photos.first.key, height: 450, width: 800, crop: :fill %>
+      </div>
+      <% @artwork.photos.each_with_index do |photo, index| %>
+        <% if index > 0 %>
+        <div class="carousel-item">
+          <%= cl_image_tag photo.key, height: 450, width: 800, crop: :fill  %>
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
