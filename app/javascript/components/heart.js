@@ -1,6 +1,7 @@
 export const checkCheckbox = () => {
-document.addEventListener('click', () => {
-  // Call your JS functions here
-  document.getElementById("checkbox").checked = true;
-});
+  document.querySelectorAll(".heart-checkbox").forEach(checkbox =>
+    checkbox.addEventListener('click', () => {
+      checkbox.checked = true;
+})
+);
 };

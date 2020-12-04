@@ -4,7 +4,7 @@ svg{
   #main-circ{transform-origin:29.5px 29.5px;}
 }
 
-#checkbox{
+.heart-checkbox{
   display:none;
 }
 
@@ -14,7 +14,7 @@ svg{
   right: 10px;
 }
 
-#checkbox:checked + label svg{
+.heart-checkbox:checked + label svg{
     #heart{transform:scale(.2); fill:#E2264D; animation:animateHeart .3s linear forwards .25s;}
     #main-circ{transition:all 2s; animation:animateCircle .3s linear forwards; opacity:1;}
     #grp1{
