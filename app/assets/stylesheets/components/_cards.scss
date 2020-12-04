@@ -10,10 +10,11 @@
 
 .card-wrapper {
   width: 250px;
-  margin: 10px;
+  margin: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .image-wrap img{
