@@ -29,9 +29,13 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 
 import { initUpdateNavbarOnScroll } from './navbar';
+import { checkCheckbox } from '../components/heart';
+import { orderButton } from '../components/order_button';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  checkCheckbox();
+  orderButton();
 });
 

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'pages#profile'
   get '/orders/:id/mark_as_shipped',  to: 'orders#mark_as_shipped', as: 'mark_as_shipped'
+  post '/favorite_artworks/:id',  to: 'favorite_artworks#like_unlike', as: 'like_unlike'
+
   # resources :category, only: [:index]
   # need to check everything we need as routes
 

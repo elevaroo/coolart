@@ -11,6 +11,7 @@ class ArtworksController < ApplicationController
 
   def index
     @artworks = apply_scopes(Artwork).all
+    @favorite_artwork = FavoriteArtwork.new
   end
 
   def show
