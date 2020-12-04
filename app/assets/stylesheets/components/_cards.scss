@@ -9,6 +9,18 @@
   justify-content: center;
 }
 
+#heart img {
+      height: 30px;
+    width: 30px;
+}
+
+#heart {
+      position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
 .card-wrapper {
   width: 250px;
   margin: 40px;
