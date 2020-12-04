@@ -1,16 +1,16 @@
 class FavoriteArtworksController < ApplicationController
 
   def create
-    @fav_artwork = FavoriteArtwork.new(fav_artworks_params)
+    @fav_artwork = FavoriteArtwork.new()
     @fav_artwork.collector_id = current_user.account.id
-    @fav_artwork.artwork_id = params[:favorite_artwork][:artwork_id]
+    @fav_artwork.artwork_id = params[:artwork_id]
     respond_to do |format|
       if @fav_artwork.save!
-        format.html { redirect_to profile_path }
+        format.html
         format.js
       else
         #display alert
-        format.html {render "artworks/show" }
+        format.html
       end
     end
   end
@@ -18,7 +18,6 @@ class FavoriteArtworksController < ApplicationController
   def destroy
     @fav_artwork = FavoriteArtwork.find(params[:id])
     @fav_artwork.destroy
-    redirect_to profile_path
   end
 
   private

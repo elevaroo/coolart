@@ -1,6 +1,5 @@
 class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-
   def index
     @artists = Artist.all
   end
@@ -8,6 +7,4 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
   end
-
-
 end
