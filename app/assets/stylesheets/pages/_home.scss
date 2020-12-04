@@ -2,4 +2,9 @@
 .background-container {
   background: asset-url('background-landing.jpg');
   object-fit: cover;
+  padding-top: 40px;
+}
+
+.container {
+  margin-top: 40px;
 }
