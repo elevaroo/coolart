@@ -4,15 +4,15 @@
 </div>
 
 <div class="background-container">
-<h2 class="container my-4"> Browse by Category:</h1>
+  <h2 class="container my-4"> Browse by Category:</h2>
 
   <div class="container d-flex flex-wrap">
     <!-- insert category card here -->
     <div class="overview-element mx-auto">
-    <% @categories.each do |category| %>
+      <% @categories.each do |category| %>
       <div class="overview-element-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("#{category.name.downcase}.png") %>')">
-        <%= link_to category.name, category_path(category.name)%>
-      </div>
+      <%= link_to category.name, category_path(category.name)%>
+    </div>
     <% end %>
   </div>
 
@@ -26,35 +26,36 @@
     </div>
   </div>
 
-
-
-<div class="container">
-  <h2>Our selected Artworks</h2>
-  <div class="card-container d-flex flex-wrap">
-    <div class="d-flex flex-wrap">
-      <% @samples.each do |artwork| %>
+  <div class="container">
+    <h2>Our selected Artworks</h2>
+    <div class="card-container d-flex flex-wrap">
+      <div class="d-flex flex-wrap">
+        <% @samples.each do |artwork| %>
           <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
-          <div class="card-wrapper">
-            <div class="card-item">
-              <%= image_tag "artwork.png", class:"artwork"%>
-            </div>
-
-            <div class="card-info">
-              <div class="d-flex justify-content-between">
-                <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                <h4 class="card-price"><%= artwork.price %> €</h4>
+            <div class="card-wrapper">
+              <div class="card-item">
+                <%= image_tag "artwork.png", class:"artwork"%>
               </div>
 
-              <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-              <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+              <div class="card-info">
+                <div class="d-flex justify-content-between">
+                  <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                  <h4 class="card-price"><%= artwork.price %> €</h4>
+                </div>
+
+                <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+                <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+              </div>
             </div>
-          </div>
           <% end %>
         <% end %>
+      </div>
     </div>
   </div>
-  <%= link_to 'Discover more artworks', artworks_path, class:"btn" %>
-</div>
 
-  <%= link_to 'Discover all our artists', artists_path, class:"btn" %>
+
+  <div class="more-info-container">
+    <div class="more-info-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('more-artworks-img.jpeg') %>')"><%= link_to 'Discover More Artworks', artworks_path, class:"more-info-button" %></div>
+    <div class="more-info-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('more-artists-img.jpeg') %>')"><%= link_to 'Discover All Our Artists', artists_path, class:"more-info-button" %></div>
+  </div>
 </div>
