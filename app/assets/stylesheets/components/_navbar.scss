@@ -4,7 +4,6 @@
   transition: 0.5s background-color ease;
   justify-content: space-between;
   position:relative;
-
 }
 
 .navbar-coolart .navbar-collapse {
@@ -16,7 +15,7 @@
 }
 
 .navbar-coolart-white {
-  background-color: #F8F8F8;
+  background-color: rgba(255, 243, 226, 0.2);
 }
 
 .navbar-right {
@@ -32,9 +31,12 @@
   .btn {
     position: relative;
     color: transparent;
+    border: 2px solid transparent;
+    margin-right: 30px;
+    margin-top: 10px;
     -webkit-font-smoothing: antialiased;
     &:hover {
-      border: none;
+      border: 2px solid transparent;
       .line-1 {
         animation: move1 1500ms infinite ease;
       }
@@ -53,7 +55,7 @@
     content: "";
     display: block;
     position: absolute;
-    width: 1px;
+    width: 2px;
     background-color: yellow;
     left: 0;
     bottom: 0;
@@ -62,7 +64,7 @@
     content: "";
     display: block;
     position: absolute;
-    height: 1px;
+    height: 2px;
     background-color: red;
     left: 0;
     top: 0;
@@ -71,7 +73,7 @@
     content: "";
     display: block;
     position: absolute;
-    width: 1px;
+    width: 2px;
     background-color: blue;
     right: 0;
     top: 0;
@@ -80,7 +82,7 @@
     content: "";
     display: block;
     position: absolute;
-    height: 1px;
+    height: 2px;
     background-color: red;
     right: 0;
     bottom: 0;
