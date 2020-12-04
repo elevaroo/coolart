@@ -2,68 +2,84 @@
 <div class="content">
   <div class="container">
     <div class="row justify-content-between">
+
+
+
+
       <div class="col-md-3 col-sm-10">
         <div class="d-flex flex-column artist-title">
           <h2> <strong> <%= @artist.user.username %></strong> profile </h2>
           <div class="image-wrap">
             <% if @artist.user.photo.attached? %>
-              <%= cl_image_tag @artist.user.photo.key %>
+            <%= cl_image_tag @artist.user.photo.key %>
             <% else %>
-            <img src='https://source.unsplash.com/800x450/?people'>
+            <img class="artist-card" src='https://source.unsplash.com/800x450/?people'>
             <% end %>
           </div>
-          <button class="follow-button">Follow<%= link_to "", "/"%></button>
-          <div class="card artist-info">
-            <h3> <i class="fas fa-user"></i>  <%= @artist.user.first_name %> <%= @artist.user.last_name %><h3>
-              <h3><i class="fas fa-thumbtack"></i>  <%= @artist.nationality.upcase %><h3>
-                <h3><i class="fas fa-graduation-cap">  </i><%= @artist.artschool %><h3>
-           <!--        <h3><i class="fas fa-birthday-cake">  </i><%= @artist.date_of_birth %><h3> -->
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-10 artist-title">
-             <h2 class="artist-nickname"> Description </h2>
-             <div class= "artist-description">
-               <%= @artist.vita %>
-             </div>
-           </div>
-           <div class="col-md-3 col-sm-10">
-            <h2 class="artist-nickname">Stat</h2>
-            <div class="card artist-info">
-              <h3><%= pluralize rand(1..20), "Artwork" %> </h3>
-              <h3><%= pluralize rand(1..500), "Follow" %> </h3>
-              <h3><%= pluralize rand(1..200), "Like" %> </h3>
-            </div>
-          </div>
+
+          <button class="follow-button">Follow </button>
+
+
         </div>
-        <div class="container">
-          <h2 class = "artist-nickname"> Artworks </h2>
-          <div class="row">
-            <div class="col-8">
-              <div class="card-container d-flex flex-wrap">
-                <div class="d-flex flex-wrap">
-                  <% @artist.artworks.each do |artwork| %>
-                  <%= link_to artist_artwork_path(artwork.artist, artwork), style: 'text-decoration: none' do%>
-                  <div class="card-wrapper">
-                    <div class="card-item">
-                      <%= image_tag "artwork.png", class:"artwork"%>
-                    </div>
-                    <div class="card-info">
-                      <div class="d-flex justify-content-between">
-                        <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                        <h4 class="card-price"><%= artwork.price %> €</h4>
-                      </div>
-                      <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-                      <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-                    </div>
-                  </div>
-                  <% end %>
-                  <% end %>
-                </div>
+
+
+        <div class="card artist-info">
+          <h3> <i class="fas fa-user"></i>  <%= @artist.user.first_name %> <%= @artist.user.last_name %></h3>
+          <h3><i class="fas fa-thumbtack"></i>  <%= @artist.nationality.upcase %></h3>
+          <h3><i class="fas fa-graduation-cap">  </i><%= @artist.artschool %></h3>
+          <!--        <h3><i class="fas fa-birthday-cake">  </i><%= @artist.date_of_birth %><h3> -->
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="col-md-4 col-sm-10 artist-title">
+       <h2 class="artist-nickname"> Description </h2>
+       <div class= "artist-description">
+         <%= @artist.vita %>
+       </div>
+     </div>
+
+     <div class="col-md-3 col-sm-10">
+      <h2 class="artist-nickname">Stat</h2>
+      <div class="card artist-info">
+        <h3><%= pluralize rand(1..20), "Artwork" %> </h3>
+        <h3><%= pluralize rand(1..500), "Follow" %> </h3>
+        <h3><%= pluralize rand(1..200), "Like" %> </h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2 class = "artist-nickname"> Artworks </h2>
+  <div class="row">
+    <div class="col-8">
+      <div class="card-container d-flex flex-wrap">
+        <div class="d-flex flex-wrap">
+          <% @artist.artworks.each do |artwork| %>
+          <%= link_to artist_artwork_path(artwork.artist, artwork), style: 'text-decoration: none' do%>
+          <div class="card-wrapper">
+            <div class="card-item">
+              <%= image_tag "artwork.png", class:"artwork"%>
+            </div>
+            <div class="card-info">
+              <div class="d-flex justify-content-between">
+                <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
+                <h4 class="card-price"><%= artwork.price %> €</h4>
+
               </div>
+              <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+              <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
             </div>
           </div>
+          <% end %>
+          <% end %>
         </div>
       </div>
     </div>
+  </div>
+</div>
+</div>
+
+
