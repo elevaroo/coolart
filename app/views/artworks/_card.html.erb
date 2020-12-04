@@ -1,0 +1,29 @@
+   <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
+   <div class="card-wrapper">
+    <div class="card-item">
+      <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
+    </div>
+
+    <div class="card-info">
+      <div class="d-flex justify-content-between">
+        <h4 class="artwork-abc"><%= artwork.name.capitalize %></h4>
+        <h4 class="card-price"><%= artwork.price %> €</h4>
+      </div>
+
+      <h4 class="card-dimensions"><%= artwork.medium.name %>, </h4>
+      <h4 class="card-dimensions">W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
+      <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
+    </div>
+
+    <% if user_signed_in? && current_user.collector? %>
+      <div id="heart">
+        <%= link_to like_unlike_path(artwork.id), remote: true, method: 'post' do %>
+        <input type="checkbox" id="checkbox-<%= artwork.id  %>" class="heart-checkbox" <%= "checked" if @artwork_ids.include?(artwork.id) %>/>
+        <label for="checkbox-<%= artwork.id  %>">
+          <%= image_tag "heart.svg" %>
+        </label>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,6 +1,7 @@
 .card-item {
   background-image: url("background_card.png");
   width:250px;
+  height: 300px;
   padding: 25px;
   flex-grow: 1;
   display: flex;
@@ -53,7 +54,7 @@
   opacity: 0.5
 }
 
-.artwork-title {
+.artwork-abc {
   font-size: 14px;
   margin: 0 0 4px;
 }
