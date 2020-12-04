@@ -1,9 +1,14 @@
+<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @offer.description %>
+<% content_for :meta_image, cl_image_path(@offer.photo.path) %>
+
+
 <h1> <%= @category.name %> </h1>
 
 <div class="container">
   <div class="d-flex flex-wrap">
     <% @category.artworks.each do |artwork| %>
-    <%= render "artworks/card", artwork: artwork %>
+      <%= render "artworks/card", artwork: artwork %>
     <% end %>
   </div>
 </div>

@@ -128,7 +128,7 @@ oil = Medium.create!(name: "Oil paint")
   category: painting,
   artist: pablo.account
   )
-  woman_photo = URI.open('https://images.saatchiart.com/saatchi/1327701/art/6736929/5806573-ZXGJZAJB-7.jpg')
+  woman_photo = URI.open('https://www.arthipo.com/image/cache/catalog/artists-painters/p/pablo-picasso/pp025-Seated-woman-doing-her-hair-1000x1000.jpg')
   woman.photos.attach(io: woman_photo, filename: "woman.jpg", content_type: 'image/jpg')
   woman.save!
 

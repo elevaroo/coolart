@@ -14,5 +14,16 @@
       <h4 class="card-dimensions">W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
       <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
     </div>
+
+    <% if user_signed_in? && current_user.collector? %>
+      <div id="heart">
+        <%= link_to like_unlike_path(artwork.id), remote: true, method: 'post' do %>
+        <input type="checkbox" id="checkbox-<%= artwork.id  %>" class="heart-checkbox" <%= "checked" if @artwork_ids.include?(artwork.id) %>/>
+        <label for="checkbox-<%= artwork.id  %>">
+          <%= image_tag "heart.svg" %>
+        </label>
+        <% end %>
+      </div>
+    <% end %>
   </div>
-  <% end %>
+<% end %>

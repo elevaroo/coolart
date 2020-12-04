@@ -1,3 +1,8 @@
-console.log('hello')
+console.log('hello');
 
-document.getElementById('artlike').innerHTML = "<%= j render 'created_like' %>"
+if (document.getElementById('artlike'))
+{document.getElementById('artlike').innerHTML = "<%= j render 'created_like' %>"};
+
+if (document.getElementById('checkbox-<%=@fav_artwork.artwork_id %>'))
+{document.getElementById('checkbox-<%=@fav_artwork.artwork_id %>').checked = true};
+
