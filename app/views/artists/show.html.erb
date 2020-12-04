@@ -1,3 +1,4 @@
+
 <div class="content">
   <div class="container">
     <div class="row justify-content-between">
@@ -6,7 +7,7 @@
           <h2> <strong> <%= @artist.user.username %></strong> profile </h2>
           <div class="image-wrap">
             <% if @artist.user.photo.attached? %>
-            <%= cl_image_tag @artist.users.photo.key %>
+              <%= cl_image_tag @artist.user.photo.key %>
             <% else %>
             <img src='https://source.unsplash.com/800x450/?people'>
             <% end %>
@@ -66,7 +67,3 @@
         </div>
       </div>
     </div>
-
-
-
-

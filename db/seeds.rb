@@ -1,4 +1,7 @@
+require "open-uri"
 
+Order.destroy_all
+FavoriteArtwork.destroy_all
 Artwork.destroy_all
 Medium.destroy_all
 Category.destroy_all
@@ -81,7 +84,7 @@ user_artist = User.create!(
 prints = Category.create!(name: "Print")
 media = Medium.create!(name: "Lithography")
 
-cows = Artwork.create!(
+cows = Artwork.new(
   name: "Cows",
   description: "Printed cows",
   year: Date.ordinal(1971),
@@ -92,6 +95,10 @@ cows = Artwork.create!(
   category: prints,
   artist: user_artist.account
   )
+
+  cows_photo = URI.open('https://www.moma.org/media/W1siZiIsIjI3NjcwMiJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=932dfadd62dc008e')
+  cows.photos.attach(io: cows_photo, filename: "cows.jpg", content_type: 'image/jpg')
+  cows.save!
 
 pablo = User.create!(
   first_name: "Pablo",
@@ -110,7 +117,7 @@ pablo = User.create!(
 painting = Category.create!(name: "Painting")
 oil = Medium.create!(name: "Oil paint")
 
-  woman = Artwork.create!(
+  woman = Artwork.new(
   name: "Woman",
   description: "naked bathing woman",
   year: Date.ordinal(1931),
@@ -121,8 +128,11 @@ oil = Medium.create!(name: "Oil paint")
   category: painting,
   artist: pablo.account
   )
+  woman_photo = URI.open('https://images.saatchiart.com/saatchi/1327701/art/6736929/5806573-ZXGJZAJB-7.jpg')
+  woman.photos.attach(io: woman_photo, filename: "woman.jpg", content_type: 'image/jpg')
+  woman.save!
 
-  desire = Artwork.create!(
+  desire = Artwork.new(
   name: "Desire",
   description: "a man's desire in a woman's eyes",
   year: Date.ordinal(2007),
@@ -134,9 +144,14 @@ oil = Medium.create!(name: "Oil paint")
   artist: pablo.account
   )
 
+  desire_photo = URI.open('https://miro.medium.com/max/2560/1*j4s3g9htmnZDmbSrIKn5eQ.jpeg')
+  desire.photos.attach(io: desire_photo, filename: "desire.jpg", content_type: 'image/jpg')
+  desire.save!
+
+sculpture = Category.create!(name:"Sculpture")
 plastic = Medium.create!(name: "Plastic")
 
-  neighbour = Artwork.create!(
+  neighbour = Artwork.new(
   name: "Neighbour",
   description: "sculture based on my neighbour who doesn't have a curtain in her bathroom",
   year: Date.ordinal(2016),
@@ -148,10 +163,13 @@ plastic = Medium.create!(name: "Plastic")
   artist: vicart.account
   )
 
-sculpture = Category.create!(name:"Sculpture")
+  neighbour_photo = URI.open('https://assets.catawiki.nl/assets/2019/11/24/d/1/8/d18572e3-6fea-46fd-9620-2b2c2e8cff93.jpg')
+  neighbour.photos.attach(io: neighbour_photo, filename: "neighbour.jpg", content_type: 'image/jpg')
+  neighbour.save!
+
 bronze = Medium.create!(name: "Bronze")
 
-  dona = Artwork.create!(
+  dona = Artwork.new(
   name: "Dona",
   description: "representing dona, a saint from Greek mythology",
   year: Date.ordinal(2017),
@@ -163,10 +181,14 @@ bronze = Medium.create!(name: "Bronze")
   artist: desposito.account
   )
 
+  dona_photo = URI.open('https://i.pinimg.com/originals/70/76/c3/7076c39da2818733b17578ae19e86c96.jpg')
+  dona.photos.attach(io: dona_photo, filename: "dona.jpg", content_type: 'image/jpg')
+  dona.save!
+
 photography = Category.create!(name:"Photography")
 lithography = Medium.create!(name: "Lithography")
 
- paris = Artwork.create!(
+ paris = Artwork.new(
   name: "Paris ",
   description: "Paris photo taken from a helicopter",
   year: Date.ordinal(2015),
@@ -178,13 +200,17 @@ lithography = Medium.create!(name: "Lithography")
   artist: desposito.account
   )
 
+  paris_photo = URI.open('https://cdn-stream.httpid.com/c204/wp-content/uploads/2015/11/paris-sunshine.jpg')
+  paris.photos.attach(io: paris_photo, filename: "paris.jpg", content_type: 'image/jpg')
+  paris.save!
+
 
 drawing = Category.create!(name:"Drawing")
 oil_paint = Medium.create!(name: "Oil paint")
 
- sunshine = Artwork.create!(
+ sunshine = Artwork.new(
   name: "sunshine",
-  description: "Paris photo taken from a helicopter",
+  description: "sunshine on a nice day",
   year: Date.ordinal(2020),
   price: 480,
   height: 30,
@@ -193,5 +219,7 @@ oil_paint = Medium.create!(name: "Oil paint")
   category: drawing,
   artist: vicart.account
   )
-
+  sunshine_photo = URI.open('https://images.squarespace-cdn.com/content/5ac2528812b13f7c187dcd15/1561680895735-2Q9RWY70TKCI3ASRIXY1/finding-sunshine.jpg?content-type=image%2Fjpeg')
+  sunshine.photos.attach(io: sunshine_photo, filename: "sunshine.jpg", content_type: 'image/jpg')
+  sunshine.save!
 

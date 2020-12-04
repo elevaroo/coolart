@@ -1,10 +1,9 @@
+<div class="home-banner">
+  <img class="logo-img" src="../assets/logo-image.jpg">
+  <h1>Start your own art collection.</h1>
+</div>
+
 <div class="background-container">
-  <div class="home-banner">
-    <div class="logo">
-
-    </div>
-  </div>
-
 <h2 class="container my-4"> Browse by Category:</h1>
 
   <div class="container d-flex flex-wrap">
@@ -19,11 +18,11 @@
 
   <div class="container">
     <h2 class="my-4">Browse by Budget:</h2>
-    <div class="d-flex flex-wrap">
-      <div class="m-2"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
-      <div class="m-2"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
-      <div class="m-2"><%= link_to 'Artworks 1000-2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
-      <div class="m-2"><%= link_to 'Artworks above 2000', artworks_path(price_min: 2000, price_max: 100000) %></div>
+    <div class="d-flex justify-content-between">
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall3.png') %>')"><%= link_to 'Artworks 1000-2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall4.png') %>')"><%= link_to 'Artworks above 2000', artworks_path(price_min: 2000, price_max: 100000) %></div>
     </div>
   </div>
 
@@ -56,6 +55,6 @@
   </div>
   <%= link_to 'Discover more artworks', artworks_path, class:"btn" %>
 </div>
-  
+
   <%= link_to 'Discover all our artists', artists_path, class:"btn" %>
 </div>

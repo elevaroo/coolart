@@ -3,7 +3,7 @@
 
     <div class="form-background w-100 d-flex flex-column align-items-center">
       <div class="form-group">
-        <%= simple_form_for([@artist, @artwork]) do |f| %>
+        <%= simple_form_for(@artwork, url: artist_artwork_path(@artist, @artwork), method: :patch) do |f| %>
         <%= f.input :name %>
         <%= f.input :year %>
         <%= f.input :description %>
@@ -14,10 +14,9 @@
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
         <%= f.input :medium %>
         <%= f.input :category %>
-        <%= f.submit "Create New Artwork", class: "btn-margin btn-ghost" %>
+        <%= f.submit "Edit artwork", class: "btn-margin btn-ghost", method: :patch %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
-
