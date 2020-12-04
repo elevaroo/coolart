@@ -1,9 +1,19 @@
 class FavoriteArtworksController < ApplicationController
+  def like_unlike
+    @artwork = Artwork.find(params[:id])
+    collector_id = current_user.account.id
+    @fav_artwork = FavoriteArtwork.find_by(collector_id: collector_id, artwork: @artwork)
+    if @fav_artwork
+      @fav_artwork.destroy
+    else
+      @fav_artwork = FavoriteArtwork.create(collector_id: collector_id, artwork: @artwork)
+    end
+  end
 
   def create
-    @fav_artwork = FavoriteArtwork.new()
-    @fav_artwork.collector_id = current_user.account.id
-    @fav_artwork.artwork_id = params[:artwork_id]
+    collector_id = current_user.account.id
+    @artwork = Artwork.find(params[:artwork_id])
+    @fav_artwork = FavoriteArtwork.find_or_create_by(collector_id: collector_id, artwork: @artwork)
     respond_to do |format|
       if @fav_artwork.save!
         format.html
