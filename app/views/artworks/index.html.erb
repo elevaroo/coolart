@@ -8,6 +8,7 @@
     <% @artwork_ids = current_user.account.favorite_artworks.pluck(:artwork_id) %>
   <% end %>
 <% end %>
+
 <div class="container-fluid">
   <div class="form-filter">
     <%= form_tag artworks_path,   method: :get do %>
