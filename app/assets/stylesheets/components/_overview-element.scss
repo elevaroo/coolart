@@ -18,7 +18,7 @@
 .overview-element-budget {
   background-size: cover;
   background-position: center;
-  height: 254px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,12 +28,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 254px;
    a {
-  color: white;
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
   }
-}
-
-a:hover {
-  text-decoration: none;
 }
 
 .overview-element {
