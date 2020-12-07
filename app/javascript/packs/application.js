@@ -31,11 +31,13 @@ import "bootstrap";
 import { initUpdateNavbarOnScroll } from './navbar';
 import { checkCheckbox } from '../components/heart';
 import { orderButton } from '../components/order_button';
+import { linkListener } from '../components/tag_link';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
   checkCheckbox();
   orderButton();
+  linkListener();
 });
-

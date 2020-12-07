@@ -8,6 +8,8 @@ class Artwork < ApplicationRecord
 
   monetize :price_cents
 
+  accepts_nested_attributes_for :tags
+
   validates :name, presence: true
   validates :description, presence: true
   validates :year, presence: true

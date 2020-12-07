@@ -5,7 +5,7 @@
     </div>
     <div class="card-info">
       <div class="d-flex justify-content-between" style= "margin-bottom: 16px;">
-        <h4 class="artwork-abc"><%= artwork.name.capitalize %></h4>
+        <h4 class="artwork-abc"><%= artwork.name.capitalize %>, <%= artwork.year.strftime("%Y") %></h4>
         <h4 class="card-price"><%= humanized_money_with_symbol(artwork.price) %></h4>
       </div>
     <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
