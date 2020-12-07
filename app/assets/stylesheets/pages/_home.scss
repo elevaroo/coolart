@@ -2,12 +2,30 @@
 .background-container {
   background: asset-url('background-landing.jpg');
   object-fit: cover;
-  padding-top: 40px;
+  padding: none;
 }
 
 .container {
   margin-top: 40px;
   justify-content: center;
+  padding: none;
+  border: 1px solid black;
+}
+
+#titles-home {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: none;
+  border: 1px solid black;
+}
+
+#more-titles-home {
+  position: relative;
+  border: 1px solid black;
+  margin-bottom: 40px;
+  padding: none;
+  align-item: flex-start;
+  display: blocK;
 }
 
 .more-info-container {
@@ -16,11 +34,13 @@
   border-radius: 3px;
   display: flex;
   align-items: space-between;
-  margin-bottom: 50px;
-  margin-top: 25px;
+  margin-bottom: 40px;
+  margin-top: 40px;
   flex-wrap: wrap;
   justify-content: center;
   align-item: center;
+  border: 1px solid black;
+  text-align: center;
 }
 
 .more-info-card{
@@ -41,6 +61,7 @@
   padding: 16px;
   color: white;
   font-size: 20px;
+  font-weight: medium;
   &:hover {
     transition: 0.3s;
     color: yellow;

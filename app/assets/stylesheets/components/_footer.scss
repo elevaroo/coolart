@@ -1,10 +1,10 @@
 .site-footer
 {
-  background-color:#26272b;
+  background-color:rgba(0, 0, 0, 0.5);
   padding:18px 0 20px;
   font-size:15px;
   line-height:24px;
-  color:#737373;
+  color:#eceeef;
   position: relative;
   left: 0;
   bottom: 0;
@@ -21,7 +21,7 @@
 }
 .site-footer h6
 {
-  color:#fff;
+  color: yellow;
   font-size:16px;
   text-transform:uppercase;
   margin-top:5px;
@@ -29,11 +29,11 @@
 }
 .site-footer a
 {
-  color:#737373;
+  color:#eceeef;
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:blue;
   text-decoration:none;
 }
 .footer-links
@@ -47,11 +47,11 @@
 }
 .footer-links a
 {
-  color:#737373
+  color:#eceeef
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:blue;
   text-decoration:none;
 }
 .footer-links.inline li
@@ -70,7 +70,7 @@
   margin-left:6px;
   margin-right:0;
   border-radius:100%;
-  background-color:#33353d
+  background-color:#737373;
 }
 .copyright-text
 {
@@ -109,13 +109,13 @@
 {
   margin-right:15px;
   text-transform:uppercase;
-  color:#96a2b2;
+  color:#eceeef;
   font-weight:700;
   font-size:13px
 }
 .social-icons a{
-  background-color:#eceeef;
-  color:#818a91;
+  background-color:#737373;
+  color:#eceeef;
   font-size:16px;
   display:inline-block;
   line-height:44px;
@@ -142,19 +142,19 @@
 }
 .social-icons a.facebook:hover
 {
-  background-color:#3b5998
+  background-color: blue;
 }
 .social-icons a.twitter:hover
 {
-  background-color:#00aced
+  background-color: red;
 }
 .social-icons a.linkedin:hover
 {
-  background-color:#007bb6
+  background-color: red;
 }
 .social-icons a.dribbble:hover
 {
-  background-color: #BBC9CA;
+  background-color: blue;
 }
 @media (max-width:767px)
 {
