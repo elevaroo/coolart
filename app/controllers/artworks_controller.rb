@@ -17,6 +17,7 @@ class ArtworksController < ApplicationController
   def show
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
+    @fav_artworks = FavoriteArtwork.all
   end
 
   def new
@@ -30,9 +31,9 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    @artwork.user = current_user
+    @artwork.artist = current_user.account
     if @artwork.save
-      redirect_to artists_path(@artwork)
+      redirect_to artist_artwork_path(@artwork.artist, @artwork)
     else
       render :new
     end
@@ -58,7 +59,7 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width, photos: [])
+    params.require(:artwork).permit(:name, :description, :year, :price, :height, :width, :depth, :medium_id, :category_id, photos: [])
   end
 end
 

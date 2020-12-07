@@ -2,10 +2,8 @@
 
 <h1> <%= @category.name %> </h1>
 
-<div class="container">
-  <div class="d-flex flex-wrap">
+<div class="card-container d-flex flex-wrap">
     <% @category.artworks.each do |artwork| %>
       <%= render "artworks/card", artwork: artwork %>
     <% end %>
   </div>
-</div>

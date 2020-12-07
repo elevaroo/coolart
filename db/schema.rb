@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_03_150629) do
+ActiveRecord::Schema.define(version: 2020_12_07_140322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_150629) do
     t.string "name"
     t.string "description"
     t.date "year"
-    t.integer "price"
     t.integer "height"
     t.integer "width"
     t.integer "depth"
@@ -59,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_12_03_150629) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "artist_id", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["artist_id"], name: "index_artworks_on_artist_id"
     t.index ["category_id"], name: "index_artworks_on_category_id"
     t.index ["medium_id"], name: "index_artworks_on_medium_id"
@@ -96,6 +96,8 @@ ActiveRecord::Schema.define(version: 2020_12_03_150629) do
     t.integer "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
     t.index ["artwork_id"], name: "index_orders_on_artwork_id"
     t.index ["collector_id"], name: "index_orders_on_collector_id"
   end

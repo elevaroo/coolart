@@ -37,6 +37,9 @@ gem 'simple_form'
 gem 'has_scope'
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'money-rails'
+gem 'stripe'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

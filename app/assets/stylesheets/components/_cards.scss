@@ -9,17 +9,6 @@
   justify-content: center;
 }
 
-#heart img {
-    height: 30px;
-    width: 30px;
-}
-
-#heart {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 9999;
-}
 
 .card-wrapper {
   width: 250px;
@@ -79,11 +68,6 @@
   font-weight: bold;
 }
 
-.card-item.heart {
-  position: absolute;
-  right: -5;
-  bottom: -5;
-}
 
 .card-order {
   overflow: hidden;
