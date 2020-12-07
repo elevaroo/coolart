@@ -20,6 +20,6 @@ class Artwork < ApplicationRecord
   scope :medium, lambda{|medium| joins(:medium).where(['media.name = ?', medium])}
   scope :tag, lambda{|tag| joins(:tag).where(['tags.name = ?', tag])}
   scope :artist, lambda{|artist| joins(:artist).where(['artist.last_name = ?', artist])}
-  scope :price_min, lambda{|min| where(['price >= ?', min])}
-  scope :price_max, lambda{|max| where(['price <= ?', max])}
+  scope :price_min, lambda{|min| where(['price_cents >= ?', min])}
+  scope :price_max, lambda{|max| where(['price_cents <= ?', max])}
 end
