@@ -7,6 +7,8 @@
         <%= f.input :name %>
         <%= f.input :year %>
         <%= f.input :description %>
+        <%= render "tags_form" %>
+        <%= link_to 'More tags', '#', class:"tag-link" %>
         <%= f.input :width %>
         <%= f.input :height %>
         <%= f.input :depth %>

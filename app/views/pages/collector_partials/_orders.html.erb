@@ -5,8 +5,8 @@
       <%= cl_image_tag order.artwork.photos.first.key %>
     </div>
     <div class="order-content">
-    <h1><%= order.artwork.name %>, <%= order.artwork.year %></h1>
-    <h2><%= order.artwork.artist %></h2>
+    <h1><%= order.artwork.name %>, <%= order.artwork.year.strftime("%Y") %></h1>
+    <h2><%= order.artwork.artist.user.first_name %> <%= order.artwork.artist.user.last_name %></h2>
     <h3><%= order.artwork.price %> €</h3>
     <% if order.status == 0 %>
       <h4 id="await-shipping">Awaiting shipping</h4>
