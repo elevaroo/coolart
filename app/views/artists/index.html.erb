@@ -10,7 +10,7 @@
           <h3><%= artist.user.username %></h2>
         </div>
           <% if artist.user.photo.attached? %>
-            <%= cl_image_tag artist.user.photo.key, crop: :fill %>
+            <%= cl_image_tag artist.user.photo.key, crop: :fill, class:"pic-size"%>
           <% else %>
             <img class="artist-profile-pic" src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
           <% end %>

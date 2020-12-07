@@ -22,7 +22,6 @@
         <%= link_to like_unlike_path(artwork.id), remote: true, method: 'post' do %>
         <input type="checkbox" id="checkbox-<%= artwork.id  %>" class="heart-checkbox" <%= "checked" if current_user.account.favorite_artworks.pluck(:artwork_id).include?(artwork.id) %>/>
         <label for="checkbox-<%= artwork.id  %>">
-
           <%= image_tag "heart.svg" %>
         </label>
         <% end %>

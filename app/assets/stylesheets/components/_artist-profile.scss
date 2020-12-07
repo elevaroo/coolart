@@ -38,7 +38,6 @@
 
   .artist-profile-pic {
     width: 250px;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: cover;
@@ -65,3 +64,7 @@
   border: none;
   margin-left:0px;
   }
+
+.pic-size {
+width:90%
+}
