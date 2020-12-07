@@ -6,3 +6,30 @@
   display:flex;
  flex-direction: column;
 }
+
+.artworks-banner {
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+      background-position: 0px -465px;
+}
+
+.artworks-banner-title {
+  position: relative;
+  margin-left: 50px;
+}
+
+.form-filter {
+  width: 100%;
+  display: flex;
+  justify-content:space-evenly;
+  background-color: rgba(39, 38, 38, 0.7);
+
+}
+
+.m-3 {
+  border: none;
+  height: 70px;
+  }

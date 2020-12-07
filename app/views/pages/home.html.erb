@@ -4,7 +4,7 @@
 </div>
 
 <div class="background-container">
-  <h2 class="container my-4"> Browse by Category:</h2>
+  <h2 class="container my-4">Featured Categories</h2>
 
   <div class="container d-flex flex-wrap">
     <!-- insert category card here -->
@@ -17,7 +17,7 @@
   </div>
 
   <div class="container">
-    <h2 class="my-4">Browse by Budget:</h2>
+    <h2 class="my-4">Shop by Price</h2>
     <div class="d-flex justify-content-between">
       <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
       <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
@@ -26,30 +26,14 @@
     </div>
   </div>
 
-  <div class="container">
-    <h2>Our selected Artworks</h2>
-    <div class="card-container d-flex flex-wrap">
-      <div class="d-flex flex-wrap">
-        <% @samples.each do |artwork| %>
-          <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
-            <div class="card-wrapper">
-              <div class="card-item">
-                <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
-              </div>
 
-              <div class="card-info">
-                <div class="d-flex justify-content-between">
-                  <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                  <h4 class="card-price"><%= artwork.price %> €</h4>
-                </div>
-
-                <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-                <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+<div class="container">
+  <h2>Our selected Artworks</h2>
+  <div class="card-container d-flex flex-wrap">
+    <div class="d-flex flex-wrap">
+      <% @samples.each do |artwork| %>
+        <%= render "artworks/card", artwork: artwork %>
+      <% end %>
     </div>
   </div>
 

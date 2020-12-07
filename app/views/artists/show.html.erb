@@ -1,7 +1,4 @@
 
-<% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @offer.description %>
-<% content_for :meta_image, cl_image_path(@offer.photo.path) %>
 <div class="content">
   <div class="container">
     <div class="row justify-content-between">
@@ -61,22 +58,7 @@
       <div class="card-container d-flex flex-wrap">
         <div class="d-flex flex-wrap">
           <% @artist.artworks.each do |artwork| %>
-          <%= link_to artist_artwork_path(artwork.artist, artwork), style: 'text-decoration: none' do%>
-          <div class="card-wrapper">
-            <div class="card-item">
-              <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
-            </div>
-            <div class="card-info">
-              <div class="d-flex justify-content-between">
-                <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                <h4 class="card-price"><%= artwork.price %> €</h4>
-
-              </div>
-              <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-              <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-            </div>
-          </div>
-          <% end %>
+          <%= render "artworks/card", artwork: artwork %>
           <% end %>
         </div>
       </div>
