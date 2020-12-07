@@ -1,25 +1,39 @@
 class OrdersController < ApplicationController
 
   def create
-    @order = Order.new(order_params)
+    @artwork = Artwork.find(params[:artwork_id])
+    @order = Order.create!(artwork: @artwork, amount: @artwork.price, status: 'pending', collector_id: current_user.account_id)
 
-    @order.collector_id = current_user.account_id
-    @order.artwork_id = params[:order][:artwork_id]
-    @order.status = 0
-    respond_to do |format|
-      if @order.save!
-        format.html{ redirect_to profile_path }
-        format.js
-      else
-        #display alert
-        format.html{render "artworks/show"}
-      end
-    end
+    # @order = Order.new(order_params)
+
+    # @order.collector_id = current_user.account_id
+    # @order.artwork_id = params[:order][:artwork_id]
+    # @order.status = 0
+    # @order.save!
+
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: @artwork.name,
+        amount: @artwork.price_cents,
+        currency: 'eur',
+        quantity: 1
+      }],
+      success_url: order_url(@order),
+      cancel_url: order_url(@order)
+    )
+
+    @order.update(checkout_session_id: session.id)
+    redirect_to new_order_payment_path(@order)
+  end
+
+  def show
+    @order = current_user.account.orders.find(params[:id])
   end
 
   def mark_as_shipped
     @order = Order.find(params[:id])
-    @order.status = 1
+    @order.status = 3
     if @order.save
       redirect_to profile_path
     end

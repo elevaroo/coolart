@@ -6,6 +6,8 @@ class Artwork < ApplicationRecord
   has_many :orders
   has_many_attached :photos
 
+  monetize :price_cents
+
   validates :name, presence: true
   validates :description, presence: true
   validates :year, presence: true

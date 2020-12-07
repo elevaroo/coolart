@@ -11,6 +11,7 @@
   transition: 0.5s background-color ease;
   justify-content: space-between;
   position:relative;
+  padding-bottom: 16px;
 }
 
 .navbar-coolart .navbar-collapse {
@@ -22,7 +23,7 @@
 }
 
 .navbar-coolart-white {
-  background-color: rgba(255, 243, 226, 0.2);
+  background-color: rgba(255, 243, 226, 0);
 }
 
 .navbar-right {

@@ -80,9 +80,27 @@ user_artist = User.create!(
     )
   )
 
+painting = Category.create!(name:"Painting")
+sculpture = Category.create!(name:"Sculpture")
+photography = Category.create!(name:"Photography")
+print_new = Category.create!(name:"Print")
+drawing = Category.create!(name:"Drawing")
+mixed = Category.create!(name:"Mixed Media")
 
-prints = Category.create!(name: "Print")
-media = Medium.create!(name: "Lithography")
+oil_paint = Medium.create!(name: "Oil paint")
+watercoulor = Medium.create!(name: "Watercolour")
+pencil = Medium.create!(name: "Pencil")
+etching = Medium.create!(name: "Etching")
+lithography = Medium.create!(name: "Lithography")
+bronze = Medium.create!(name: "Bronze")
+marble = Medium.create!(name: "Marble")
+wood = Medium.create!(name: "Wood")
+iron = Medium.create!(name: "Iron")
+plastic = Medium.create!(name: "Plastic")
+acrylic = Medium.create!(name: "Acrylic paint")
+chalk = Medium.create!(name: "Chalk")
+pastel = Medium.create!(name: "Pastel")
+
 
 cows = Artwork.new(
   name: "Cows",
@@ -91,8 +109,8 @@ cows = Artwork.new(
   price: 950,
   height: 80,
   width: 50,
-  medium: media,
-  category: prints,
+  medium: watercoulor,
+  category: print_new,
   artist: user_artist.account
   )
 
@@ -114,8 +132,6 @@ pablo = User.create!(
     )
   )
 
-painting = Category.create!(name: "Painting")
-oil = Medium.create!(name: "Oil paint")
 
   woman = Artwork.new(
   name: "Woman",
@@ -124,7 +140,7 @@ oil = Medium.create!(name: "Oil paint")
   price: 9300,
   height: 60,
   width: 40,
-  medium: oil,
+  medium: oil_paint,
   category: painting,
   artist: pablo.account
   )
@@ -139,7 +155,7 @@ oil = Medium.create!(name: "Oil paint")
   price: 2600,
   height: 60,
   width: 40,
-  medium: oil,
+  medium: oil_paint,
   category: painting,
   artist: pablo.account
   )
@@ -148,8 +164,7 @@ oil = Medium.create!(name: "Oil paint")
   desire.photos.attach(io: desire_photo, filename: "desire.jpg", content_type: 'image/jpg')
   desire.save!
 
-sculpture = Category.create!(name:"Sculpture")
-plastic = Medium.create!(name: "Plastic")
+
 
   neighbour = Artwork.new(
   name: "Neighbour",
@@ -167,7 +182,6 @@ plastic = Medium.create!(name: "Plastic")
   neighbour.photos.attach(io: neighbour_photo, filename: "neighbour.jpg", content_type: 'image/jpg')
   neighbour.save!
 
-bronze = Medium.create!(name: "Bronze")
 
   dona = Artwork.new(
   name: "Dona",
@@ -185,8 +199,6 @@ bronze = Medium.create!(name: "Bronze")
   dona.photos.attach(io: dona_photo, filename: "dona.jpg", content_type: 'image/jpg')
   dona.save!
 
-photography = Category.create!(name:"Photography")
-lithography = Medium.create!(name: "Lithography")
 
  paris = Artwork.new(
   name: "Paris ",
@@ -205,8 +217,7 @@ lithography = Medium.create!(name: "Lithography")
   paris.save!
 
 
-drawing = Category.create!(name:"Drawing")
-oil_paint = Medium.create!(name: "Oil paint")
+
 
  sunshine = Artwork.new(
   name: "sunshine",
@@ -222,4 +233,7 @@ oil_paint = Medium.create!(name: "Oil paint")
   sunshine_photo = URI.open('https://images.squarespace-cdn.com/content/5ac2528812b13f7c187dcd15/1561680895735-2Q9RWY70TKCI3ASRIXY1/finding-sunshine.jpg?content-type=image%2Fjpeg')
   sunshine.photos.attach(io: sunshine_photo, filename: "sunshine.jpg", content_type: 'image/jpg')
   sunshine.save!
+
+
+
 

@@ -1,12 +1,14 @@
 .card-item {
-  background-image: url("background_card.png");
+  //background-image: url("background_card.png");
   width:250px;
+  height: 300px;
   padding: 25px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 
 .card-wrapper {
   width: 250px;
@@ -16,7 +18,14 @@
   justify-content: space-between;
   position: relative;
   box-shadow: 0px 0px 6px rgba(0,0,0,0.18);
-
+  border-radius: 3px;
+  border: 2px solid transparent;
+  background-color: white;
+  &:hover {
+    border-radius: 3px;
+    transition: 0.3s;
+    border: 2px solid rgba(yellow, 0.5);
+  }
 }
 
 .image-wrap img{
@@ -41,19 +50,19 @@
 }
 
 .card-info {
-  padding: 10px;
+  padding: 16px;
+  width: 250px;
 }
 
 .card-price {
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
   margin: 0 0 4px;
 }
 
 .card-artist {
-  font-weight: bold;
   font-size: 14px;
-  margin: 0 0 0 0;
+  margin: 0 0 8 0;
 }
 
 .card-dimensions {
@@ -61,20 +70,12 @@
   opacity: 0.5
 }
 
-.artwork-title {
-  font-size: 14px;
+.artwork-abc {
+  font-size: 18px;
   margin: 0 0 4px;
+  font-weight: bold;
 }
 
-.card-wrapper:hover {
-  outline: 2px solid (#F9B194);
-}
-
-.card-item.heart {
-  position: absolute;
-  right: -5;
-  bottom: -5;
-}
 
 .card-order {
   overflow: hidden;
@@ -98,4 +99,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+a{
+  color: #272626;
+  &:hover {
+    color: #272626;
+  }
 }

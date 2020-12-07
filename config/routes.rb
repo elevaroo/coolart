@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     resources :artworks, except: [ :index ]
   end
 
-  resources :orders, only: [:new, :create]
+  resources :orders, only: [:create, :show] do
+    resources :payments, only: :new
+  end
   resources :favorite_artworks, only: [:new, :create, :destroy]
   resources :artworks, only: [ :index ]
 

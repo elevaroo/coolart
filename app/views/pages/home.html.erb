@@ -1,61 +1,82 @@
-<div class="home-banner">
-  <img class="logo-img" src="../assets/logo-image.jpg">
-  <h1>Start your own art collection.</h1>
+
+<div id="carouselExampleIndicators" class="carousel slide w-100" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item carousel-background active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "banner_1_home.png" %>')">
+      <div class="carousel-content">
+      <h1>Start your own art collection.</h1>
+      </div>
+    </div>
+    <div class="carousel-item carousel-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "banner_2_home.jpg" %>')">
+      <div class="carousel-content">
+      <h1>Explore our artworks!</h1>
+      <%= link_to "Click here", artworks_path, class:"more-info-button" %>
+      </div>
+    </div>
+    <div class="carousel-item carousel-background" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path "banner_3_home.jpg" %>')">
+      <div class="carousel-content">
+      <h1>Explore our artists!</h1>
+      <%= link_to "Click here", artists_path, class:"more-info-button" %>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
 
+
+
+
+
 <div class="background-container">
-  <h2 class="container my-4"> Browse by Category:</h2>
 
-  <div class="container d-flex flex-wrap">
+  <div class="container">
+  <h2 id="titles-home">FEATURED CATEGORIES</h2>
     <!-- insert category card here -->
-    <div class="overview-element mx-auto">
-      <% @categories.each do |category| %>
-      <div class="overview-element-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path("#{category.name.downcase}.png") %>')">
-      <%= link_to category.name, category_path(category.name)%>
+
+    <div class="card-container d-flex flex-wrap">
+      <div class="overview-element mx-auto">
+        <% @categories.each do |category| %>
+        <div class="overview-element-category m-2" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_path("#{category.name.downcase}.png") %>')">
+        <%= link_to category.name, category_path(category.name)%>
+      </div>
+      <% end %>
     </div>
-    <% end %>
+
   </div>
 
   <div class="container">
-    <h2 class="my-4">Browse by Budget:</h2>
+  <h2 id="titles-home">SHOP BY PRICE</h2>
     <div class="d-flex justify-content-between">
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'Artworks up to 500', artworks_path(price_min: 0, price_max: 500) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to 'Artworks 500-1000', artworks_path(price_min: 500, price_max: 1000) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall3.png') %>')"><%= link_to 'Artworks 1000-2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall4.png') %>')"><%= link_to 'Artworks above 2000', artworks_path(price_min: 2000, price_max: 100000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'UP TO €500', artworks_path(price_min: 0, price_max: 500) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to '€500 - €1000', artworks_path(price_min: 500, price_max: 1000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall3.png') %>')"><%= link_to '€1000 - €2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall4.png') %>')"><%= link_to '€2000 AND MORE', artworks_path(price_min: 2000, price_max: 100000) %></div>
     </div>
-  </div>
 
   <div class="container">
-    <h2>Our selected Artworks</h2>
+  <h2 id="titles-home">OUR SELECTED ARTWORKS</h2>
     <div class="card-container d-flex flex-wrap">
       <div class="d-flex flex-wrap">
         <% @samples.each do |artwork| %>
-          <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
-            <div class="card-wrapper">
-              <div class="card-item">
-                <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
-              </div>
-
-              <div class="card-info">
-                <div class="d-flex justify-content-between">
-                  <h4 class="artwork-title"><%= artwork.name.capitalize %></h4>
-                  <h4 class="card-price"><%= artwork.price %> €</h4>
-                </div>
-
-                <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-                <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-              </div>
-            </div>
-          <% end %>
+          <%= render "artworks/card", artwork: artwork %>
         <% end %>
       </div>
     </div>
   </div>
 
-
   <div class="more-info-container">
+    <h2 id="more-titles-home">EXPLORE MORE</h2>
     <div class="more-info-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('more-artworks-img.jpg') %>')"><%= link_to 'Discover More Artworks', artworks_path, class:"more-info-button" %></div>
     <div class="more-info-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('more-artists-img.jpg') %>')"><%= link_to 'Discover All Our Artists', artists_path, class:"more-info-button" %></div>
   </div>
-</div>
