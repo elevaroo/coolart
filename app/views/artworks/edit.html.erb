@@ -12,8 +12,8 @@
         <%= f.input :depth %>
         <%= f.input :price %>
         <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-        <%= f.input :medium %>
-        <%= f.input :category %>
+        <%= f.association :medium %>
+        <%= f.association :category %>
         <%= f.submit "Edit artwork", class: "btn-margin btn-ghost", method: :patch %>
         <% end %>
       </div>
