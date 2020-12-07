@@ -2,5 +2,7 @@ class Order < ApplicationRecord
   belongs_to :artwork
   belongs_to :collector
 
-  enum status: { confirmed: 0, dispatched: 1, fulfilled: 2 }
+  monetize :amount_cents
+
+  enum status: { pending: 0, confirmed: 1, dispatched: 2, fulfilled: 3 }
 end

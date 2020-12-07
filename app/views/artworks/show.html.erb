@@ -65,11 +65,11 @@
           </ul>
 
           <div class="buybanner">
-            <h2><%= @artwork.price %> €</h2>
+            <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
             <!-- this is the order button which redirects to the profile page in the bought items -->
-            <%= simple_form_for [@order] do |f| %>
-            <%= f.input_field :artwork_id, value: @artwork.id, as: :hidden%>
-            <%= f.button :submit, "BUY ME", class: 'button' %>
+            <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'artwork_id', @artwork.id %>
+              <%= submit_tag 'BUY ME', class: 'button' %>
             <% end %>
           </div>
 
