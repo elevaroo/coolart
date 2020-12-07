@@ -18,6 +18,19 @@
 h1 {
   font-size: 40px;
   color: white;
-  margin-left: 300px;
 }
 
+
+.carousel-background {
+  min-height: 80vh;
+  height: 80vh;
+  background-size: cover;
+}
+
+.carousel-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
