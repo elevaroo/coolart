@@ -7,14 +7,11 @@
   align-items: center;
   color: white;
   font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 3px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 345px;
    a {
   color: white;
-  font-family: Helvetica;
   }
 }
 
@@ -27,19 +24,15 @@
   align-items: center;
   color: white;
   font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 3px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 254px;
    a {
   color: white;
-  font-family: Helvetica;
   }
 }
 
 a:hover {
-  opacity: 0.8;
   text-decoration: none;
 }
 
