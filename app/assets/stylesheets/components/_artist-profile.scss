@@ -20,8 +20,10 @@
     }
   }
 
-.content {
-  background-color:rgba(255, 243, 226, 0.2);
+.content-artiste {
+
+    margin-left: -200px;
+    margin-right: 0px;
 }
 
   .artist-info {
@@ -46,9 +48,9 @@
   }
 
   .artist-info {
-    background-color: rgba(249, 177, 148, 1);
+    background-color: transparent;
     margin-top:10px;
-    border-radius:10px;
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.18);
   }
 
   .artist-card {
@@ -63,5 +65,12 @@
   .follow-button {
   background-color: grey;
   border: none;
-  margin-left:0px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .border-artist {
+    border-right: 2px dotted white;
+    border-top: 2px dotted white;
   }
