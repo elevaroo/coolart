@@ -3,7 +3,7 @@ export const orderButton = () => {
 document.querySelectorAll('.truck-button').forEach(button => {
     button.addEventListener('click', e => {
 
-        e.preventDefault();
+
 
         let box = button.querySelector('.box'),
             truck = button.querySelector('.truck');
@@ -77,7 +77,7 @@ document.querySelectorAll('.truck-button').forEach(button => {
                 });
 
             }
-
+        setTimeout(3500)
         } else {
             button.classList.remove('animation', 'done');
             gsap.set(truck, {
