@@ -1,0 +1,16 @@
+.super-button {
+  border: 3px solid white;
+  border-radius: 3px;
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+  font-weight: medium;
+  margin: 16px;
+  &:hover {
+    transition: 0.3s;
+    color: blue;
+    border-color: yellow;
+    background-color: yellow;
+  }
+
+}
