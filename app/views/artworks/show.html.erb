@@ -108,23 +108,25 @@
           <div class="buybanner">
             <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
             <!-- this is the order button which redirects to the profile page in the bought items -->
-            <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'artwork_id', @artwork.id %>
-              <button type="submit" class="truck-button">
-                <span class="default">Buy Me</span>
-                <span class="success">
-                Order Placed
-                <svg viewbox="0 0 12 10">
-                <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </svg>
-                </span>
-                <div class="truck">
-                <div class="wheel"></div>
-                <div class="back"></div>
-                <div class="front"></div>
-                <div class="box"></div>
-                </div>
-              </button>
+            <% if !user_signed_in? || current_user.collector? %>
+              <%= form_tag orders_path do %>
+                <%= hidden_field_tag 'artwork_id', @artwork.id %>
+                <button type="submit" class="truck-button">
+                  <span class="default">Buy Me</span>
+                  <span class="success">
+                  Order Placed
+                  <svg viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </svg>
+                  </span>
+                  <div class="truck">
+                  <div class="wheel"></div>
+                  <div class="back"></div>
+                  <div class="front"></div>
+                  <div class="box"></div>
+                  </div>
+                </button>
+              <% end %>
             <% end %>
           </div>
 

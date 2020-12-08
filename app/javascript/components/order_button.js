@@ -3,8 +3,6 @@ export const orderButton = () => {
 document.querySelectorAll('.truck-button').forEach(button => {
     button.addEventListener('click', e => {
 
-
-
         let box = button.querySelector('.box'),
             truck = button.querySelector('.truck');
 
