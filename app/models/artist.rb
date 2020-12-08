@@ -7,8 +7,7 @@ class Artist < ApplicationRecord
   validates :vita, presence: true
   validates :nationality, presence: true
 
-  extend FriendlyId
-  friendly_id :username, use: :slugged
+
 
 end
 

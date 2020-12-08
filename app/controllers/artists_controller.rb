@@ -6,7 +6,7 @@ class ArtistsController < ApplicationController
 
   def show
     if User.find_by_username(params[:id]).artist?
-      @artist =User.find_by_username(params[:id]).account
+      @artist = User.find_by_username(params[:id]).account
     else
       redirect_to request.referer
     end
