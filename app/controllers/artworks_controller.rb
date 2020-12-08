@@ -18,6 +18,8 @@ class ArtworksController < ApplicationController
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
     @fav_artworks = FavoriteArtwork.all
+
+
   end
 
   def new
@@ -56,6 +58,7 @@ class ArtworksController < ApplicationController
 
   def set_artwork
     @artwork = Artwork.find(params[:id])
+    # @artwork = Artwork.find_by_username(params[:id]).account
   end
 
   def artwork_params
