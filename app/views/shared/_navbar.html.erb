@@ -5,9 +5,10 @@
   </button>
 
   <div>
+ <%= link_to root_path do %>
     <img class="navbar-logo" src="../assets/logo-navbar.png">
   </div>
-
+<% end %>
   <div class="navbar-left btn-cont">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
@@ -18,40 +19,38 @@
           <span class='line-3'></span>
           <span class='line-4'></span>
         </li>
-        <li class="nav-item btn btn-succes">
-          <%= link_to "Artists", artists_path, class:"nav-link hp-btn" %>
-          <span class='line-1'></span>
-          <span class='line-2'></span>
-          <span class='line-3'></span>
-          <span class='line-4'></span>
-        </li>
-        <li class="nav-item btn btn-succes">
-          <%= link_to "Artworks", artworks_path, class:"nav-link hp-btn" %>
-          <span class='line-1'></span>
-          <span class='line-2'></span>
-          <span class='line-3'></span>
-          <span class='line-4'></span>
-        </li>
-
-        <li class="nav-item  link-effect btn btn-succes">
-          <a class="nav-link hp-btn" href="#">Find your style</a>
-          <span class='line-1'></span>
-          <span class='line-2'></span>
-          <span class='line-3'></span>
-          <span class='line-4'></span>
-        </li>
-
         <li class="nav-item link-effect btn btn-succes dropdown">
-          <a class="nav-link" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category <a/>
+          <a class="nav-link hp-btn" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category <a/>
             <span class='line-1'></span>
             <span class='line-2'></span>
             <span class='line-3'></span>
             <span class='line-4'></span>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <% Category.all.each do |category| %>
+              <% Category.all.each do |category| %>
               <%= link_to category.name, category_path(category.name), class:"dropdown-item"%>
-            <% end %>
+              <% end %>
             </div>
+          </li>
+          <li class="nav-item btn btn-succes">
+            <%= link_to "Artists", artists_path, class:"nav-link hp-btn" %>
+            <span class='line-1'></span>
+            <span class='line-2'></span>
+            <span class='line-3'></span>
+            <span class='line-4'></span>
+          </li>
+          <li class="nav-item btn btn-succes">
+            <%= link_to "Artworks", artworks_path, class:"nav-link hp-btn" %>
+            <span class='line-1'></span>
+            <span class='line-2'></span>
+            <span class='line-3'></span>
+            <span class='line-4'></span>
+          </li>
+          <li class="nav-item  link-effect btn btn-succes">
+            <a class="nav-link hp-btn" href="#">Find your style</a>
+            <span class='line-1'></span>
+            <span class='line-2'></span>
+            <span class='line-3'></span>
+            <span class='line-4'></span>
           </li>
         </ul>
       </div>
