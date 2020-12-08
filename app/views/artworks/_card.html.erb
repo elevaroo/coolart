@@ -12,6 +12,13 @@
     <h4 class="card-dimensions"><%= artwork.medium.name %>, </h4>
     <h4 class="card-dimensions">W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
     </div>
+
+    <% if artwork.artist == current_user.account && current_page?(profile_path)%>
+    <div class="card-artist-btn d-flex justify-content-center">
+        <%= link_to "Edit", edit_artist_artwork_path(artwork.artist, artwork), class:"mr-3" %>
+        <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete do %><i class="fas fa-trash"></i><% end %>
+    </div>
+  <% end %>
   <% end %>
 
   <% if user_signed_in? %>
