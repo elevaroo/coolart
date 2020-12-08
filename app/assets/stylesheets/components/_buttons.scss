@@ -6,3 +6,15 @@
   padding:15px;
   margin-top: 10px;
 }
+
+.add-button {
+  border-radius: 25px;
+  background-color: rgba(39, 38, 38, 0.8);
+  color: lightgrey;
+  padding: 10px;
+  &:hover {
+    transition: 0.3s;
+    color: rgba(39, 38, 38, 1.0);
+    background-color: #F9B194;
+  }
+}
