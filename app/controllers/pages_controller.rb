@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   def home
   @artworks = Artwork.all
   @categories = Category.all
-  @samples = Artwork.all.sample(3)
+  @samples = Artwork.all.sample(6)
   #can you call the inclusion(validation) values of the Category model instead?
 
   end

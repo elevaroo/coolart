@@ -32,6 +32,7 @@ import { initUpdateNavbarOnScroll } from './navbar';
 import { checkCheckbox } from '../components/heart';
 import { orderButton } from '../components/order_button';
 import { linkListener } from '../components/tag_link';
+import { cardsCarousel } from '../components/cards_carousel';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -40,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   checkCheckbox();
   orderButton();
   linkListener();
+  cardsCarousel();
 });
