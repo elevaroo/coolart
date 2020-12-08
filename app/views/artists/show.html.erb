@@ -1,6 +1,6 @@
   <div class="container">
     <div class="row justify-content-between">
-      <div class="col-md-4 col-sm-10 border-artist">
+      <div class="col-md-4 col-sm-10">
         <div class="d-flex flex-column artist-title">
           <h2> <strong> <%= @artist.user.username.upcase%></strong> </h2>
           <div class="image-wrap">
@@ -14,13 +14,11 @@
             <h3> <i class="fas fa-graduation-cap"></i><%= @artist.artschool %></h3>
           </div>
         </div>
+        <p></p>
         <div class="box center-btn">
-          <a href="#" class="follow-btn follow-btn-white btn-animation-1">+ Follow </a>
+          <a href="#" class="btn btn-white btn-animation-1"> Follow me <i class="fas fa-user-plus"></i></a>
         </div>
-        <div class="card artist-info">
-          <h3> ABOUT ME </h3>
-          <h4><%= @artist.vita %></h4>
-        </div>
+        <p></p>
         <div class="card artist-info">
          <h3> STATS </h3>
          <h4><%= pluralize rand(1..20), "Artwork" %> </h4>
@@ -30,30 +28,32 @@
        <br>
        <p>
        </div>
-       <div class="col-md-8 col-sm-10 border-left-0">
-        <div class="container">
-          <h2 class = "artist-nickname"> Artworks </h2>
-          <div class="row">
-            <div class="card-container d-flex flex-wrap">
-              <div class="d-flex flex-wrap">
-                <% @artist.artworks.each do |artwork| %>
-                <%= link_to artist_artwork_path(artwork.artist, artwork), style: 'text-decoration: none' do%>
-                <div class="card-wrapper">
-                  <div class="card-item">
-                    <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
-                  </div>
-                  <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-                  <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4
+       <div class="col-md-8 col-sm-10">
+        <div class="card artist-info">
+          <h3> ABOUT ME </h3>
+          <h4><%= @artist.vita %></h4>
+        </div>
+        <p>
+          <div class="container">
+            <h3 class="center-btn"> MY ARTWORKS </h3>
+            <div class="row">
+              <div class="col-8">
+                <div class="card-container d-flex flex-wrap">
+                  <div class="d-flex flex-wrap">
+                    <% @artist.artworks.each do |artwork| %>
+                    <%= render "artworks/card", artwork: artwork %>
+                    <% end %>
                   </div>
                 </div>
-                <% end %>
-                <% end %>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
+
+
+    i
 

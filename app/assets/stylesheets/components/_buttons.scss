@@ -1,3 +1,15 @@
+.add-button {
+  border-radius: 25px;
+  background-color: rgba(39, 38, 38, 0.8);
+  color: lightgrey;
+  padding: 10px;
+  &:hover {
+    transition: 0.3s;
+    color: rgba(39, 38, 38, 1.0);
+    background-color: #F9B194;
+  }
+}
+
 .follow-button {
   border: 1px;
   background-color: rgba(196, 196, 196, 1);
@@ -6,26 +18,6 @@
   padding:15px;
   margin-top: 10px;
 }
-
-
-
-#follow-button {
-  color: #3399FF;
-  font-family: "Helvetica";
-  font-size: 14pt;
-  background-color: #ffffff;
-  border: 1px solid;
-  border-color: #3399FF;
-  border-radius: 3px;
-  width: 110px;
-  height: 30px;
-  border-right: auto;
-  border-left:auto;
-  cursor: hand;
-  margin-right: auto;
-  margin-left: auto;
-}
-
 
 .follow-btn:link,
 .follow-btn:visited{
@@ -102,3 +94,6 @@
   align-items: center;
   justify-content: center;
 }
+
+
+
