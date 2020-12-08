@@ -8,10 +8,7 @@ class Artist < ApplicationRecord
   validates :nationality, presence: true
 
   extend FriendlyId
-  friendly_id :nickname, use: :slugged
+  friendly_id :username, use: :slugged
 
-  def nickname
-    user.nickame
-  end
 end
 

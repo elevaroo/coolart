@@ -5,6 +5,11 @@ class Artwork < ApplicationRecord
   has_many :tags
   has_many :orders
   has_many_attached :photos
+  has_many :favorite_artworks
+  has_many :collectors, through: :favorite_artworks
+
+  include SimpleRecommender::Recommendable
+  similar_by :collectors
 
   monetize :price_cents
 

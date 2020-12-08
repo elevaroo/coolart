@@ -8,7 +8,7 @@
 .artwork-title {
   text-align: center;
   margin-bottom: 70px;
-  position: absolute;
+  position: center;
 }
 
 .artwork-info-container {
@@ -22,7 +22,7 @@
   height: 510px;
   width: auto;
   flex-grow: 1;
-  border: 1px solid #272626;
+  object-fit: contain;
 }
 
 .artdescription {
@@ -103,6 +103,10 @@ ul {
   font-size: 24px;
 }
 
+span.carousel-control-next-icon {
+
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -112,6 +116,5 @@ button {
     transition: 0.3s;
   }
 }
-
 
 

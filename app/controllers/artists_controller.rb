@@ -5,6 +5,10 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.friendly.find(params[:id])
+    if User.find_by_username(params[:id]).artist?
+      @artist =User.find_by_username(params[:id]).account
+    else
+      redirect_to request.referer
+    end
   end
 end

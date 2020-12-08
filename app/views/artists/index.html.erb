@@ -4,7 +4,7 @@
 
     <div class="d-flex flex-wrap align-items-start">
       <% @artists.each do |artist| %>
-      <%= link_to artist_path(artist), style: 'text-decoration: none' do %>
+      <%= link_to artist_path(artist.user.username), style: 'text-decoration: none' do %>
         <div class=" card-wrapper artist-profile-pic">
           <div class="artist-nickname">
           <h3><%= artist.user.username %></h2>
