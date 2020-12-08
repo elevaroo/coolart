@@ -1,4 +1,5 @@
 class ArtworksController < ApplicationController
+  before_action :onboarding
   has_scope :price_min
   has_scope :price_max
   has_scope :category

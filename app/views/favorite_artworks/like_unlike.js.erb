@@ -3,3 +3,10 @@ var heartCheckbox = document.getElementById('checkbox-<%=@fav_artwork.artwork_id
 
 if (heartCheckbox)
 {heartCheckbox.checked = !heartCheckbox.checked};
+
+var row = document.querySelector("#recommendations-container");
+if (row) {
+row.innerHTML = ""
+row.insertAdjacentHTML('afterbegin',
+  `<div class="row"><div class="col-12"><div class="card-container d-flex flex-wrap"><div class="p-2 d-flex flex-wrap align-content-start"><% @artwork.similar_items(n_results: 3).each do |artwork| %><%= render "artworks/card", artwork: artwork %><% end %></div></div></div></div>` )
+};

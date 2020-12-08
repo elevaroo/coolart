@@ -2,6 +2,7 @@ require "open-uri"
 
 Order.destroy_all
 FavoriteArtwork.destroy_all
+Tag.destroy_all
 Artwork.destroy_all
 Medium.destroy_all
 Category.destroy_all

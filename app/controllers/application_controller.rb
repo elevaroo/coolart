@@ -14,4 +14,14 @@ end
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool, :photo]])
   end
+
+  def onboarding
+    unless current_user&.collector? && current_user.account.favorite_artworks.count > 1
+      redirect_to getstarted_path
+    end
+  end
+
+  def after_sign_in_path_for(resource)
+    getstarted_path
+  end
 end
