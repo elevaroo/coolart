@@ -10,4 +10,12 @@ class PagesController < ApplicationController
   #can you call the inclusion(validation) values of the Category model instead?
 
   end
+
+  def getstarted
+    @samples = Artwork.all.sample(20)
+  end
+
+  def mystyle
+
+  end
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get 'profile', to: 'pages#profile'
+  get 'getstarted', to: 'pages#getstarted'
+  get 'mystyle', to: 'pages#mystyle'
   get '/orders/:id/mark_as_shipped',  to: 'orders#mark_as_shipped', as: 'mark_as_shipped'
   post '/favorite_artworks/:id',  to: 'favorite_artworks#like_unlike', as: 'like_unlike'
 
