@@ -6,5 +6,12 @@ class Artist < ApplicationRecord
   validates :location, presence: true
   validates :vita, presence: true
   validates :nationality, presence: true
+
+  extend FriendlyId
+  friendly_id :nickname, use: :slugged
+
+  def nickname
+    user.nickame
+  end
 end
 

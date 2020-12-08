@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   belongs_to :account, polymorphic: true
   has_one_attached :photo
 
@@ -24,4 +25,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :username, presence: true, uniqueness: true
+
+extend FriendlyId
+friendly_id :name, use: :slugged
 end

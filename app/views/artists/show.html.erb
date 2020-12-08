@@ -43,7 +43,7 @@
                     <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
                   </div>
                   <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
-                  <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4
+                  <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
                   </div>
                 </div>
                 <% end %>
