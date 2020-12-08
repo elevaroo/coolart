@@ -32,6 +32,8 @@
           <h3 id="arttitle">Description</h3>
           <p> <%= @artwork.description %></p>
         </div>
+
+        <h1><%= @artwork.similar_items(n_results: 3) %></h1>
       </div>
     </div>
 
@@ -142,4 +144,6 @@
 
 
   </div>
+  <div class="row">
+    <div class="col-8">
 </div>
