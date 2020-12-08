@@ -28,11 +28,33 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 254px;
    a {
-    color: white;
-    &:hover {
-      text-decoration: none;
-    }
+  color: white;
   }
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.overview-element-info{
+  width: 49%;
+  height: 300px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+#left-info {
+  margin-right: 8px;
+}
+
+#right-info {
+  margin-left: 8px;
 }
 
 .overview-element {

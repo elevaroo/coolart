@@ -5,54 +5,24 @@
   padding: none;
 }
 
-.container {
-  margin-top: 40px;
+.container-home {
+  margin-bottom: 90px;
   justify-content: center;
   padding: none;
-  border: 1px solid black;
+  align-items: center;
+}
+
+.element-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #titles-home {
   text-align: center;
+  margin-top: 70px;
   margin-bottom: 40px;
   padding: none;
-  border: 1px solid black;
-}
-
-#more-titles-home {
-  position: relative;
-  border: 1px solid black;
-  margin-bottom: 40px;
-  padding: none;
-  align-item: flex-start;
-  display: blocK;
-}
-
-.more-info-container {
-  width: 100%;
-  height: 400px;
-  border-radius: 3px;
-  display: flex;
-  align-items: space-between;
-  margin-bottom: 40px;
-  margin-top: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-item: center;
-  border: 1px solid black;
-  text-align: center;
-}
-
-.more-info-card{
-  flex-grow: 1;
-  margin: 25px;
-  width: 45%;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .more-info-button {
@@ -60,7 +30,7 @@
   border-radius: 3px;
   padding: 16px;
   color: white;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: medium;
   &:hover {
     transition: 0.3s;
