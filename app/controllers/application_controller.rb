@@ -16,7 +16,7 @@ end
   end
 
   def onboarding
-    unless current_user&.collector? && current_user.account.favorite_artworks.count > 5
+    unless current_user&.collector? && current_user.account.favorite_artworks.count > 1
       redirect_to getstarted_path
     end
   end
