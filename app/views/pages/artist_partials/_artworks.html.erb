@@ -1,24 +1,6 @@
-<div class="m-2 d-flex flex-wrap">
+<div class="p-2 d-flex flex-wrap align-content-start">
   <% current_user.account.artworks.each do |artwork| %>
-    <%= link_to artist_artwork_path(artwork.artist, artwork) , style: 'text-decoration: none' do%>
-      <div class="card-wrapper">
-        <div class="card-item">
-          <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
-        </div>
-        <div class="card-info">
-          <div class="d-flex justify-content-between">
-            <h4 class="artwork-title"><%= artwork.name.capitalize %>, <%= artwork.year %></h4>
-            <h4 class="card-price"><%= artwork.price %> €</h4>
-          </div>
-            <h4 class="card-dimensions"><%= artwork.medium.name %>, W <%= artwork.width %> x H <%= artwork.height %><% if artwork.depth %> x D <%= artwork.depth %><% end %></h4>
-            <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-          </div>
-        <div class="card-artist-btn">
-            <%= link_to "Edit", edit_artist_artwork_path(artwork.artist, artwork) %>
-            <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete do %><i class="fas fa-trash"></i><% end %>
-        </div>
-      </div>
-    <% end %>
+    <%= render "artworks/card", artwork: artwork %>
   <% end %>
 </div>
 
