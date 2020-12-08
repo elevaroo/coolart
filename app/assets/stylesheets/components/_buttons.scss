@@ -27,8 +27,8 @@
 }
 
 
-.btn:link,
-.btn:visited{
+.follow-btn:link,
+.follow-btn:visited{
   text-decoration: none;
   text-transform:uppercase;
   position:relative;
@@ -40,7 +40,7 @@
   transition: all .5s;
 }
 
-.btn-white{
+.follow-btn-white{
   background:#fff;
   color:#000;
  display: flex;
@@ -48,22 +48,22 @@
   justify-content: center;
 }
 
-.btn:hover{
+.follow-btn:hover{
    box-shadow:0px 10px 10px rgba(0,0,0,0.2);
    transform : translateY(-3px);
 }
 
-.btn:active{
+.follow-btn:active{
   box-shadow:0px 5px 10px rgba(0,0,0,0.2);
   transform:translateY(-1px);
 }
 
-.btn-bottom-animation-1{
+.follow-btn-bottom-animation-1{
   animation:comeFromBottom 1s ease-out .8s;
   box-shadow:0px 0px 6px rgba(0, 0, 0, 0.18);
 }
 
-.btn::after{
+.follow-btn::after{
   content:"";
   text-decoration: none;
   text-transform:uppercase;
@@ -78,11 +78,11 @@
   transition: all .5s;
 }
 
-.btn-white::after {
+.follow-btn-white::after {
     background: #fff;
 }
 
-.btn-animation-1:hover::after {
+.follow-btn-animation-1:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
 }
