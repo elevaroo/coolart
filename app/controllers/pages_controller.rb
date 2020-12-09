@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def getstarted
-    if current_use.collector?
+    if current_user.collector?
       @samples = Artwork.all.sample(20)
     end
   end
