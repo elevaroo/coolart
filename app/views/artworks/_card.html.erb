@@ -1,5 +1,5 @@
 <div class="card-wrapper" style="position: relative">
-  <%= link_to artist_artwork_path(artwork.artist, artwork) , style:'text-decoration: none;' do%>
+  <%= link_to artist_artwork_path(artwork.artist.user.username, artwork) , style:'text-decoration: none;' do%>
     <div class="card-item" >
       <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
     </div>
