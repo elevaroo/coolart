@@ -29,4 +29,11 @@ class Artwork < ApplicationRecord
   scope :artist, lambda{|artist| joins(:artist).where(['artist.last_name = ?', artist])}
   scope :price_min, lambda{|min| where(['price_cents >= ?', min])}
   scope :price_max, lambda{|max| where(['price_cents <= ?', max])}
+
+
+def increase_views
+  self.view_counter = self.view_counter + 1
+  save!
+end
+
 end

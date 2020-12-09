@@ -6,7 +6,6 @@ class ArtworksController < ApplicationController
   has_scope :medium
   has_scope :tag
 
-
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]
 
@@ -19,6 +18,7 @@ class ArtworksController < ApplicationController
     @order = Order.new
     @favorite_artwork = FavoriteArtwork.new
     @fav_artworks = FavoriteArtwork.all
+    @artwork.increase_views
   end
 
   def new
@@ -64,6 +64,3 @@ class ArtworksController < ApplicationController
   end
 end
 
-# artworks[:user_id] = current_user
-
-# rails/info/routes
