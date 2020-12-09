@@ -33,6 +33,7 @@ import { checkCheckbox } from '../components/heart';
 import { orderButton } from '../components/order_button';
 import { linkListener } from '../components/tag_link';
 import { cardsCarousel } from '../components/cards_carousel';
+import { displayTab } from '../components/tabs';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -42,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   orderButton();
   linkListener();
   cardsCarousel();
+  displayTab();
 });

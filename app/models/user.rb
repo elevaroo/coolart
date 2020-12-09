@@ -13,6 +13,11 @@ class User < ApplicationRecord
     self.account = account_type.constantize.create(params)
   end
 
+  def artist
+    account
+  end
+
+
   def collector?
     account_type == "Collector"
   end
