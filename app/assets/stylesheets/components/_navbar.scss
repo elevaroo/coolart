@@ -166,3 +166,9 @@
     color: transparent !important;
   }
 }
+
+.dropdown-item {
+  &:active{
+    background-color: blue;
+  }
+}

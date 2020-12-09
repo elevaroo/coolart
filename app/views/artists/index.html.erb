@@ -1,7 +1,10 @@
-<div class="content">
-  <h2> Discover our artists </h2>
-  <div class="container">
+<div class="artworks-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('<%= image_path('banner_3_home.jpg') %>')">
+  <h1 class="artworks-banner-title">Discover our artists.</h1>
+</div>
 
+<div class="background-container">
+  <div class="content">
+    <div class="container">
     <div class="d-flex flex-wrap align-items-start">
       <% @artists.each do |artist| %>
            <%= link_to artist_path(artist.user.username), style: 'text-decoration: none' do %>
