@@ -1,15 +1,34 @@
-<div class="row" style="position: relative;">
-  <div class="col-12">
-    <div class="card-container d-flex flex-wrap">
-      <div class="p-2 d-flex flex-wrap align-content-start">
-        <% @samples.each do |artwork| %>
-          <%= render "artworks/card", artwork: artwork %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <h1>Get started and find your personal style!</h1>
+        <p>Please like at least 5 artworks that suit your taste. If you do not like any of the displayed artworks feel free to get new impressions by refreshing the page. Once you have selected your favorites, submit your style palette and get excited about a curated list of artworks specially prepared just for you!</p>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center">
+        <%= link_to "Find my style", mystyle_path, class:"btn btn-success" %>
+        <%= link_to getstarted_path, class:"btn btn-warning" do %>
+        <i class="fas fa-sync-alt"></i>
         <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-container d-flex flex-wrap">
+        <div class="p-2 d-flex flex-wrap align-content-start">
+          <% @samples.each do |artwork| %>
+            <%= render "artworks/card", artwork: artwork %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="mystyle">
-  <%= link_to "Find my style", mystyle_path, class:"btn btn-success" %>
-</div>
+
