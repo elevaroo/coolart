@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_105814) do
+ActiveRecord::Schema.define(version: 2020_12_09_151848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "intarray"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_105814) do
     t.string "location"
     t.string "nationality"
     t.date "date_of_birth"
-    t.string "vita"
+    t.text "vita"
     t.string "artschool"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_105814) do
 
   create_table "artworks", force: :cascade do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.date "year"
     t.integer "height"
     t.integer "width"
