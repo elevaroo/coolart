@@ -107,7 +107,7 @@
             <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
             <!-- this is the order button which redirects to the profile page in the bought items -->
             <% if (!user_signed_in? || current_user.collector?) %>
-              <% if @artwork.orders.any? %>
+              <% if @artwork.orders.any?%>
                 <h2><strong>SOLD</strong></h2>
               <% else %>
                 <%= form_tag orders_path do %>
@@ -135,7 +135,7 @@
           <div id="artfacts">
             <div>
               <i class="far fa-eye"></i>
-              <p id="artfacts-text">463 Views</p>
+              <p id="artfacts-text"> <%= @artwork.view_counter %></p>
             </div>
             <div>
               <i class="fas fa-heart"></i>
@@ -154,4 +154,7 @@
 <div class="container" id="recommendations-container">
 
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
 
