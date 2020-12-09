@@ -13,7 +13,7 @@
             <div class="carousel-inner">
               <% if @artwork.photos.attached? %>
               <% @artwork.photos.each_with_index do |photo, index| %>
-              <div class="d-flex justify-content-center carousel-item <%= 'active' if index == 0  %>">
+              <div class="carousel-item <%= 'active' if index == 0  %>">
                 <%= cl_image_tag photo.key, class:"artimage", crop: :fill  %>
               </div>
               <% end %>
@@ -31,7 +31,9 @@
 
           <div class="artdescription">
             <h3 id="arttitle">Description</h3>
-            <p> <%= @artwork.description %></p>
+            <pre style="font-family:Montserrat;">
+              <p> <%= @artwork.description %></p>
+            </pre>
           </div>
         </div>
       </div>

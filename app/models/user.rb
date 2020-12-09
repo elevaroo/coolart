@@ -13,6 +13,11 @@ class User < ApplicationRecord
     self.account = account_type.constantize.create(params)
   end
 
+  def artist
+    account
+  end
+
+
   def collector?
     account_type == "Collector"
   end
@@ -21,7 +26,7 @@ class User < ApplicationRecord
     account_type == "Artist"
   end
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: true, format: { with: /\b[A-Z][a-z]*\b/ }
+  validates :last_name, presence: true, format: { with: /\b[A-Z][a-z]*\b/ }
   validates :username, presence: true, uniqueness: true
 end

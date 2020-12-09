@@ -5,28 +5,28 @@
 <div class="background-container">
   <div class="content">
     <div class="container">
-    <div class="d-flex flex-wrap align-items-start">
-      <% @artists.each do |artist| %>
-           <%= link_to artist_path(artist.user.username), style: 'text-decoration: none' do %>
-        <div class=" card-wrapper artist-profile-pic">
-          <div class="artist-nickname">
-          <h3><%= artist.user.username %></h2>
-        </div>
-        <div class="profile-size">
-          <% if artist.user.photo.attached? %>
-            <%= cl_image_tag artist.user.photo.key, crop: :fill, class:"pic-size"%>
-          <% else %>
-            <img class="pic-size" src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
+      <div class="d-flex flex-wrap align-items-start">
+        <% @artists.each do |artist| %>
+          <%= link_to artist_path(artist.user.username), style: 'text-decoration: none' do %>
+            <div class="account-collector">
+              <div class="account-picture">
+                <% if artist.user.photo.attached? %>
+                  <%= cl_image_tag artist.user.photo.key %>
+                <% else %>
+                  <img src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
+                <% end %>
+              </div>
+              <div class="account-content">
+                <h3 class="name"><%= artist.user.first_name %> <%= artist.user.last_name %></h3>
+                <h4 class="title">@<%= artist.user.username %></h4>
+              </div>
+              <div class="edit-btn">
+                <h4><%= artist.location %></h4>
+              </div>
+            </div>
           <% end %>
-          </div>
-        <div class="d-flex justify-content-between my-2 mx-2">
-          <%= artist.location %><i class="fas fa-thumbtack"></i>
-        </div>
-          <div class="d-flex justify-content-between my-2 mx-2">
-          <% end %>
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
