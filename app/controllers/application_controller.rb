@@ -16,12 +16,20 @@ end
   end
 
   def onboarding
-    unless current_user&.collector? && current_user.account.favorite_artworks.count > 1
-      redirect_to getstarted_path
+    if user_signed_in?
+      if current_user.collector?
+        if current_user.account.favorite_artworks.count < 1
+          redirect_to getstarted_path
+        end
+      end
     end
   end
 
   def after_sign_in_path_for(resource)
-    getstarted_path
+    if current_user.collector? && current_user.account.favorite_artworks.count < 1
+      getstarted_path
+    else
+      root_path
+    end
   end
 end
