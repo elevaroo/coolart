@@ -12,7 +12,7 @@ end
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name, :username, :account_type, :photo, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool, :photo]])
 
     # For additional in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool, :photo]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :photo, :first_name, :last_name, account_attributes: [ :location, :nationality, :date_of_birth, :vita, :artschool, :photo, :id]])
   end
 
   def onboarding

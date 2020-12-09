@@ -1,37 +1,29 @@
-
-<div class="content">
-  <div class="m-4">
-    <%= link_to "Update details", edit_user_registration_path, class: "add-button" %>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 col-sm-10">
-        <div class="d-flex flex-column artist-title">
-          <div class="image-wrap">
-            <% if current_user.photo.attached? %>
-              <%= cl_image_tag current_user.photo.key %>
-            <% else %>
-            <img src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
-            <% end %>
-          </div>
-          <div class="card artist-info">
-            <h3><i class="fas fa-fingerprint"></i><%= current_user.first_name %> <%= current_user.last_name %></h3>
-            <h3><i class="fas fa-globe-europe"></i><%= current_user.account.nationality.upcase %></h3>
-            <% if current_user.account.artschool %>
-              <h3><i class="fas fa-graduation-cap"></i><%= current_user.account.artschool %></h3>
-            <% end %>
-            <h3><i class="fas fa-birthday-cake"></i><%= current_user.account.date_of_birth%></h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-10 artist-title">
-        <h2 class="artist-nickname"> Description </h2>
-        <div class= "artist-description">
-          <%= current_user.account.vita %>
-        </div>
-      </div>
+<div class="d-flex">
+  <div class="account-collector">
+    <div class="account-picture">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key %>
+      <% else %>
+        <img src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
+      <% end %>
+    </div>
+    <div class="account-content">
+      <h3 class="name"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <h4 class="title">@<%= current_user.username %></h4>
+    </div>
+    <div class="edit-btn">
+      <%= link_to "Update details", edit_user_registration_path %>
     </div>
   </div>
+  <div class="account-details">
+    <h2><i class="fas fa-map-marker-alt"></i>     <%= current_user.account.location %></h2>
+    <h2><i class="fas fa-globe"></i>    <%= current_user.account.nationality %></h2>
+    <% if current_user.account.date_of_birth %>
+      <h2><i class="fas fa-birthday-cake"></i>    <%= current_user.account.date_of_birth %></h2>
+    <% end %>
+    <% if current_user.account.artschool %>
+      <h2><i class="fas fa-graduation-cap"></i>    <%= current_user.account.artschool %></h2>
+    <% end %>
+    <p><%= current_user.account.vita %></p>
+  </div>
 </div>
-
-
