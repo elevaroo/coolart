@@ -1,157 +1,159 @@
-<div class="container">
-  <div class="row">
+<div class="background-container">
+  <div class="container">
+    <div class="row">
 
 
-    <div class="col-8">
-      <div class="artwork-title">
-        <h1 class="text-center mb-4">"<%= @artwork.name.capitalize %>" (<i><%= @artwork.year.strftime("%Y") %></i>) by <%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></h1>
-      </div>
-
-      <div class="artwork-info-container">
-        <div id="carouselExampleControls" class="mx-auto w-100 carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <% if @artwork.photos.attached? %>
-            <% @artwork.photos.each_with_index do |photo, index| %>
-            <div class="d-flex justify-content-center carousel-item <%= 'active' if index == 0  %>">
-              <%= cl_image_tag photo.key, class:"artimage", crop: :fill  %>
-            </div>
-            <% end %>
-            <% end %>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" style="background-color:grey;" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" style="background-color:grey;" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+      <div class="col-8">
+        <div class="artwork-title">
+          <h1 class="text-center mb-4">"<%= @artwork.name.capitalize %>" (<i><%= @artwork.year.strftime("%Y") %></i>) by <%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></h1>
         </div>
 
-        <div class="artdescription">
-          <h3 id="arttitle">Description</h3>
-          <p> <%= @artwork.description %></p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-4">
-      <div class="artinfo-card">
-        <div class="artwork-info">
-          <% if user_signed_in? %>
-            <% if current_user.collector? %>
-              <div id="heart-show">
-                <%= link_to like_unlike_path(@artwork.id), remote: true, method: 'post' do %>
-                  <input type="checkbox" id="checkbox-<%= @artwork.id  %>" class="heart-checkbox" <%= "checked" if current_user.account.favorite_artworks.pluck(:artwork_id).include?(@artwork.id) %>/>
-                  <label for="checkbox-<%= @artwork.id  %>">
-                    <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
-                      <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
-                        <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
-                        <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
-
-                        <g id="grp7" opacity="0" transform="translate(7 6)">
-                          <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
-                          <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp6" opacity="0" transform="translate(0 28)">
-                          <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
-                          <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp3" opacity="0" transform="translate(52 28)">
-                          <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
-                          <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp2" opacity="0" transform="translate(44 6)">
-                          <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
-                          <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp5" opacity="0" transform="translate(14 50)">
-                          <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
-                          <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp4" opacity="0" transform="translate(35 50)">
-                          <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
-                          <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
-                        </g>
-
-                        <g id="grp1" opacity="0" transform="translate(24)">
-                          <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
-                          <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
-                        </g>
-                      </g>
-                    </svg>
-                  </label>
-                <% end %>
+        <div class="artwork-info-container">
+          <div id="carouselExampleControls" class="mx-auto w-100 carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <% if @artwork.photos.attached? %>
+              <% @artwork.photos.each_with_index do |photo, index| %>
+              <div class="d-flex justify-content-center carousel-item <%= 'active' if index == 0  %>">
+                <%= cl_image_tag photo.key, class:"artimage", crop: :fill  %>
               </div>
-            <% end %>
-          <% end %>
+              <% end %>
+              <% end %>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" style="background-color:grey;" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" style="background-color:grey;" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
 
-          <h3 id="arttitle"><strong> <%= @artwork.name %> </strong></h3>
+          <div class="artdescription">
+            <h3 id="arttitle">Description</h3>
+            <p> <%= @artwork.description %></p>
+          </div>
+        </div>
+      </div>
 
-          <ul>
-            <li><%= @artwork.category.name.capitalize %></li>
-            <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
-            <li>Date of Creation: <%= @artwork.year %></li>
-            <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
-            <!-- need right link to location of artist (current_user) -->
-            <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong><%= @artwork.artist.location %></strong></li>
-          </ul>
 
-          <div class="buybanner">
-            <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
-            <!-- this is the order button which redirects to the profile page in the bought items -->
-            <% if (!user_signed_in? || current_user.collector?) %>
-              <% if @artwork.orders.any? %>
-                <h2><strong>SOLD</strong></h2>
-              <% else %>
-                <%= form_tag orders_path do %>
-                  <%= hidden_field_tag 'artwork_id', @artwork.id %>
-                  <button type="submit" class="truck-button">
-                    <span class="default">Buy Me</span>
-                    <span class="success">
-                    Order Placed
-                    <svg viewbox="0 0 12 10">
-                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                    </svg>
-                    </span>
-                    <div class="truck">
-                    <div class="wheel"></div>
-                    <div class="back"></div>
-                    <div class="front"></div>
-                    <div class="box"></div>
-                    </div>
-                  </button>
-                <% end %>
+      <div class="col-4">
+        <div class="artinfo-card">
+          <div class="artwork-info">
+            <% if user_signed_in? %>
+              <% if current_user.collector? %>
+                <div id="heart-show">
+                  <%= link_to like_unlike_path(@artwork.id), remote: true, method: 'post' do %>
+                    <input type="checkbox" id="checkbox-<%= @artwork.id  %>" class="heart-checkbox" <%= "checked" if current_user.account.favorite_artworks.pluck(:artwork_id).include?(@artwork.id) %>/>
+                    <label for="checkbox-<%= @artwork.id  %>">
+                      <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+                        <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                          <path d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z" id="heart" fill="#AAB8C2"/>
+                          <circle id="main-circ" fill="#E2264D" opacity="0" cx="29.5" cy="29.5" r="1.5"/>
+
+                          <g id="grp7" opacity="0" transform="translate(7 6)">
+                            <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"/>
+                            <circle id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp6" opacity="0" transform="translate(0 28)">
+                            <circle id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"/>
+                            <circle id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp3" opacity="0" transform="translate(52 28)">
+                            <circle id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"/>
+                            <circle id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp2" opacity="0" transform="translate(44 6)">
+                            <circle id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"/>
+                            <circle id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp5" opacity="0" transform="translate(14 50)">
+                            <circle id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"/>
+                            <circle id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp4" opacity="0" transform="translate(35 50)">
+                            <circle id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"/>
+                            <circle id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"/>
+                          </g>
+
+                          <g id="grp1" opacity="0" transform="translate(24)">
+                            <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
+                            <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
+                          </g>
+                        </g>
+                      </svg>
+                    </label>
+                  <% end %>
+                </div>
               <% end %>
             <% end %>
-          </div>
 
-          <div id="artfacts">
-            <div>
-              <i class="far fa-eye"></i>
-              <p id="artfacts-text">463 Views</p>
+            <h3 id="arttitle"><strong> <%= @artwork.name %> </strong></h3>
+
+            <ul>
+              <li><%= @artwork.category.name.capitalize %></li>
+              <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
+              <li>Date of Creation: <%= @artwork.year %></li>
+              <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
+              <!-- need right link to location of artist (current_user) -->
+              <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong><%= @artwork.artist.location %></strong></li>
+            </ul>
+
+            <div class="buybanner">
+              <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
+              <!-- this is the order button which redirects to the profile page in the bought items -->
+              <% if (!user_signed_in? || current_user.collector?) %>
+                <% if @artwork.orders.any? %>
+                  <h2><strong>SOLD</strong></h2>
+                <% else %>
+                  <%= form_tag orders_path do %>
+                    <%= hidden_field_tag 'artwork_id', @artwork.id %>
+                    <button type="submit" class="truck-button">
+                      <span class="default">Buy Me</span>
+                      <span class="success">
+                      Order Placed
+                      <svg viewbox="0 0 12 10">
+                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                      </svg>
+                      </span>
+                      <div class="truck">
+                      <div class="wheel"></div>
+                      <div class="back"></div>
+                      <div class="front"></div>
+                      <div class="box"></div>
+                      </div>
+                    </button>
+                  <% end %>
+                <% end %>
+              <% end %>
             </div>
-            <div>
-              <i class="fas fa-heart"></i>
-              <p id="artfacts-text"><%= @fav_artworks.pluck(:artwork_id).count(@artwork.id) %> Likes</p>
+
+            <div id="artfacts">
+              <div>
+                <i class="far fa-eye"></i>
+                <p id="artfacts-text">463 Views</p>
+              </div>
+              <div>
+                <i class="fas fa-heart"></i>
+                <p id="artfacts-text"><%= @fav_artworks.pluck(:artwork_id).count(@artwork.id) %> Likes</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
 
 
   </div>
+  <div class="container" id="recommendations-container">
 
-
-</div>
-<div class="container" id="recommendations-container">
-
+  </div>
 </div>
 
