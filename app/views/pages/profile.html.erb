@@ -1,7 +1,7 @@
-<% if current_user.artist? %>
-  <%= render "pages/profile_partials/artist_profile" %>
-<% elsif current_user.collector? %>
-  <%= render "pages/profile_partials/collector_profile" %>
-<% end %>
-
-
+<div class="content">
+  <% if current_user.artist? %>
+    <%= render "pages/profile_partials/artist_profile" %>
+  <% elsif current_user.collector? %>
+    <%= render "pages/profile_partials/collector_profile" %>
+  <% end %>
+</div>
