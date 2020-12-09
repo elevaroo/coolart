@@ -12,7 +12,7 @@
         <h4 class="card-price"><%= humanized_money_with_symbol(artwork.price) %></h4>
       </div>
     <h4 class="card-artist"><%= artwork.artist.user.first_name %> <%= artwork.artist.user.last_name %></h4>
-    <h4 class="card-dimensions"><%= artwork.medium.name %>, </h4>
+    <h4 class="card-dimensions"><%= artwork.medium.name %> </h4>
     <h4 class="card-dimensions">W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
     </div>
 
