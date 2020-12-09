@@ -1,12 +1,23 @@
-<div class="row">
-  <div class="col-12">
-    <div class="card-container d-flex flex-wrap">
-      <div class="p-2 d-flex flex-wrap align-content-start">
-        <% current_user.account.favorite_artworks.each do |fav| %>
-          <% fav.artwork.similar_items(n_results: 2).each do |artwork| %>
-            <%= render "artworks/card", artwork: artwork %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div>
+        <h1>My style</h1>
+        <p>CoolArt provides you with personalised recommendations based on your likes! Discover what artworks we recommend you based on your initial taste screening or come back later to see how your taste profile has evolved!</p>
+        <br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card-container d-flex flex-wrap">
+        <div class="p-2 d-flex flex-wrap align-content-start">
+          <% current_user.account.favorite_artworks.each do |fav| %>
+            <% fav.artwork.similar_items(n_results: 2).each do |artwork| %>
+              <%= render "artworks/card", artwork: artwork %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
