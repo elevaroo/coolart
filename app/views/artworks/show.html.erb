@@ -100,7 +100,11 @@
             <li><%= @artwork.category.name.capitalize %></li>
             <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
             <li>Date of Creation: <%= @artwork.year %></li>
+
+           <%= link_to artist_path(@artwork.artist.user.username), class:"username-link" do %>
             <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
+              <% end %>
+
             <!-- need right link to location of artist (current_user) -->
             <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong><%= @artwork.artist.location %></strong></li>
           </ul>
