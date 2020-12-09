@@ -2,5 +2,5 @@
 meta_product_name: "Coolart"
 meta_title: "Coolart - access to the art world from your living room"
 meta_description: "It gives you the opportunity to access the art markets from your living room."
-meta_image: "painting.png" # should exist in `app/assets/images/`
+meta_image: "og_img.png" # should exist in `app/assets/images/`
 twitter_account: "@ndashiz"   # required for Twitter Cards
