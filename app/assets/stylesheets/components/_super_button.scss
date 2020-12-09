@@ -8,9 +8,9 @@
   margin: 16px;
   &:hover {
     transition: 0.3s;
-    color: blue;
+    color: yellow;
     border-color: yellow;
-    background-color: yellow;
+    background: rgba(0, 0, 0, 0.2);
   }
 
 }
