@@ -85,52 +85,53 @@
                             <circle id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"/>
                             <circle id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"/>
                           </g>
-                        </g>
-                      </svg>
-                    </label>
-                  <% end %>
-                </div>
-              <% end %>
+                      
+                      </g>
+                    </svg>
+                  </label>
+                <% end %>
+              </div>
             <% end %>
+          <% end %>
 
-            <h3 id="arttitle"><strong> <%= @artwork.name %> </strong></h3>
+          <h3 id="arttitle"><strong> <%= @artwork.name %> </strong></h3>
 
-            <ul>
-              <li><%= @artwork.category.name.capitalize %></li>
-              <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
-              <li>Date of Creation: <%= @artwork.year %></li>
-              <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
-              <!-- need right link to location of artist (current_user) -->
-              <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong><%= @artwork.artist.location %></strong></li>
-            </ul>
+          <ul>
+            <li><%= @artwork.category.name.capitalize %></li>
+            <li>Dimensions: W <%= @artwork.width %> x H <%= @artwork.height %></li>
+            <li>Date of Creation: <%= @artwork.year %></li>
+            <li id="icon-fact"><i class="fas fa-user"></i> <strong><%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></strong></li>
+            <!-- need right link to location of artist (current_user) -->
+            <li id="icon-fact"><i class="fas fa-thumbtack"></i> <strong><%= @artwork.artist.location %></strong></li>
+          </ul>
 
-            <div class="buybanner">
-              <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
-              <!-- this is the order button which redirects to the profile page in the bought items -->
-              <% if (!user_signed_in? || current_user.collector?) %>
-                <% if @artwork.orders.any? %>
-                  <h2><strong>SOLD</strong></h2>
-                <% else %>
-                  <%= form_tag orders_path do %>
-                    <%= hidden_field_tag 'artwork_id', @artwork.id %>
-                    <button type="submit" class="truck-button">
-                      <span class="default">Buy Me</span>
-                      <span class="success">
-                      Order Placed
-                      <svg viewbox="0 0 12 10">
-                      <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                      </svg>
-                      </span>
-                      <div class="truck">
-                      <div class="wheel"></div>
-                      <div class="back"></div>
-                      <div class="front"></div>
-                      <div class="box"></div>
-                      </div>
-                    </button>
-                  <% end %>
+          <div class="buybanner">
+            <h2><%= humanized_money_with_symbol(@artwork.price) %> €</h2>
+            <!-- this is the order button which redirects to the profile page in the bought items -->
+            <% if (!user_signed_in? || current_user.collector?) %>
+              <% if @artwork.orders.any?%>
+                <h2><strong>SOLD</strong></h2>
+              <% else %>
+                <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'artwork_id', @artwork.id %>
+                  <button type="submit" class="truck-button">
+                    <span class="default">Buy Me</span>
+                    <span class="success">
+                    Order Placed
+                    <svg viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                    </svg>
+                    </span>
+                    <div class="truck">
+                    <div class="wheel"></div>
+                    <div class="back"></div>
+                    <div class="front"></div>
+                    <div class="box"></div>
+                    </div>
+                  </button>
                 <% end %>
               <% end %>
+            <% end %>
             </div>
 
             <div id="artfacts">
@@ -156,4 +157,7 @@
 
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
 

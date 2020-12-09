@@ -17,7 +17,7 @@
         </div>
         <p></p>
         <div class="box center-btn">
-          <a href="#" class="btn btn-white btn-animation-1"> Follow me <i class="fas fa-user-plus"></i></a>
+          <a href="#" class="follow-btn follow-btn-white follow-btn-animation-1"> Follow me <i class="fas fa-user-plus"></i></a>
         </div>
         <p></p>
         <div class="card artist-info">
@@ -38,13 +38,11 @@
           <div class="container">
             <h3 class="center-btn"> MY ARTWORKS </h3>
             <div class="row">
-              <div class="col-8">
-                <div class="card-container d-flex flex-wrap">
-                  <div class="d-flex flex-wrap">
-                    <% @artist.artworks.each do |artwork| %>
-                    <%= render "artworks/card", artwork: artwork %>
-                    <% end %>
-                  </div>
+              <div class="card-container d-flex flex-wrap">
+                <div class="d-flex flex-wrap">
+                  <% @artist.artworks.each do |artwork| %>
+                  <%= render "artworks/card", artwork: artwork %>
+                  <% end %>
                 </div>
               </div>
             </div>
