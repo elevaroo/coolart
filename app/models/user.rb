@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  belongs_to :account, polymorphic: true
+  belongs_to :account, polymorphic: true, dependent: :destroy
   has_one_attached :photo
 
   accepts_nested_attributes_for :account

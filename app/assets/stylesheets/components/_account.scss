@@ -22,6 +22,10 @@
   margin-bottom: 50px;
   z-index: 1;
   position: relative;
+  img {
+    height: 130px;
+    width: 130px;
+  }
 }
 
 .account-collector .account-picture::before {
@@ -56,8 +60,6 @@
 }
 
 .account-collector .account-picture img {
-  width: 100%;
-  height: auto;
   border-radius: 50%;
   transform: scale(1);
   transition: all 0.9s ease 0s;
@@ -117,4 +119,5 @@
   border-right: 1px solid grey;
   width: 170px;
   min-height: 470px;
+  margin-bottom: 20px;
 }
