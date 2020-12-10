@@ -56,10 +56,10 @@
   <div class="container">
   <h2 id="titles-home">SHOP BY PRICE</h2>
     <div class="d-flex justify-content-between">
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'UP TO €500', artworks_path(price_min: 0, price_max: 50000) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to '€500 - €1000', artworks_path(price_min: 50000, price_max: 100000) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall3.png') %>')"><%= link_to '€1000 - €2000', artworks_path(price_min: 100000, price_max: 200000) %></div>
-      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall4.png') %>')"><%= link_to '€2000 AND MORE', artworks_path(price_min: 200000, price_max: 10000000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall1.png') %>')"><%= link_to 'UP TO €500', artworks_path(price_min: 0, price_max: 500) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall2.png') %>')"><%= link_to '€500 - €1000', artworks_path(price_min: 500, price_max: 1000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall3.png') %>')"><%= link_to '€1000 - €2000', artworks_path(price_min: 1000, price_max: 2000) %></div>
+      <div class="overview-element-budget m-2" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path('wall4.png') %>')"><%= link_to '€2000 AND MORE', artworks_path(price_min: 2000, price_max: 100000) %></div>
     </div>
   </div>
 
