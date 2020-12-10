@@ -5,7 +5,7 @@
   <h2>Active</h2>
   <div class="p-2 d-flex flex-wrap align-content-start">
     <% current_user.account.artworks.each do |artwork| %>
-      <% if artwork.orders.size < 1  %>
+      <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size < 1  %>
         <%= render "artworks/card", artwork: artwork %>
       <% end %>
     <% end %>
@@ -13,7 +13,7 @@
   <h2>Sold</h2>
   <div class="p-2 d-flex flex-wrap align-content-start">
     <% current_user.account.artworks.each do |artwork| %>
-      <% if artwork.orders.size > 0 %>
+      <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size > 0 %>
         <%= render "artworks/card", artwork: artwork %>
       <% end %>
     <% end %>
