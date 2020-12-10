@@ -30,11 +30,12 @@
 </head>
 
 <body>
-  <%= render 'shared/navbar' %>
-  <%= render 'shared/flashes' %>
-    <%= yield %>
-<%= render 'shared/footer' %>
-
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class="content-box">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
 
 </body>
 </html>
