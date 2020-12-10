@@ -9,44 +9,32 @@
 <% end %>
 
 <div class="background-container">
-  <div class="container-fluid">
     <div class="search-title d-flex justify-content-center mt-3">
-      <h2>Refine your search</h2>
+      <h2 class="search-title">Refine Your Search</h2>
     </div>
-    <div class="form-filter">
+
       <%= form_tag artworks_path,   method: :get do %>
-        <div class="d-flex justify-content-center align-items-center">
+        <div class="d-flex justify-content-center align-items-center" style="margin-bottom: 25px;">
+          <div class="form-filter">
 
-          <div class="m-3">
-            <div><%= label_tag(:category, "Category:") %></div>
-            <div><%= select_tag(:category, options_for_select(['Painting', 'Sculpture', 'Photography', 'Print', 'Drawing', 'Mixed Media'], params[:category]), prompt: '') %></div>
-          </div>
+            <div class="drop-icon"><%= select_tag(:category, options_for_select(['Painting', 'Sculpture', 'Photography', 'Print', 'Drawing', 'Mixed Media'], params[:category]), prompt: "Categories", class:"drowpdown-search") %><i class="fas fa-sort"></i></div>
 
-          <div class="m-3">
-            <div><%= label_tag(:medium, "Medium:") %></div>
-            <div><%= select_tag(:medium, options_for_select(['Oil paint', 'Watercolour', 'Pencil', 'Etching', 'Lithography', 'Bronze', 'Marble', 'Wood', 'Iron', 'Plastic', 'Acrylic paint', 'Chalk', 'Pastel'], params[:medium]), prompt: '') %></div>
-          </div>
+            <div class="drop-icon"><%= select_tag(:medium, options_for_select(['Oil paint', 'Watercolour', 'Pencil', 'Etching', 'Lithography', 'Bronze', 'Marble', 'Wood', 'Iron', 'Plastic', 'Acrylic paint', 'Chalk', 'Pastel'], params[:medium]), prompt: "Media", class:"drowpdown-search") %><i class="fas fa-sort"></i></div>
 
-          <div class="m-3">
-            <div><%= label_tag(:year, "Year:") %></div>
-            <div><%= select_tag(:year, options_for_select(Artwork.available_years.map(&:to_i)), prompt: '')%></div>
-          </div>
+            <div class="drop-icon"><%= select_tag(:year, options_for_select(Artwork.available_years.map(&:to_i)), prompt: "Year", class:"drowpdown-search")%><i class="fas fa-sort"></i></div>
 
-          <div class="m-3">
-            <div><%= label_tag(:price_min, "Min €") %></div>
-            <div><%= text_field_tag :price_min, params[:price_min], class:"search-field"%></div>
-          </div>
+            <div><%= text_field_tag :price_min, nil, placeholder: "Min €", params[:price_min], class:"search-field"%></div>
 
-          <div class="m-3">
-            <div><%= label_tag(:price_max, "Max €") %></div>
-            <div><%= text_field_tag :price_max, params[:price_max], class:"search-field"%></div>
-          </div>
+            <div><%= text_field_tag :price_max, nil, placeholder: "Max €", params[:price_max], class:"search-field"%></div>
 
-          <div class="m-3"><%= submit_tag "Find your Artwork!", class: "button btn-search" %></div>
+            <button class="button-search">
+              <i class="fas fa-search"></i>
+            </button>
         </div>
       <% end %>
     </div>
 
+  <div class="container-fluid">
     <div class="row">
       <div class="col-12">
         <div class="card-container d-flex flex-wrap">
