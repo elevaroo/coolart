@@ -5,7 +5,6 @@
   font-size:15px;
   line-height:24px;
   color:#eceeef;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -173,4 +172,7 @@ body {
  flex-direction: column;
 }
 
+.content-box {
+  flex: 1;
+}
 
