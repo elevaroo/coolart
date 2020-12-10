@@ -64,4 +64,3 @@ class ArtworksController < ApplicationController
     params.require(:artwork).permit(:name, :description, :year, :price, :height, :width, :depth, :medium_id, :category_id, tags_attributes: [:name], photos: [])
   end
 end
-
