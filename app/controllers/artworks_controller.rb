@@ -5,6 +5,7 @@ class ArtworksController < ApplicationController
   has_scope :category
   has_scope :medium
   has_scope :tag
+  has_scope :year
 
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_artwork, only: [:show, :edit, :update, :destroy]

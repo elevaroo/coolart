@@ -10,6 +10,9 @@
 
 <div class="background-container">
   <div class="container-fluid">
+    <div class="search-title d-flex justify-content-center mt-3">
+      <h2>Refine your search</h2>
+    </div>
     <div class="form-filter">
       <%= form_tag artworks_path,   method: :get do %>
         <div class="d-flex justify-content-center align-items-center">
@@ -25,14 +28,21 @@
           </div>
 
           <div class="m-3">
-            <div><%= text_field_tag :price_min, nil, placeholder: "Minimum Price" %></div>
+            <div><%= label_tag(:year, "Year:") %></div>
+            <div><%= select_tag(:year, options_for_select(Artwork.available_years.map(&:to_i)), prompt: '')%></div>
           </div>
 
           <div class="m-3">
-            <div><%= text_field_tag :price_max, nil, placeholder: "Maximum Price" %></div>
+            <div><%= label_tag(:price_min, "Min €") %></div>
+            <div><%= text_field_tag :price_min, nil, class:"search-field"%></div>
           </div>
 
-          <div class="m-3"><%= submit_tag "Find your Artwork!", class: "button" %></div>
+          <div class="m-3">
+            <div><%= label_tag(:price_min, "Max €") %></div>
+            <div><%= text_field_tag :price_max, nil, class:"search-field"%></div>
+          </div>
+
+          <div class="m-3"><%= submit_tag "Find your Artwork!", class: "button btn-search" %></div>
         </div>
       <% end %>
     </div>
