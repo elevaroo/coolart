@@ -1,7 +1,9 @@
 <div class="account-collector mt-1">
   <div class="account-picture">
     <% if current_user.photo.attached? %>
-      <%= cl_image_tag current_user.photo.key %>
+      <%= cl_image_tag current_user.photo.key, :transformation=>[
+  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+  {:width=>200, :crop=>"scale"}] %>
     <% else %>
       <img src='https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'>
     <% end %>

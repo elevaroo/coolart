@@ -65,7 +65,9 @@
           <li class="nav-item dropdown">
             <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src=
             <% if current_user.photo.attached? %>
-            <%= cl_image_path current_user.photo.key %>
+            <%= cl_image_path current_user.photo.key, :transformation=>[
+  {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+  {:width=>200, :crop=>"scale"}] %>
             <% else %>
             'https://www.pphfoundation.ca/wp-content/uploads/2018/05/default-avatar.png'
             <% end %> />
