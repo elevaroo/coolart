@@ -29,7 +29,11 @@ class Artwork < ApplicationRecord
   scope :artist, lambda{|artist| joins(:artist).where(['artist.last_name = ?', artist])}
   scope :price_min, lambda{|min| where(['price_cents >= ?', min])}
   scope :price_max, lambda{|max| where(['price_cents <= ?', max])}
+  scope :year, lambda{|year| where(["extract(YEAR from year)= ?", year])}
 
+def self.available_years
+  Artwork.pluck('extract(YEAR from year)').sort.uniq
+end
 
 def increase_views
   self.view_counter = self.view_counter + 1

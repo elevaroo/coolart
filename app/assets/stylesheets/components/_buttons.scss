@@ -94,3 +94,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.btn-search {
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
