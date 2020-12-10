@@ -1,18 +1,12 @@
-// .artwork-container {
-//   text-align: right;
-//   margin: 40px;
-//   flex-wrap: wrap;
-//   align-items: flex-start;
-// }
-
 .text-center {
-  color: black;
+  color: #272626;
 }
 
 .artwork-title {
   text-align: center;
   margin-bottom: 70px;
   position: center;
+  margin-top: 25px;
 }
 
 .artwork-info-container {
@@ -23,11 +17,11 @@
 }
 
 .artimage {
-    height: 510px;
-    width: 100%;
-    -o-object-fit: contain;
-    object-fit: contain;
-    object-position: center;
+  height: 510px;
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  object-position: center;
 }
 
 .artdescription {
@@ -40,21 +34,18 @@
 
 .artinfo-card {
   margin-top: 100px;
-  width: 340px;
-  height: 510px;
+  margin-bottom: 100px;
+  width: 330px;
+  height: 480px;
   text-align: center;
   padding-top: 15px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   vertical-align: center;
-  background-color: #F9B194;
+  background-color: white;
   color: #272626;
   position: sticky;
-  top: 0;
-}
-
-ul {
-  list-style: none;
-  padding-inline-start: 0px;
+  top: 16px;
+  align-self: flex-start;
 }
 
 #icon-fact {
@@ -63,24 +54,15 @@ ul {
 }
 
 .buybanner {
-  padding: 10px;
-  margin: none;
-  width: 340px;
-  height: 115px;
+  padding: 20px;
+  margin-top: 25px;
+  width: 330px;
+  height: 80px;
   content-align: center;
   vertical-align: center;
-  background-color: lightgrey;
-}
-
-.button {
-  border-radius: 1px;
-  background-color: rgba(39, 38, 38, 0.8);
-  color: lightgrey;
-  &:hover {
-    transition: 0.3s;
-    color: rgba(39, 38, 38, 1.0);
-    background-color: #F9B194;
-  }
+  background-color: #272626;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  color: yellow;
 }
 
 #artfacts {
@@ -88,14 +70,14 @@ ul {
   justify-content: space-between;
   color: #272626;
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: 27px;
   width: 340px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 85px;
+  padding-right: 85px;
 }
 
 .fa-heart .fa-eye {
-  padding: 16px;
+  padding: 0px;
 }
 
 #artfacts-text {
@@ -104,7 +86,7 @@ ul {
 
 #arttitle {
   margin-bottom: 16px;
-  margin-top: 0px;
+  margin-top: 16px;
   font-size: 24px;
 }
 

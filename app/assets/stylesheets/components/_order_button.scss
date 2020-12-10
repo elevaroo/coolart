@@ -18,21 +18,28 @@
     --street-fill: #404660;
     --box: #DCB97A;
     --box-shadow: #B89B66;
-    padding: 12px 0;
+    margin-top: 24px;
+    margin-bottom: 5px;
+    padding: 16px 0;
     width: 172px;
     cursor: pointer;
     text-align: center;
     position: relative;
-    border: none;
     outline: none;
-    color: var(--color);
-    background: var(--background);
-    border-radius: var(--br, 5px);
+    color: yellow;
+    background: #272626;
+    border-radius: var(--br, 3px);
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
     transform-style: preserve-3d;
     transform: rotateX(var(--rx, 0deg)) translateZ(0);
     transition: transform .5s, border-radius .3s linear var(--br-d, 0s);
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    &:hover {
+      color: white;
+      background: grey;
+      transition: 0.3s;
+    }
     &:before,
     &:after {
         content: '';
