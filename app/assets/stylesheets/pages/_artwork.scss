@@ -4,16 +4,16 @@
 
 .artwork-title {
   text-align: center;
-  margin-bottom: 70px;
   position: center;
   margin-top: 25px;
+  margin-bottom: 16px;
 }
 
 .artwork-info-container {
   align-self: flex-start;
   margin-right: 40px;
   flex-grow: 1;
-  margin-top: 100px;
+  margin-top: 45px;
 }
 
 .artimage {
@@ -26,14 +26,14 @@
 
 .artdescription {
   content-align: center;
-  margin-top: 40px;
+  margin-top: 45px;
   width: auto;
   text-align: left;
   flex-grow: 1;
 }
 
 .artinfo-card {
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   width: 330px;
   height: 480px;
@@ -109,4 +109,3 @@ button {
   letter-spacing: 4px;
   text-decoration: underline
 }
-
