@@ -1,12 +1,10 @@
 <div class="background-container">
   <div class="container">
+    <div class="artwork-title">
+      <h1 class="text-center mb-4">"<%= @artwork.name.capitalize %>" (<i><%= @artwork.year.strftime("%Y") %></i>) by <%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></h1>
+    </div>
     <div class="row">
-
-
       <div class="col-8">
-        <div class="artwork-title">
-          <h1 class="text-center mb-4">"<%= @artwork.name.capitalize %>" (<i><%= @artwork.year.strftime("%Y") %></i>) by <%= @artwork.artist.user.first_name %> <%= @artwork.artist.user.last_name %></h1>
-        </div>
 
         <div class="artwork-info-container">
           <div id="carouselExampleControls" class="mx-auto w-100 carousel slide" data-ride="carousel">
