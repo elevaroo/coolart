@@ -7,27 +7,34 @@ h1 {
 }
 
 h2{
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
-font-family: 'Montserrat', sans-serif;
-font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
 }
 
 
 h4{
-font-family: 'Montserrat', sans-serif;
-font-size:14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size:14px;
 }
 
 
 h5{
-font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
-
+.text-display {
+  font-family: Montserrat;
+  word-wrap: break-word;
+  overflow: inherit;
+  width: 100%;
+  white-space: pre-wrap;
+  text-align: left;
+}
 // --------------SPECIAL RULES--------------------
 
 
