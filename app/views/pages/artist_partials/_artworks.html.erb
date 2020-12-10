@@ -1,8 +1,11 @@
-<div class="d-flex flex-column justify-content-center">
+<div class="d-flex flex-column justify-content-center artworks-artist">
   <div class="d-flex" style="margin-left: 50px; margin-top: 10px">
     <%= link_to "Add artwork", new_artist_artwork_path(current_user.account), class:"add-button" %>
   </div>
-  <h2>Active</h2>
+  <br>
+  <div class="artworks-artist">
+    <h2>Active</h2>
+  </div>
   <div class="p-2 d-flex flex-wrap align-content-start">
     <% current_user.account.artworks.each do |artwork| %>
       <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size < 1  %>
@@ -10,7 +13,9 @@
       <% end %>
     <% end %>
   </div>
-  <h2>Sold</h2>
+  <div class="artworks-artist">
+    <h2>Sold</h2>
+  </div>
   <div class="p-2 d-flex flex-wrap align-content-start">
     <% current_user.account.artworks.each do |artwork| %>
       <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size > 0 %>
