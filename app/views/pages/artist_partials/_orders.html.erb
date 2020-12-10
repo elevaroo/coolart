@@ -6,7 +6,7 @@
     </div>
     <div class="order-content">
       <h1><%= order.artwork.name %>, <%= order.artwork.year %></h1>
-      <h2><%= order.artwork.collector.user.first_name %> <%= order.artwork.collector.user.last_name %></h2>
+      <h2><%= order.collector.user.first_name %> <%= order.collector.user.last_name %></h2>
       <h3><%= order.artwork.price %> €</h3>
       <% if order.status == 0 %>
         <%= link_to "Mark as shipped", mark_as_shipped_path(order), class:"mark-as-shipped-btn" %>
