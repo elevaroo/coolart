@@ -2,9 +2,20 @@
   <div class="d-flex" style="margin-left: 50px; margin-top: 10px">
     <%= link_to "Add artwork", new_artist_artwork_path(current_user.account), class:"add-button" %>
   </div>
+  <h2>Active</h2>
   <div class="p-2 d-flex flex-wrap align-content-start">
     <% current_user.account.artworks.each do |artwork| %>
-      <%= render "artworks/card", artwork: artwork %>
+      <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size < 1  %>
+        <%= render "artworks/card", artwork: artwork %>
+      <% end %>
+    <% end %>
+  </div>
+  <h2>Sold</h2>
+  <div class="p-2 d-flex flex-wrap align-content-start">
+    <% current_user.account.artworks.each do |artwork| %>
+      <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).size > 0 %>
+        <%= render "artworks/card", artwork: artwork %>
+      <% end %>
     <% end %>
   </div>
 </div>
