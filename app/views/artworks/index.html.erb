@@ -23,9 +23,9 @@
 
             <div class="drop-icon"><%= select_tag(:year, options_for_select(Artwork.available_years.map(&:to_i)), prompt: "Year", class:"drowpdown-search")%><i class="fas fa-sort"></i></div>
 
-            <div><%= text_field_tag :price_min, nil, placeholder: "Min €", params[:price_min], class:"search-field"%></div>
+            <div><%= text_field_tag :price_min, params[:price_min], placeholder: "Min €", class:"search-field"%></div>
 
-            <div><%= text_field_tag :price_max, nil, placeholder: "Max €", params[:price_max], class:"search-field"%></div>
+            <div><%= text_field_tag :price_max, params[:price_max], placeholder: "Max €", class:"search-field"%></div>
 
             <button class="button-search">
               <i class="fas fa-search"></i>
