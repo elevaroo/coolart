@@ -1,5 +1,5 @@
 class Artist < ApplicationRecord
-  has_one :user, as: :account
+  has_one :user, as: :account, required: true
   has_many :artworks, dependent: :destroy
   has_many :orders, through: :artworks, dependent: :destroy
 
