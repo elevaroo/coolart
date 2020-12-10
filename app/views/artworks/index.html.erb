@@ -34,12 +34,12 @@
 
           <div class="m-3">
             <div><%= label_tag(:price_min, "Min €") %></div>
-            <div><%= text_field_tag :price_min, nil, class:"search-field"%></div>
+            <div><%= text_field_tag :price_min, params[:price_min], class:"search-field"%></div>
           </div>
 
           <div class="m-3">
-            <div><%= label_tag(:price_min, "Max €") %></div>
-            <div><%= text_field_tag :price_max, nil, class:"search-field"%></div>
+            <div><%= label_tag(:price_max, "Max €") %></div>
+            <div><%= text_field_tag :price_max, params[:price_max], class:"search-field"%></div>
           </div>
 
           <div class="m-3"><%= submit_tag "Find your Artwork!", class: "button btn-search" %></div>
