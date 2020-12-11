@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
+  before_action :onboarding, only: [ :mystyle]
   has_scope :price_min
   has_scope :price_max
 
