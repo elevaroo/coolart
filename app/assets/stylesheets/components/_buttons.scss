@@ -1,13 +1,13 @@
 .add-button {
-  border-radius: 25px;
-  background-color: rgba(39, 38, 38, 0.8);
+  border-radius: 3px;
+  background-color: rgba(39, 38, 38, 0.5);
   color: lightgrey;
   padding: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
   &:hover {
     transition: 0.3s;
     color: yellow;
-    background-color: rgba(39, 38, 38, 0.8);
-    border: 2px yellow;
+    background-color: rgba(39, 38, 38, 0.7);
   }
 }
 

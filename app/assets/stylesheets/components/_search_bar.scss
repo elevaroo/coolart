@@ -12,7 +12,7 @@
     justify-content: center;
     vertical-align: center;
     padding: 8px;
-    background-color: rgba(39, 38, 38, 0.4);
+    background-color: #D1D5F8;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     border-radius: 3px;
     align-self: center;
@@ -27,7 +27,7 @@
     font-size: 18px;
     width: 150px;
     margin: none;
-    border-right: 3px solid rgba(39, 38, 38, 0.4);
+    border-right: 3px solid #D1D5F8;
   }
 
   .drowpdown-search {
@@ -41,14 +41,15 @@
     padding-right: 30px;
     appearance: none;
     margin: none;
-    border-right: 3px solid rgba(39, 38, 38, 0.4);
+    border-right: 3px solid #D1D5F8;
   }
 
   .button-search {
     margin-left: 8px;
+    color: #85889E;
   &:hover{
     transition: 0.3s;
-    color: yellow;
+    color: grey;
   }
 }
 
