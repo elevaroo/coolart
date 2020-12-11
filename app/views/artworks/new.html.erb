@@ -5,7 +5,7 @@
       <div class="form-group">
         <%= simple_form_for([@artist, @artwork]) do |f| %>
         <%= f.input :name %>
-        <%= f.input :year %>
+        <%= f.input :year, start_year: Date.today.year - 110, end_year: Date.today.year %>
         <%= f.input :description %>
         <%= render "tags_form" %>
         <%= link_to 'More tags', '#', class:"tag-link" %>

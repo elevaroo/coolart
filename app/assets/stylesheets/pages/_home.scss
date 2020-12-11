@@ -1,7 +1,10 @@
 // Specific CSS for your home-page
 .background-container {
-  background: asset-url('background-landing.jpg');
-  object-fit: cover;
+  background: asset-url('background-landing.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding: none;
 }
 
