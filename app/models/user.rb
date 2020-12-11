@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :account
 
+  before_validation :check_account
+
   def build_account(params)
     self.account = account_type.constantize.create(params)
   end
@@ -17,6 +19,11 @@ class User < ApplicationRecord
     account
   end
 
+  def check_account
+    if User.where(username: self.username).any?
+      self.account.destroy
+    end
+  end
 
   def collector?
     account_type == "Collector"
