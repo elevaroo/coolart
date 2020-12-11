@@ -9,20 +9,12 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :account
 
-  after_validation :check_account
-
   def build_account(params)
-    self.account = account_type.constantize.create(params)
+    self.account = account_type.constantize.new(params)
   end
 
   def artist
     account
-  end
-
-  def check_account
-    if self.errors.any?
-      self.account.destroy
-    end
   end
 
   def collector?
