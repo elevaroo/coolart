@@ -4,7 +4,7 @@
       <div class="col-md-4 col-sm-10">
         <div class="d-flex flex-column artist-title">
           <h2> <strong> <%= @artist.user.username.upcase%></strong> </h2>
-          <div class="image-wrap">
+          <div class="image-wrap d-flex flex-column align-items-center">
             <% if @artist.user.photo.attached? %>
             <%= cl_image_tag @artist.user.photo.key %>
             <% else %>
