@@ -3,7 +3,7 @@ class Artwork < ApplicationRecord
   belongs_to :medium
   belongs_to :category
   has_many :tags
-  has_many :orders
+  has_many :orders, dependent: :destroy
   has_many_attached :photos
   has_many :favorite_artworks
   has_many :collectors, through: :favorite_artworks
