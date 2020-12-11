@@ -1,5 +1,5 @@
 <div class="card-wrapper" style="position: relative">
-  <%= link_to artist_artwork_path(artwork.artist.user.username, artwork) , style:'text-decoration: none;' do%>
+  <%= link_to artist_artwork_path(artwork.artist.user.username, artwork) , style:'text-decoration: none; min-height: 470px' do%>
     <div class="card-item" >
       <%= cl_image_tag artwork.photos.first.key, class:"artwork"%>
       <% if artwork.orders.where(status: [:confirmed, :dispatched, :fulfilled]).any? %>
@@ -15,13 +15,13 @@
     <h4 class="card-dimensions"><%= artwork.medium.name %> </h4>
     <h4 class="card-dimensions">W <%= artwork.width %> cm x H <%= artwork.height %> cm</h4>
     </div>
+  <% end %>
 
     <% if user_signed_in? && artwork.artist == current_user.account && current_page?(profile_path)%>
     <div class="card-artist-btn d-flex justify-content-center">
         <%= link_to "Edit", edit_artist_artwork_path(artwork.artist, artwork), class:"mr-3" %>
-        <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete do %><i class="fas fa-trash"></i><% end %>
+        <%= link_to artist_artwork_path(artwork.artist, artwork), method: :delete, data:{confirm: 'Are you sure you want to delete the Artwork?'} do %><i class="fas fa-trash"></i><% end %>
     </div>
-  <% end %>
 
   <% end %>
 
