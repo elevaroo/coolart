@@ -1,7 +1,7 @@
 .ribbon {
   margin: 0;
   padding: 0;
-  background: rgba(#D1D5F8, 0.7);
+  background: #D1D5F8;
   color:white;
   padding:1em 0;
   position: absolute;
@@ -18,7 +18,7 @@
   margin: 0 -1px; /* tweak */
   width: 120%;
   height: 100%;
-  background: rgba(#D1D5F8, 0.7);
+  background: #D1D5F8;
 }
 .ribbon:before {
   right:100%;
