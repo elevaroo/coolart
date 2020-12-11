@@ -13,7 +13,10 @@
 
 .card-wrapper {
   width: 250px;
-  margin: 40px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 57px;
+  margin-left: 57px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -127,4 +130,9 @@ a{
   &:hover {
     color: #272626;
   }
+}
+
+
+.artworks-container {
+
 }
