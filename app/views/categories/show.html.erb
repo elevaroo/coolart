@@ -3,7 +3,7 @@
 </div>
 
 <div class="background-container">
-  <div class="card-container d-flex flex-wrap">
+  <div class="card-container d-flex flex-wrap container">
     <% @category.artworks.each do |artwork| %>
       <%= render "artworks/card", artwork: artwork %>
     <% end %>
