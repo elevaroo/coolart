@@ -5,8 +5,9 @@
   padding: 10px;
   &:hover {
     transition: 0.3s;
-    color: rgba(39, 38, 38, 1.0);
-    background-color: #F9B194;
+    color: yellow;
+    background-color: rgba(39, 38, 38, 0.8);
+    border: 2px yellow;
   }
 }
 
